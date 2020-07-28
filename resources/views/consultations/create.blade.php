@@ -28,7 +28,7 @@
 	    @csrf
 	    <div class="form-group">
 		<label>User </label>
-		<input class="form-control" name="user_id" placeholder="User qui fait la consulation">
+		<input class="form-control" name="user_id" value="{{Auth::id()}}" readonly placeholder="User qui fait la consulation">
 		<label>Patient  </label>
 		<input class="form-control" name="patient_id" placeholder="Patient Id">
 		<label> Payement</label>

@@ -69,3 +69,10 @@ Route::post('consultations','ConsultationsController@store');
 Route::get('consultations/edit/{consultation}','ConsultationsController@edit');
 Route::put('consultations/{consultation}','ConsultationsController@update');
 Route::post('consultations/destroy/{consultation}','ConsultationsController@destroy');
+
+Route::get('examens','ExamensController@index');
+Route::get('examens/create','ExamensController@create');
+Route::post('examens','ExamensController@store');
+Route::get('examens/edit/{examen}','ExamensController@edit');
+Route::put('examens/{examen}','ExamensController@update');
+Route::post('examens/destroy/{examen}','ExamensController@destroy');
