@@ -62,3 +62,10 @@ Route::post('payements','PayementsController@store');
 Route::get('payements/edit/{payement}','PayementsController@edit');
 Route::put('payements/{payement}','PayementsController@update');
 Route::post('payements/destroy/{payement}','PayementsController@destroy');
+
+Route::get('consultations','ConsultationsController@index');
+Route::get('consultations/create','ConsultationsController@create');
+Route::post('consultations','ConsultationsController@store');
+Route::get('consultations/edit/{consultation}','ConsultationsController@edit');
+Route::put('consultations/{consultation}','ConsultationsController@update');
+Route::post('consultations/destroy/{consultation}','ConsultationsController@destroy');
