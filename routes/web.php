@@ -48,3 +48,10 @@ Route::post('typePayements','TypePayementsController@store');
 Route::get('typePayements/edit/{typePayement}','TypePayementsController@edit');
 Route::put('typePayements/{typePayement}','TypePayementsController@update');
 Route::post('typePayements/destroy/{typePayement}','TypePayementsController@destroy');
+
+Route::get('patients','PatientsController@index');
+Route::get('patients/create','PatientsController@create');
+Route::post('patients','PatientsController@store');
+Route::get('patients/edit/{patient}','PatientsController@edit');
+Route::put('patients/{patient}','PatientsController@update');
+Route::post('patients/destroy/{patient}','PatientsController@destroy');
