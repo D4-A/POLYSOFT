@@ -34,3 +34,10 @@ Route::post('fonctions','FonctionsController@store');
 Route::get('fonctions/edit/{fonction}','FonctionsController@edit');
 Route::put('fonctions/{fonction}','FonctionsController@update');
 Route::post('fonctions/destroy/{fonction}','FonctionsController@destroy');
+
+Route::get('users','UsersController@index');
+Route::get('users/create','UsersController@create');
+Route::post('users','UsersController@store');
+Route::get('users/edit/{user}','UsersController@edit');
+Route::put('users/{user}','UsersController@update');
+Route::post('users/destroy/{user}','UsersController@destroy');

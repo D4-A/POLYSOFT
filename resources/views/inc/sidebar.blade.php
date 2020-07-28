@@ -21,7 +21,7 @@
 	    </li>
 	    <li><a href="{{url('/examens')}}"><em class="fa fa-list-alt">&nbsp;</em> Examen</a></li>
 	    <li><a href="{{url('/emails')}}"><em class="fa fa-list-alt">&nbsp;</em> Email</a></li>
-	    <li><a href="{{url('/personels')}}"><em class="fa fa-user-o">&nbsp;</em> Users</a></li>
+	    <li><a href="{{url('/users')}}"><em class="fa fa-user-o">&nbsp;</em> Users</a></li>
 
 	    <li>
 		<a class="dropdown-item" href="{{ route('logout') }}"
