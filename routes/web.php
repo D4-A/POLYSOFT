@@ -76,3 +76,10 @@ Route::post('examens','ExamensController@store');
 Route::get('examens/edit/{examen}','ExamensController@edit');
 Route::put('examens/{examen}','ExamensController@update');
 Route::post('examens/destroy/{examen}','ExamensController@destroy');
+
+Route::get('emails','EmailsController@index');
+Route::get('emails/create','EmailsController@create');
+Route::post('emails/send','EmailsController@send');
+Route::post('sendp','EmailsController@senddeux');
+Route::post('emails','EmailsController@store');
+Route::post('emails/destroy/{email}','EmailsController@destroy');
