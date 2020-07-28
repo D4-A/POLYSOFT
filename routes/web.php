@@ -55,3 +55,10 @@ Route::post('patients','PatientsController@store');
 Route::get('patients/edit/{patient}','PatientsController@edit');
 Route::put('patients/{patient}','PatientsController@update');
 Route::post('patients/destroy/{patient}','PatientsController@destroy');
+
+Route::get('payements','PayementsController@index');
+Route::get('payements/create','PayementsController@create');
+Route::post('payements','PayementsController@store');
+Route::get('payements/edit/{payement}','PayementsController@edit');
+Route::put('payements/{payement}','PayementsController@update');
+Route::post('payements/destroy/{payement}','PayementsController@destroy');
