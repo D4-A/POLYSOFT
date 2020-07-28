@@ -41,3 +41,10 @@ Route::post('users','UsersController@store');
 Route::get('users/edit/{user}','UsersController@edit');
 Route::put('users/{user}','UsersController@update');
 Route::post('users/destroy/{user}','UsersController@destroy');
+
+Route::get('typePayements','TypePayementsController@index');
+Route::get('typePayements/create','TypePayementsController@create');
+Route::post('typePayements','TypePayementsController@store');
+Route::get('typePayements/edit/{typePayement}','TypePayementsController@edit');
+Route::put('typePayements/{typePayement}','TypePayementsController@update');
+Route::post('typePayements/destroy/{typePayement}','TypePayementsController@destroy');
