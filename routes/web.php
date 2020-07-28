@@ -27,3 +27,10 @@ Route::post('services','ServicesController@store');
 Route::get('services/edit/{service}','ServicesController@edit');
 Route::put('services/{service}','ServicesController@update');
 Route::post('services/destroy/{service}','ServicesController@destroy');
+
+Route::get('fonctions','FonctionsController@index');
+Route::get('fonctions/create','FonctionsController@create');
+Route::post('fonctions','FonctionsController@store');
+Route::get('fonctions/edit/{fonction}','FonctionsController@edit');
+Route::put('fonctions/{fonction}','FonctionsController@update');
+Route::post('fonctions/destroy/{fonction}','FonctionsController@destroy');
