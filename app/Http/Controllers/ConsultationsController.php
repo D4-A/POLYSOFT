@@ -69,7 +69,14 @@ class ConsultationsController extends Controller
      */
     public function show(Consultation $consultation)
     {
-        //
+        $patient = Patient::find($consultation->patient_id)->get();
+        $examen = null;
+
+        return view('consultations/show',[
+            'consultation' => $consultation,
+            'patient' => $patient,
+            'examen' => $examen
+        ]);
     }
 
     /**
