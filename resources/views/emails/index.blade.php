@@ -35,7 +35,7 @@
 	@csrf
         <div class="form-group">
             <div class="input-group">
-                <input type="search" name="examen_id" class="form-control">
+                <input name="consultation_id" class="form-control">
                 <span class="">
                     <button type="submit" class="btn btn-info">envoi Examen</button>
                 </span>
@@ -53,7 +53,7 @@
 
             <th>ID </th>
 	    <th>ID Personnel</th>
-	    <th>ID Examen</th>
+	    <th>ID Consultation</th>
             <th>Subject</th>
 	    <th>Body </th>
 	    <th>filename </th>
@@ -66,7 +66,7 @@
             <tr>
                 <td> <?= $email->id; ?></td>
 		<td> <?= $email->user_id; ?></td>
-		<td> <?= $email->examen_id; ?></td>
+		<td> <?= $email->consultation_id; ?></td>
                 <td> <?= $email->subject; ?></td>
 		<td> <?= $email->body; ?></td>
 		<td> <?= $email->filename; ?></td>

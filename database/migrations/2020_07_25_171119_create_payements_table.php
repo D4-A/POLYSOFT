@@ -19,11 +19,14 @@ class CreatePayementsTable extends Migration
             $table->unsignedBigInteger('patient_id');
             $table->unsignedBigInteger('type_payement_id');
             $table->timestamps();
-
+            
             $table->foreign('user_id')->references('id')->on('users')
-                ->onDelete('cascade');
-            $table->foreign('type_payement_id')->references('id')->on('type_payements')
-                ->onDelete('cascade');
+                  ->onDelete('cascade');
+            $table->foreign('patient_id')->references('id')->on('patients')
+                  ->onDelete('cascade');
+            $table->foreign('type_payement_id')->references('id')
+                  ->on('type_payements')
+                  ->onDelete('cascade');
         });
     }
 

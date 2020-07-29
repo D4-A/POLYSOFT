@@ -16,7 +16,7 @@ class CreateEmailsTable extends Migration
         Schema::create('emails', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('examen_id')->nullable();
+            $table->unsignedBigInteger('consultation_id')->nullable();
             $table->string('subject');
             $table->string('body');
             $table->string('filename')->nullable();
@@ -24,7 +24,7 @@ class CreateEmailsTable extends Migration
 
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade');
-            $table->foreign('examen_id')->references('id')->on('examens')
+            $table->foreign('consultation_id')->references('id')->on('consultations')
                 ->onDelete('cascade');
         });
     }

@@ -29,8 +29,8 @@
 		    <div class="form-group">
 			<label>User ID</label>
 			<input class="form-control" name="user_id" value="{{Auth::id()}}" readonly placeholder="User examen">
-			<label>Examen ID</label>
-			<input class="form-control" name="examen_id" value="{{$examen_id}}" readonly placeholder="User examen">
+			<label>Consultation ID</label>
+			<input class="form-control" name="consultation_id" value="{{$consultation_id}}" readonly placeholder="User examen">
 			<label>Mail to</label>
 			<input class="form-control" name="to_email" value="{{$email}}" readonly placeholder="Email">
 			<label>subject</label>

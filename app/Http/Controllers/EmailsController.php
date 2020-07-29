@@ -31,10 +31,7 @@ class EmailsController extends Controller
         ]);
     }
     public function send(Request $request){
-        $examen_id = $request->examen_id;
-        // terrible hack that allow as to fetch email
-        //cascaded value in table foreign scheme
-        $cons_id = DB::table('examens')->where('id',$examen_id)->value('consultation_id');
+        $cons_id = $request->consultation_id;
         $patient_id = DB::table('consultations')->where('id',$cons_id)->value('patient_id');
         $email = DB::table('patients')->where('id',$patient_id)->value('email');
 
@@ -47,7 +44,7 @@ class EmailsController extends Controller
         unset($files[count($files) - 1]); // remove last value
         return view('emails/send', [
             'files' => $files,
-            'examen_id' => $examen_id,
+            'consultation_id' => $cons_id,
             'email' => $email
         ]);
     }
