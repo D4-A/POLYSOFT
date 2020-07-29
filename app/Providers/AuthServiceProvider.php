@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\DB;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -29,9 +30,12 @@ class AuthServiceProvider extends ServiceProvider
             return $user->role == 'admin';
          });
         
-         //define a author user role 
          Gate::define('isSimpleuser', function($user) {
              return $user->role == 'simpleuser';
+         });
+         Gate::define('isDoctor', function($user) {
+             $id = DB::table('fonctions')->where('name','docteur')->value('id');
+             return $user->fonction_id == $id;
          });
     }
 }

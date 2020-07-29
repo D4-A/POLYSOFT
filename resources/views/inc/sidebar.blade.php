@@ -3,7 +3,9 @@
 	    <li class="active"><a href="{url('/')}"><em class="fa fa-dashboard">&nbsp;</em> Home</a></li>
 	    <li><a href="{{url('/patients')}}"><em class="fa fa-users">&nbsp;</em> patient</a></li>
 	    <li><a href="{{url('/payements')}}"><em class="fa fa-shopping-cart">&nbsp;</em> Paiement</a></li>
+	    @canany(['isDoctor','isAdmin'])
 	    <li><a href="{{url('/consultations')}}"><em class="fa fa-list-alt">&nbsp;</em> Consultations</a></li>
+	    @endcan
 	    <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 				<em class="fa fa-cog">&nbsp;</em> Configuration <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 			</a>
@@ -21,8 +23,9 @@
 	    </li>
 	    <li><a href="{{url('/examens')}}"><em class="fa fa-list-alt">&nbsp;</em> Examen</a></li>
 	    <li><a href="{{url('/emails')}}"><em class="fa fa-list-alt">&nbsp;</em> Email</a></li>
+	    @can('isAdmin')
 	    <li><a href="{{url('/users')}}"><em class="fa fa-user-o">&nbsp;</em> Users</a></li>
-
+	    @endcan
 	    <li>
 		<a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
