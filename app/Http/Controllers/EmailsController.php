@@ -51,7 +51,7 @@ class EmailsController extends Controller
     public function senddeux(Request $request){
 
         $user_id = $request->get('user_id');
-        $examen_id = $request->get('examen_id');
+        $consultation_id = $request->get('consultation_id');
         $subject = $request->get('subject');
         $email = $request->get('to_email');
         $body = $request->get('body');
@@ -60,7 +60,7 @@ class EmailsController extends Controller
         Mail::to($email)->send(new MailPatient(false,$data,$user_id,$subject,$body));
         $email = new Email();
         $email->user_id = $request->get('user_id');
-        $email->examen_id = $examen_id;
+        $email->consultation_id = $consultation_id;
         $email->subject = $subject;
         $email->body = $body;
         $email->filename = $filejoined;
