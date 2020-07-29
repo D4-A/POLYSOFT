@@ -15,7 +15,7 @@
 		<li><a href="#">
 		    <em class="fa fa-home"></em>
 		</a></li>
-		<li class="active">Home</li>
+		<li class="active">Fonctions</li>
 	    </ol>
 	</div><!--/.row-->
 	
