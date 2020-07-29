@@ -21,7 +21,7 @@
 	
 	<div class="row">
 	    <div class="col-lg-12">
-		<h1 class="page-header">Modifier Service</h1>
+		<h1 class="page-header">Modifier Patients</h1>
 	    </div>
 	</div><!--/.row-->
 	<form role="form" action="/patients/{{$patient->id}}" method="post">
