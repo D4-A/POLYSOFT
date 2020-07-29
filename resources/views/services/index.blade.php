@@ -45,17 +45,19 @@
 			    <td> <?= $service->name; ?></td>
 			    <td>
 				<a href="services/edit/{{$service->id}}">
-
+				    @can('isAdmin')
 				    <button type="submit" class="btn btn-sm btn-primary">
 					<span class="glyphicon glyphicon-edit"> Edit</span>
 				    </button>
-
+				    @endcan
 				</a>
 				<form action="services/destroy/{{$service->id}}" method="post">
 				    @csrf
-				    <button type="submit" class="btn btn-sm btn-danger">
-					<span class="glyphicon glyphicon-trash"> Delete</span>
-				    </button>
+				    @can('isAdmin')
+					<button type="submit" class="btn btn-sm btn-danger">
+					    <span class="glyphicon glyphicon-trash"> Delete</span>
+					</button>
+					@endcan
 				</form>
                             </td>
 			</tr>
