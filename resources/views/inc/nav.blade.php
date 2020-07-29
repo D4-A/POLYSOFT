@@ -8,7 +8,7 @@
 				<a class="navbar-brand" href="#"><span>Polyclinique du Nord</span> Software</a>
 				<ul class="nav navbar-top-links navbar-right">
 				    <li>
-					
+					<i class="fa fa-circle-o" aria-hidden="true"></i>
 				    </li>
 				</ul>
 			</div>

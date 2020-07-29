@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Consultation;
 use App\User;
 use App\Patient;
+use App\Examen;
 use App\Payement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ConsultationsController extends Controller
 {
@@ -71,13 +73,24 @@ class ConsultationsController extends Controller
     public function show(Consultation $consultation)
     {
         $patient = Patient::find($consultation->patient_id)->get();
-        $examen = null;
+        $examen = DB::table('examens')->where('consultation_id',$consultation->id)->get();
+
+        $files = '';
+        foreach($examen as $ex){
+            $files .= $ex->files . ',';
+        }
+        $examen = explode(',',$files);
+        unset($examen[count($examen) - 1]);
 
         return view('consultations/show',[
             'consultation' => $consultation,
             'patient' => $patient,
             'examen' => $examen
         ]);
+    }
+    public function download($patient,$consultation,$filename){
+        $file = 'public/uploads/' . $patient . '/' . $consultation .'/'. $filename;
+        return Storage::download($file);
     }
 
     /**

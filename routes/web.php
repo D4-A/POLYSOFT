@@ -84,3 +84,5 @@ Route::post('emails/send','EmailsController@send');
 Route::post('sendp','EmailsController@senddeux');
 Route::post('emails','EmailsController@store');
 Route::post('emails/destroy/{email}','EmailsController@destroy');
+
+Route::get('download/{patient}/{consultation}/{filename}', 'ConsultationsController@download');

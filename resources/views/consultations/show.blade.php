@@ -107,7 +107,7 @@
 				    @else
 					@foreach($examen as $ex)
 					    <strong>
-						<a href='{{url('uploads/' . $ex)}}'> {{basename($ex)}}</a>
+						<a href='{{url('download/' . $ex)}}'> {{basename($ex)}}</a>
 					    </strong></br>
 					@endforeach
 				    @endif
