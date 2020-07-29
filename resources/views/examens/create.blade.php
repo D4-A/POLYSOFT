@@ -28,7 +28,7 @@
 	    @csrf
 	    <div class="form-group">
 		<label>User ID</label>
-		<input class="form-control" name="user_id" placeholder="User examen">
+		<input class="form-control" name="user_id" value="{{Auth::id()}}" placeholder="User examen" readonly>
 		<label>Consulation ID</label>
 		<input class="form-control" name="consultation_id" placeholder="Consultation ID">
 		<label>Nom</label>

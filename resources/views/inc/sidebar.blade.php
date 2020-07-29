@@ -1,6 +1,6 @@
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 	<ul class="nav menu">
-	    <li class="active"><a href="{url('/')}"><em class="fa fa-dashboard">&nbsp;</em> Home</a></li>
+	    <li class="active"><a href="{{url('/home')}}"><em class="fa fa-dashboard">&nbsp;</em> Home</a></li>
 	    <li><a href="{{url('/patients')}}"><em class="fa fa-users">&nbsp;</em> patient</a></li>
 	    <li><a href="{{url('/payements')}}"><em class="fa fa-shopping-cart">&nbsp;</em> Paiement</a></li>
 	    @canany(['isDoctor','isAdmin'])
