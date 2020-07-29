@@ -30,9 +30,14 @@
 		<label>Nom du Patient </label>
 		<input class="form-control" name="nom" placeholder="Nom patient">
 		<label>Prenom du Patient</label>
-		<input class="form-control" name="prenom" placeholder="Age du patient">
+		<input class="form-control" name="prenom" placeholder="Prenom du patient">
 		<label>Genre du Patient </label>
-		<input class="form-control" name="genre" placeholder="Genre du patient">
+		<select name="genre" id="genre" class="form-control">
+		    <option value="">sectionne le Genre</option>
+                    <option value="Masculin">Masculin</option>
+		    <option value="Feminin">Feminin</option>
+		    <option value="No Precise">No Precise</option>
+                </select>
 		<label>Age du Patient</label>
 		<input class="form-control" name="age" placeholder="Age du patient">
 		<label>Profession du Patient</label>

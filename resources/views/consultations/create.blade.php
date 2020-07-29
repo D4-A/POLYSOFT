@@ -33,6 +33,8 @@
 		<input class="form-control" name="patient_id" placeholder="Patient Id">
 		<label> Payement</label>
 		<input class="form-control" name="payement_id" placeholder="Payement">
+		<label> Motif</label>
+		<input class="form-control" name="motif" placeholder="Motif">
 		<label>Antecedent</label>
 		<input class="form-control" name="antecedent" placeholder="Maladie deja infecte">
 		<label>Motif de consulation </label>

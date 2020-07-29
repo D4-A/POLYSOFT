@@ -60,7 +60,7 @@ class ExamensController extends Controller
             $file_db = DB::table('examens')->where('consultation_id',$cons_id)->value('files');
             
             if(!Storage::disk('public')->exists('uploads/' . $filename)
-               && !strpos($file_db,$filename))
+               || !strpos($file_db,$filename))
                 $paths[]  = $filename;
             else
                 $fileNotUpload[] = $name;

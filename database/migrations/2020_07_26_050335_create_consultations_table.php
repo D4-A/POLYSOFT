@@ -18,6 +18,7 @@ class CreateConsultationsTable extends Migration
             $table->unsignedBigInteger('user_id'); 
             $table->unsignedBigInteger('patient_id');
             $table->unsignedBigInteger('payement_id');
+            $table->string('motif');
             $table->string('antecedent');
             $table->string('historique'); 
             $table->string('examen_physique');

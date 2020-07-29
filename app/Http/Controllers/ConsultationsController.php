@@ -55,6 +55,7 @@ class ConsultationsController extends Controller
         $consultation->user_id = $request->user_id;
         $consultation->patient_id = $request->patient_id;
         $consultation->payement_id = $request->payement_id;
+        $consultation->motif = $request->motif;
         $consultation->antecedent = $request->antecedent;
         $consultation->historique = $request->historique;
         $consultation->examen_physique = $request->examen_physique;
@@ -110,6 +111,7 @@ class ConsultationsController extends Controller
         $consultation->user_id = $request->user_id;
         $consultation->patient_id = $request->patient_id;
         $consultation->payement_id = $request->payement_id;
+        $consultation->motif = $request->motif;
         $consultation->antecedent = $request->antecedent;
         $consultation->historique = $request->historique;
         $consultation->examen_physique = $request->examen_physique;

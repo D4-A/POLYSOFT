@@ -2,7 +2,7 @@
 	<ul class="nav menu">
 	    <li class="active"><a href="{{url('/home')}}"><em class="fa fa-dashboard">&nbsp;</em> Home</a></li>
 	    <li><a href="{{url('/patients')}}"><em class="fa fa-users">&nbsp;</em> patient</a></li>
-	    <li><a href="{{url('/payements')}}"><em class="fa fa-shopping-cart">&nbsp;</em> Paiement</a></li>
+	    <li><a href="{{url('/payements')}}"><em class="fa fa-shopping-cart">&nbsp;</em> Payement</a></li>
 	    @canany(['isDoctor','isAdmin'])
 	    <li><a href="{{url('/consultations')}}"><em class="fa fa-list-alt">&nbsp;</em> Consultations</a></li>
 	    @endcan
@@ -17,7 +17,7 @@
 				    <span class="fa fa-arrow-right">&nbsp;</span> Fonctions
 				</a></li>
 				<li><a class="" href="{{url('/typePayements')}}">
-				    <span class="fa fa-arrow-right">&nbsp;</span> Type Payement
+				    <span class="fa fa-arrow-right">&nbsp;</span> Type de Payement
 				</a></li>
 			</ul>
 	    </li>
