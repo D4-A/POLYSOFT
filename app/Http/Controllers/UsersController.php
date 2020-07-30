@@ -50,6 +50,19 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'pronom' => 'required',
+            'service_id' => 'required',
+            'fonction_id' => 'required',
+            'genre' => 'required',
+            'age' => 'required',
+            'tel' => 'required',
+            'email' => 'required',
+            'cni' => 'required',
+            'adresse' => 'required',
+         ]);
+        
         $user= new User();
         $user->name = $request->name;
         $user->prenom = $request->prenom;
@@ -109,6 +122,19 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        $request->validate([
+            'name' => 'required',
+            'pronom' => 'required',
+            'service_id' => 'required',
+            'fonction_id' => 'required',
+            'genre' => 'required',
+            'age' => 'required',
+            'tel' => 'required',
+            'email' => 'required',
+            'cni' => 'required',
+            'adresse' => 'required',
+         ]);
+        
         $user->name = $request->name;
         $user->prenom = $request->prenom;
         $user->genre = $request->genre;
