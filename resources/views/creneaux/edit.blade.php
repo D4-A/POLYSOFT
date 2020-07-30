@@ -28,8 +28,6 @@
 	    @csrf
 	    @method('PUT')
 	    <div class="form-group">
-		<label>User ID</label>
-		<input class="form-control" name="user_id" value="{{Auth::id()}}" placeholder="Name creneau" readonly>
 		<label>Creneau Name</label>
 		<input class="form-control" name="name" value="{{$creneau->name}}" placeholder="Name creneau">
 		<label>Creneau Start at</label>
