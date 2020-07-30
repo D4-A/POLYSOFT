@@ -38,6 +38,9 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required'
+        ]);
         $service = new Service();
         $service ->name = $request->name;
         $service->save();
@@ -79,6 +82,9 @@ class ServicesController extends Controller
      */
     public function update(Request $request, Service $service)
     {
+        $request->validate([
+            'name' => 'required'
+        ]);
         $service->name = $request->name;
         $service->save();
         return redirect('services');

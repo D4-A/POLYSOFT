@@ -14,46 +14,10 @@
 
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Home</h1>
+		    <h1 class="page-header">Home</h1>
 		</div>
 	</div>
 	<!--/.row-->
-
-	<div class="panel panel-container">
-		<div class="row">
-			<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-				<div class="panel panel-teal panel-widget border-right">
-					<div class="row no-padding"><em class="fa fa-xl fa-shopping-cart color-blue"></em>
-						<div class="text-muted">Orders</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-				<div class="panel panel-blue panel-widget border-right">
-					<div class="row no-padding"><em class="fa fa-xl fa-users color-orange"></em>
-						<div class="large"></div>
-						<div class="text-muted">Customers</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-				<div class="panel panel-orange panel-widget border-right">
-					<div class="row no-padding"><em class="fa fa-xl fa-list-alt color-teal"></em>
-						<div class="large"></div>
-						<div class="text-muted">Products</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-				<div class="panel panel-red panel-widget ">
-					<div class="row no-padding"><em class="fa fa-xl fa-user color-red"></em>
-						<div class="large"></div>
-						<div class="text-muted">Profile</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--/.row-->
-	</div>
+	
 </div>
 @endsection()

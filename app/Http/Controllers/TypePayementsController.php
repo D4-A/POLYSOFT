@@ -38,6 +38,10 @@ class TypePayementsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'montant' => 'required'
+        ]);
         $typePayement= new TypePayement();
         $typePayement->name = $request->name;
         $typePayement->montant = $request->montant;
@@ -80,6 +84,10 @@ class TypePayementsController extends Controller
      */
     public function update(Request $request, TypePayement $typePayement)
     {
+        $request->validate([
+            'name' => 'required',
+            'montant' => 'required'
+        ]);
         $typePayement->name = $request->name;
         $typePayement->montant = $request->montant;
         $typePayement->save();

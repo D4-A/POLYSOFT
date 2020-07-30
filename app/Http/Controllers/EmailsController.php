@@ -31,6 +31,12 @@ class EmailsController extends Controller
         ]);
     }
     public function send(Request $request){
+        $request->validate([
+            'to_email' => 'required',
+            'subject' => 'required',
+            'body' => 'required',
+            'consultation_id' => 'required',
+         ]);
         $cons_id = $request->consultation_id;
         $patient_id = DB::table('consultations')->where('id',$cons_id)->value('patient_id');
         $email = DB::table('patients')->where('id',$patient_id)->value('email');
@@ -50,6 +56,13 @@ class EmailsController extends Controller
     }
     public function senddeux(Request $request){
 
+        $request->validate([
+            'to_email' => 'required',
+            'subject' => 'required',
+            'body' => 'required',
+            'consultation_id' => 'required',
+         ]);
+        
         $user_id = $request->get('user_id');
         $consultation_id = $request->get('consultation_id');
         $subject = $request->get('subject');
@@ -85,6 +98,11 @@ class EmailsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'to_email' => 'required',
+            'subject' => 'required',
+            'body' => 'required'
+        ]);
         $user = DB::table('users')
                   ->where('id',$request->get('user_id'))->value('name');
         $email = $request->get('to_email');

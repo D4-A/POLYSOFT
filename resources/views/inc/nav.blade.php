@@ -7,7 +7,7 @@
 					<span class="icon-bar"></span></button>
 				<a class="navbar-brand" href="#"><span>Polyclinique du Nord</span> Software</a>
 				<ul class="nav navbar-top-links navbar-right">
-				    <li class="dropdown"><a href="{{url('/rendez-vous')}}">
+				    <li class="dropdown"><a href="{{url('/rendezVous')}}">
 					<em class="fa fa-calendar"></em>
 				    </a>
 				    
