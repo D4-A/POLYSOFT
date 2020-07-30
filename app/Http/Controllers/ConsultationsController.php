@@ -79,13 +79,15 @@ class ConsultationsController extends Controller
         foreach($examen as $ex){
             $files .= $ex->files . ',';
         }
-        $examen = explode(',',$files);
-        unset($examen[count($examen) - 1]);
+        $files = explode(',',$files);
+        unset($files[count($files) - 1]);
 
+        if(count($files) == 0)
+            $files = null;
         return view('consultations/show',[
             'consultation' => $consultation,
             'patient' => $patient,
-            'examen' => $examen
+            'files' => $files
         ]);
     }
     public function download($patient,$consultation,$filename){

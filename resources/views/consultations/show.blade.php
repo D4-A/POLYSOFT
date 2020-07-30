@@ -31,7 +31,7 @@
 				<div class="col-md-3">
 				    Motif:
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-3">
 				    <strong>{{ $consultation->motif }}</strong>
 				</div>
 			    </div>
@@ -102,12 +102,12 @@
 				    Examen Fait:
 				</div>
 				<div class="col-md-6">
-				    @if($examen === null)
+				    @if($files === null)
 					<strong> Aucun Examen Ajouter</strong>
 				    @else
-					@foreach($examen as $ex)
+					@foreach($files as $file)
 					    <strong>
-						<a href='{{url('download/' . $ex)}}'> {{basename($ex)}}</a>
+						<a href='{{url('download/' . $file)}}'> {{basename($file)}}</a>
 					    </strong></br>
 					@endforeach
 				    @endif

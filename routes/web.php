@@ -41,6 +41,7 @@ Route::post('users','UsersController@store');
 Route::get('users/edit/{user}','UsersController@edit');
 Route::put('users/{user}','UsersController@update');
 Route::post('users/destroy/{user}','UsersController@destroy');
+Route::get('profile','UsersController@profile');
 
 Route::get('typePayements','TypePayementsController@index');
 Route::get('typePayements/create','TypePayementsController@create');
