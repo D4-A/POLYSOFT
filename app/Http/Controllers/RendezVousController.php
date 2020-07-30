@@ -39,6 +39,14 @@ class RendezVousController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'patient_id' => 'required',
+            'payement_id' => 'required',
+            'creneau_id' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+            'etat' => 'required'
+         ]);
         $rendezvous = new RendezVous();
 
         $rendezvous->user_id = Auth::id();
@@ -87,6 +95,15 @@ class RendezVousController extends Controller
      */
     public function update(Request $request, rendezVous $rendezvous)
     {
+        $request->validate([
+            'patient_id' => 'required',
+            'payement_id' => 'required',
+            'creneau_id' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+            'etat' => 'required'
+         ]);
+        
         $rendezvous->user_id = Auth::id();
         $rendezvous->patient_id = $request->patient_id;
         $rendezvous->payement_id = $request->payement_id;
