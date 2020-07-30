@@ -85,6 +85,11 @@ class EmailsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'to_email' => 'required',
+            'subject' => 'required',
+            'body' => 'required'
+        ]);
         $user = DB::table('users')
                   ->where('id',$request->get('user_id'))->value('name');
         $email = $request->get('to_email');
