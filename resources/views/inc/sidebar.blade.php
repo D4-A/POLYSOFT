@@ -22,7 +22,7 @@
 			</ul>
 	    </li>
 	    <li><a href="{{url('/examens')}}"><em class="fa fa-list-alt">&nbsp;</em> Examen</a></li>
-	    <li><a href="{{url('/emails')}}"><em class="fa fa-list-alt">&nbsp;</em> Email</a></li>
+	    <li><a href="{{url('/emails')}}"><em class="fa fa-envelope-open">&nbsp;</em> Email</a></li>
 	    @can('isAdmin')
 	    <li><a href="{{url('/users')}}"><em class="fa fa-user-o">&nbsp;</em> Users</a></li>
 	    @endcan
