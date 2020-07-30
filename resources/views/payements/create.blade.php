@@ -27,12 +27,10 @@
 	<form role="form" action="{{url('payements')}}" method="post">
 	    @csrf
 	    <div class="form-group">
-		<label>User </label>
-		<input class="form-control" name="user_id" value="{{Auth::id()}}" readonly placeholder="user">
 		<label>Patients  </label>
 		<input class="form-control" name="patient_id" placeholder="patient">
 		
-		<label>Type_Payement Occupe </label>
+		<label>Type de Payement </label>
 		<select name="type_payement_id" id="type_payement_id" class="form-control">
                     <option placeholder="" value="">Choisissez un Type de Payement</option>
 		    
