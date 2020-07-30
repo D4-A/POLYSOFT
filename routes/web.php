@@ -98,3 +98,10 @@ Route::post('creneaux','CreneauxController@store');
 Route::get('creneaux/edit/{creneau}','CreneauxController@edit');
 Route::put('creneaux/{creneau}','CreneauxController@update');
 Route::post('creneaux/destroy/{creneau}','CreneauxController@destroy');
+
+Route::get('rendezVous','RendezVousController@index');
+Route::get('rendezVous/create','RendezVousController@create');
+Route::post('rendezVous','RendezVousController@store');
+Route::get('rendezVous/edit/{rendezvous}','RendezVousController@edit');
+Route::put('rendezVous/{rendezvous}','RendezVousController@update');
+Route::post('rendezVous/destroy/{rendezvous}','RendezVousController@destroy');
