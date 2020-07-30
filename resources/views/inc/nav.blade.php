@@ -8,7 +8,7 @@
 				<a class="navbar-brand" href="#"><span>Polyclinique du Nord</span> Software</a>
 				<ul class="nav navbar-top-links navbar-right">
 				    <li>
-					<a href="/profile"> <i class="fa fa-user fa-2x color-none" aria-hidden="true"></i></a>
+					<a href="{{url('profile')}}"> <i class="fa fa-user fa-2x color-none" aria-hidden="true"></i></a>
 					
 				    </li>
 				</ul>

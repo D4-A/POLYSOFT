@@ -41,7 +41,7 @@ Route::post('users','UsersController@store');
 Route::get('users/edit/{user}','UsersController@edit');
 Route::put('users/{user}','UsersController@update');
 Route::post('users/destroy/{user}','UsersController@destroy');
-Route::get('profile','UsersController@profile');
+
 
 Route::get('typePayements','TypePayementsController@index');
 Route::get('typePayements/create','TypePayementsController@create');
@@ -87,3 +87,7 @@ Route::post('emails','EmailsController@store');
 Route::post('emails/destroy/{email}','EmailsController@destroy');
 
 Route::get('download/{patient}/{consultation}/{filename}', 'ConsultationsController@download');
+
+Route::get('profile','ProfilesController@index');
+Route::get('profile/edit/{profile}','ProfilesController@edit');
+Route::put('profile/{profile}','ProfilesController@update');
