@@ -79,6 +79,11 @@ class ProfilesController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
+
+        //TODO use javascript to chech user input
+        if($request->password !== $request->password_confirmation)
+            return back()->with('password_confirmation','Password dont equal');
+
         $user->name = $request->name;
         $user->prenom = $request->prenom;
         $user->genre = $request->genre;
@@ -89,7 +94,7 @@ class ProfilesController extends Controller
         $user->cni = $request->cni;
         $user->password = Hash::make($request->password);
         $user->save();
-        return redirect('profile');
+        return redirect('profile')->with('success', 'Infos modifier avec succes');
     }
 
     /**

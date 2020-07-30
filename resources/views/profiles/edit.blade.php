@@ -21,7 +21,7 @@
 	
 	<div class="row">
 	    <div class="col-lg-12">
-		<h1 class="page-header">Modifier Service</h1>
+		<h1 class="page-header">Modifier profile infos</h1>
 	    </div>
 	</div><!--/.row-->
 	<form role="form" action="/profile/{{$user->id}}" method="post">
@@ -146,6 +146,11 @@
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
+		    @if ($message = Session::get('password_confirmation'))
+			<div class="alert alert-danger">
+			    <p>{{ $message }}</p>
+			</div>
+		    @endif
                 </div>
             </div>
             
@@ -154,7 +159,13 @@
 
                 <div class="col-md-9">
                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                </div>
+		    @if ($message = Session::get('password_confirmation'))
+			<div class="alert alert-danger">
+			    <p>{{ $message }}</p>
+			</div>
+		    @endif
+		</div>
+		
             </div>
 
             <div class="form-group row">
@@ -162,12 +173,12 @@
                     
                 </div>
                 <div class="col-md-4">
-                    <button type="submit" class="btn btn-primary col-md-12">
+                    <button type="submit" class="btn btn-primary col-md-12 glyphicon glyphicon-modify">
                         {{ __('MODIFIER INFOS') }}
                     </button>
                 </div>
                 <div class="col-md-5">
-                    <a class="btn btn-secondary col-md-12" href="{{ url('profile') }}">
+                    <a class="btn btn-primary col-md-12 glyphicon glyphicon-cancel" href="{{ url('profile') }}">
                         {{ __('ANNULER') }}
                     </a>
                 </div>

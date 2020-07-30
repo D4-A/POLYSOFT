@@ -24,6 +24,11 @@
 			    <h1 class="page-header">Profile</h1>
 			</div>
 		</div><!--/.row-->
+		@if ($message = Session::get('success'))
+		    <div class="alert alert-success">
+			<p>{{ $message }}</p>
+		    </div>
+		@endif
 		<div class="card-body">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
@@ -96,10 +101,10 @@
 		    <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group row">
                             <div class="col-md-6">
-                                <a class="btn btn-primary col-md-12" href="{{ url('home') }}">ANNULER</a>
+                                <a class="btn btn-primary col-md-12 glyphicon glyphicon-cancel" href="{{ url('home') }}">ANNULER</a>
                             </div>
                             <div class="col-md-6">
-                                <a class="btn btn-primary col-md-12" href="{{url('profile/edit',$user->id) }}">EDITER</a>
+                                <a class="btn btn-primary col-md-12 glyphicon glyphicon-edit" href="{{url('profile/edit',$user->id) }}">EDITER</a>
                             </div>
                         </div>
                     </div>
