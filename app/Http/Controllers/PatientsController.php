@@ -38,6 +38,17 @@ class PatientsController extends Controller
      */
     public function store(Request $request)
     {
+         $request->validate([
+            'nom' => 'required',
+            'pronom' => 'required',
+            'genre' => 'required',
+            'age' => 'required',
+            'profession' => 'required',
+            'tel' => 'required',
+            'email' => 'required',
+            'cni' => 'required',
+            'adresse' => 'required',
+         ]);
         $patient= new Patient();
         $patient->nom = $request->nom;
         $patient->prenom = $request->prenom;
@@ -87,6 +98,18 @@ class PatientsController extends Controller
      */
     public function update(Request $request, Patient $patient)
     {
+        $request->validate([
+            'nom' => 'required',
+            'pronom' => 'required',
+            'genre' => 'required',
+            'age' => 'required',
+            'profession' => 'required',
+            'tel' => 'required',
+            'email' => 'required',
+            'cni' => 'required',
+            'adresse' => 'required',
+         ]);
+        
         $patient->nom = $request->nom;
         $patient->prenom = $request->prenom;
         $patient->genre = $request->genre;
