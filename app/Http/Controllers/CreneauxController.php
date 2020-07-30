@@ -42,9 +42,15 @@ class CreneauxController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required',
+            'ouvert' => 'required'
+         ]);
         $creneau= new Creneau();
         $creneau->name = $request->name;
-        $creneau->user_id = $request->user_id;
+        $creneau->user_id = Auth::id();
         $creneau->start_time = $request->start_time;
         $creneau->end_time = $request->end_time;
         $creneau->ouvert = $request->ouvert == 'true' ? 1 : 0;
@@ -86,7 +92,14 @@ class CreneauxController extends Controller
      */
     public function update(Request $request, Creneau $creneau)
     {
-        $creneau->user_id = $request->user_id;
+        $request->validate([
+            'name' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required',
+            'ouvert' => 'required'
+         ]);
+        
+        $creneau->user_id = Auth::id();
         $creneau->name = $request->name;
         $creneau->start_time = $request->start_time;
         $creneau->end_time = $request->end_time;
