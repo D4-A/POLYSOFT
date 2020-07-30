@@ -18,13 +18,6 @@
 		</div>
 	</div>
 	<!--/.row-->
-	<a href="{{url('/creneaux')}}">
-            <button type="submit"  class="btn btn-success">
-		<span class="glyphicon glyphicon-plus"></span>
-		Nouveau Creneaux
-		
-	    </button>
-	</a>
 	
 </div>
 @endsection()

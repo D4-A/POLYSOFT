@@ -19,6 +19,9 @@
 	    <li><a class="" href="{{url('/typePayements')}}">
 		<span class="fa fa-arrow-right">&nbsp;</span> Type de Payement
 	    </a></li>
+	    <li><a class="" href="{{url('/creneaux')}}">
+		<span class="fa fa-arrow-right">&nbsp;</span> creneau
+	    </a></li>
 	</ul>
 	</li>
 	<li><a href="{{url('/examens')}}"><em class="fa fa-list-alt">&nbsp;</em> Examen</a></li>
