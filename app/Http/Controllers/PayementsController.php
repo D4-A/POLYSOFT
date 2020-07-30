@@ -49,10 +49,13 @@ class PayementsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'patient_id' => 'required',
+            'type_payement_id' => 'required'
+         ]);
         $payement= new Payement();
         $payement->user_id = $request->user_id;
         $payement->patient_id = $request->patient_id;
-        $payement->user_id = $request->user_id;
         $payement->type_payement_id = $request->type_payement_id;
         $payement->save();
         return redirect('payements');
@@ -97,6 +100,10 @@ class PayementsController extends Controller
      */
     public function update(Request $request, Payement $payement)
     {
+        $request->validate([
+            'patient_id' => 'required',
+            'type_payement_id' => 'required'
+         ]);
         $payement->user_id = $request->user_id;
         $payement->patient_id = $request->patient_id;
         $payement->type_payement_id = $request->type_payement_id;
