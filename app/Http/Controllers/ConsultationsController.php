@@ -10,6 +10,7 @@ use App\Payement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class ConsultationsController extends Controller
 {
@@ -49,8 +50,18 @@ class ConsultationsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'patient_id' => 'required',
+            'payement_id' => 'required',
+            'historique' => 'required',
+            'examen_physique' => 'required',
+            'hypothese_dia' => 'required',
+            'examen_compl' => 'required',
+            'traitement' => 'required'
+         ]);
+        
         $consultation= new Consultation();
-        $consultation->user_id = $request->user_id;
+        $consultation->user_id = Auth::id();
         $consultation->patient_id = $request->patient_id;
         $consultation->payement_id = $request->payement_id;
         $consultation->motif = $request->motif;
@@ -119,7 +130,17 @@ class ConsultationsController extends Controller
      */
     public function update(Request $request, Consultation $consultation)
     {
-        $consultation->user_id = $request->user_id;
+        $request->validate([
+            'patient_id' => 'required',
+            'payement_id' => 'required',
+            'historique' => 'required',
+            'examen_physique' => 'required',
+            'hypothese_dia' => 'required',
+            'examen_compl' => 'required',
+            'traitement' => 'required'
+         ]);
+        
+        $consultation->user_id = Auth::id();
         $consultation->patient_id = $request->patient_id;
         $consultation->payement_id = $request->payement_id;
         $consultation->motif = $request->motif;

@@ -28,8 +28,6 @@
 	    @csrf
 	    @method('PUT')
 	    <div class="form-group">
-		<label>User </label>
-		<input class="form-control" name="user_id" value="{{$consultation->user_id}}" readonly placeholder="User qui fait la consulation">
 		<label>Patient  </label>
 		<input class="form-control" name="patient_id" value="{{$consultation->patient_id}}" placeholder="Patient Id">
 		<label> Payement</label>
