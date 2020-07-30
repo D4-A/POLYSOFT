@@ -78,11 +78,18 @@ class ProfilesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
+            'genre' => 'required',
+            'age' => 'required',
+            'tel' => 'required',
+            'adresse' => 'required',
+            'cni' => 'required',
+            'email' => 'required',
+            'password' => ['required', 'min:8', 'confirmed']
+        ]);
         $user = User::find($id);
-
-        //TODO use javascript to chech user input
-        if($request->password !== $request->password_confirmation)
-            return back()->with('password_confirmation','Password dont equal');
 
         $user->name = $request->name;
         $user->prenom = $request->prenom;

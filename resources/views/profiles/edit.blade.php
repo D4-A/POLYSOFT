@@ -33,7 +33,7 @@
                 <div class="col-md-9">
                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') ?? $user->name }}" required autocomplete="off" autofocus>
 
-                    @error('nom_prenom')
+                    @error('name')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -46,7 +46,7 @@
                 <div class="col-md-9">
                     <input id="prenom" type="text" class="form-control @error('nom_prenom') is-invalid @enderror" name="prenom" value="{{ old('prenom') ?? $user->prenom }}" required autocomplete="off" autofocus>
 
-                    @error('nom_prenom')
+                    @error('prenom')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
@@ -146,11 +146,6 @@
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
-		    @if ($message = Session::get('password_confirmation'))
-			<div class="alert alert-danger">
-			    <p>{{ $message }}</p>
-			</div>
-		    @endif
                 </div>
             </div>
             
