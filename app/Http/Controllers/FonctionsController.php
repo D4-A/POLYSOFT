@@ -38,6 +38,10 @@ class FonctionsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'diplome' => 'required'
+        ]);
         $fonction= new Fonction();
         $fonction->name = $request->name;
         $fonction->diplome = $request->diplome;
@@ -80,6 +84,10 @@ class FonctionsController extends Controller
      */
     public function update(Request $request, Fonction $fonction)
     {
+        $request->validate([
+            'name' => 'required',
+            'diplome' => 'required'
+        ]);
         $fonction->name = $request->name;
         $fonction->diplome = $request->diplome;
         $fonction->save();
