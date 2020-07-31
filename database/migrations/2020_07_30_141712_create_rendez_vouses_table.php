@@ -17,8 +17,8 @@ class CreateRendezVousesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('patient_id');
-            $table->unsignedBigInteger('payement_id');
-            $table->unsignedBigInteger('creneau_id');
+            $table->unsignedBigInteger('payement_id')->unique();
+            $table->unsignedBigInteger('creneau_id')->unique();
             $table->string('title');
             $table->string('description')->nullable();
             $table->string('etat');
