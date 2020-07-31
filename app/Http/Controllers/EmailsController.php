@@ -32,9 +32,6 @@ class EmailsController extends Controller
     }
     public function send(Request $request){
         $request->validate([
-            'to_email' => 'required',
-            'subject' => 'required',
-            'body' => 'required',
             'consultation_id' => 'required',
          ]);
         $cons_id = $request->consultation_id;
