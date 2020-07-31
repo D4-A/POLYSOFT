@@ -27,8 +27,6 @@
 	<form role="form" action="{{url('emails')}}" enctype="multipart/form-data" method="post">
 	    @csrf
 	    <div class="form-group">
-		<label>User ID</label>
-		<input class="form-control" name="user_id" value="{{Auth::id()}}" readonly placeholder="User examen">
 		<label>Mail to</label>
 		<input class="form-control" name="to_email" placeholder="Email">
 		<label>subject</label>

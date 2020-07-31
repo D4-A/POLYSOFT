@@ -7,6 +7,7 @@ use User;
 use Examen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Mail;
 use App\Mail\MailPatient;
 
@@ -60,7 +61,7 @@ class EmailsController extends Controller
             'consultation_id' => 'required',
          ]);
         
-        $user_id = $request->get('user_id');
+        $user_id = Auth::id();
         $consultation_id = $request->get('consultation_id');
         $subject = $request->get('subject');
         $email = $request->get('to_email');
@@ -69,7 +70,7 @@ class EmailsController extends Controller
         $filejoined = join(",",$data);
         Mail::to($email)->send(new MailPatient(false,$data,$user_id,$subject,$body));
         $email = new Email();
-        $email->user_id = $request->get('user_id');
+        $email->user_id = Auth::id();
         $email->consultation_id = $consultation_id;
         $email->subject = $subject;
         $email->body = $body;
@@ -101,7 +102,7 @@ class EmailsController extends Controller
             'body' => 'required'
         ]);
         $user = DB::table('users')
-                  ->where('id',$request->get('user_id'))->value('name');
+              ->where('id',Auth::id())->value('name');
         $email = $request->get('to_email');
         $subject = $request->get('subject');
         $body = $request->get('body');
@@ -109,7 +110,7 @@ class EmailsController extends Controller
         Mail::to($email)->send(
             new MailPatient(true,null,$user,$subject,$body));
         $email = new Email();
-        $email->user_id = $request->get('user_id');
+        $email->user_id = Auth::id();
         $email->subject = $subject;
         $email->body = $body;
         $email->save();

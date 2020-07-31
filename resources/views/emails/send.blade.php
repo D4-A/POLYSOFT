@@ -27,8 +27,6 @@
 		<form role="form" action="/sendp" enctype="multipart/form-data" method="post">
 		    @csrf
 		    <div class="form-group">
-			<label>User ID</label>
-			<input class="form-control" name="user_id" value="{{Auth::id()}}" readonly placeholder="User examen">
 			<label>Consultation ID</label>
 			<input class="form-control" name="consultation_id" value="{{$consultation_id}}" readonly placeholder="User examen">
 			<label>Mail to</label>
