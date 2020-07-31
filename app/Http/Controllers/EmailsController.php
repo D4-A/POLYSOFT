@@ -159,6 +159,7 @@ class EmailsController extends Controller
      */
     public function destroy(Email $email)
     {
-        //
+        $email->delete();
+        return redirect('emails');
     }
 }

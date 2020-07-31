@@ -33,9 +33,10 @@
 			<input class="form-control" name="to_email" value="{{$email}}" readonly placeholder="Email">
 			<label>subject</label>
 			<input class="form-control" name="subject" placeholder="User examen">
-			<div class="md-form">
-			    <textarea id="form7" name="body" class="md-textarea form-control" rows="3"></textarea>
-			    <label for="form7">Material textarea</label>
+			<div class="form-group green-border-focus">
+			    <label for="body">Message</label>
+			    <textarea class="form-control" id="body" name="body" rows="3">
+			    </textarea>
 			</div>
 
 			<div class="form-group row">
