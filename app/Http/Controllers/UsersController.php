@@ -52,7 +52,7 @@ class UsersController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'pronom' => 'required',
+            'prenom' => 'required',
             'service_id' => 'required',
             'fonction_id' => 'required',
             'genre' => 'required',
@@ -62,7 +62,7 @@ class UsersController extends Controller
             'cni' => 'required',
             'adresse' => 'required',
          ]);
-        
+  
         $user= new User();
         $user->name = $request->name;
         $user->prenom = $request->prenom;
@@ -124,7 +124,7 @@ class UsersController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'pronom' => 'required',
+            'prenom' => 'required',
             'service_id' => 'required',
             'fonction_id' => 'required',
             'genre' => 'required',
