@@ -31,8 +31,12 @@
 		<input class="form-control" name="to_email" placeholder="Email">
 		<label>subject</label>
 		<input class="form-control" name="subject" placeholder="User examen">
-		<label>body</label>
-		<input class="form-control" name="body" placeholder="User examen">
+		<div class="form-group green-border-focus">
+		    <label for="body">Message</label>
+		    <textarea class="form-control" id="body" name="body" rows="3">
+
+		    </textarea>
+		</div>
 		    </div>
 		    
 		    <button type="submit" class="btn btn-primary">
