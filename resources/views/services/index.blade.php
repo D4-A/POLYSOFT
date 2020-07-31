@@ -7,6 +7,28 @@
 	    <meta charset="UTF-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <title>Polyclinique du Nord</title>
+	    <script>
+	     function myFunction() {
+
+		 var input, filter, table, tr, td, i, txtValue;
+		 input = document.getElementById("myInput");
+		 filter = input.value.toUpperCase();
+		 table = document.getElementById("myTable");
+		 tr = table.getElementsByTagName("tr");
+
+		 for (i = 0; i < tr.length; i++) {
+		     td = tr[i].getElementsByTagName("td")[1];
+		     if (td) {
+			 txtValue = td.textContent || td.innerText;
+			 if (txtValue.toUpperCase().indexOf(filter) > -1) {
+			     tr[i].style.display = "";
+			 } else {
+			     tr[i].style.display = "none";
+			 }
+		     }
+		 }
+	     }
+	    </script>
 	</head>
 	<body>
 	    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
@@ -30,7 +52,8 @@
 			Nouveau service
 		    </button>
 		</a>
-		<table class="table">
+		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+		<table class="table" id="myTable">
 		    <thead>
 			<tr>
 			    <th>ID Service</th>
