@@ -54,7 +54,7 @@
 				<form action="services/destroy/{{$service->id}}" method="post">
 				    @csrf
 				    @can('isAdmin')
-				    <button type="submit" class="btn btn-sm btn-danger">
+				    <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
 					<span class="glyphicon glyphicon-trash"> Delete</span>
 				    </button>
 				    @endcan
