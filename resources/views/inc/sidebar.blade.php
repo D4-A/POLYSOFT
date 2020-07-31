@@ -7,7 +7,7 @@
 	<li><a href="{{url('/consultations')}}"><em class="fa fa-hospital-o">&nbsp;</em> Consultations</a></li>
 	@endcan
 	<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
-	    <em class="fa fa-cog">&nbsp;</em> Configuration <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+	    <em class="fa fa-cog">&nbsp;</em> Extras ressources <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 	</a>
 	<ul class="children collapse" id="sub-item-1">
 	    <li><a class="" href="{{url('/services')}}">
@@ -24,7 +24,7 @@
 	    </a></li>
 	</ul>
 	</li>
-	<li><a href="{{url('/examens')}}"><em class="fa fa-list-alt">&nbsp;</em> Examen</a></li>
+	<li><a href="{{url('/examens')}}"><em class="fa fa-upload">&nbsp;</em> Examen</a></li>
 	<li><a href="{{url('/emails')}}"><em class="fa fa-envelope">&nbsp;</em> Email</a></li>
 	@can('isAdmin')
 	<li><a href="{{url('/users')}}"><em class="fa fa-user-md">&nbsp;</em> Users</a></li>

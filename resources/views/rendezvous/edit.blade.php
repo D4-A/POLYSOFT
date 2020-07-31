@@ -13,7 +13,7 @@
 	<div class="row">
 	    <ol class="breadcrumb">
 		<li><a href="#">
-		    <em class="fa fa-home"></em>
+		    <em class="fa fa-calendar"></em>
 		</a></li>
 		<li class="active">Fonctions</li>
 	    </ol>

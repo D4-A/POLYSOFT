@@ -13,7 +13,7 @@
 	<div class="row">
 	    <ol class="breadcrumb">
 		<li><a href="#">
-		    <em class="fa fa-home"></em>
+		    <em class="fa fa-user-md"></em>
 		</a></li>
 		<li class="active">Users</li>
 	    </ol>

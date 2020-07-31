@@ -13,7 +13,7 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#">
-					<em class="fa fa-home"></em>
+					<em class="fa fa-upload"></em>
 				</a></li>
 				<li class="active">Examens</li>
 			</ol>
@@ -21,7 +21,7 @@
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Examens</h1>
+			    <h1 class="page-header">Examens upload</h1>
 			</div>
         </div><!--/.row-->
     <a href="{{url('/examens/create')}}">

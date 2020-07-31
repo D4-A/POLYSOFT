@@ -13,7 +13,7 @@
 	<div class="row">
 	    <ol class="breadcrumb">
 		<li><a href="#">
-		    <em class="fa fa-home"></em>
+		    <em class="fa fa-hospital-o"></em>
 		</a></li>
 		<li class="active">Consultations</li>
 	    </ol>
@@ -21,7 +21,7 @@
 	
 	<div class="row">
 	    <div class="col-lg-12">
-		<h1 class="page-header">Add Consultations</h1>
+		<h1 class="page-header">Enregistre une Consultation</h1>
 	    </div>
 	</div><!--/.row-->
 	<form role="form" action="{{url('consultations')}}" method="post">

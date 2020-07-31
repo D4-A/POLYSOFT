@@ -13,7 +13,7 @@
 	<div class="row">
 	    <ol class="breadcrumb">
 		<li><a href="#">
-		    <em class="fa fa-home"></em>
+		    <em class="fa fa-upload"></em>
 		</a></li>
 		<li class="active">Examens</li>
 	    </ol>
@@ -27,8 +27,6 @@
 	<form role="form" action="{{url('examens')}}" enctype="multipart/form-data" method="post">
 	    @csrf
 	    <div class="form-group">
-		<label>User ID</label>
-		<input class="form-control" name="user_id" value="{{Auth::id()}}" placeholder="User examen" readonly>
 		<label>Consulation ID</label>
 		<input class="form-control" name="consultation_id" placeholder="Consultation ID">
 		<label>Nom</label>
