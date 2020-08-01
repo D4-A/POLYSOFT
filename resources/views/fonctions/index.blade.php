@@ -34,6 +34,7 @@
 		<select class="selectpicker" id="search">
 		    <option value="0"> ID</option>
 		    <option value="1"> Nom</option>
+		    <option value="2"> Diplome</option>
 		</select>
 		<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
 		
