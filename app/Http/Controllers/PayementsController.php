@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Payement;
 use App\User;
 use App\TypePayement;
+use App\Patient;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -23,10 +24,13 @@ class PayementsController extends Controller
      */
     public function index()
     {
-        $payements = DB::table('payements')->get();
-        
+        $payements = DB::table('payements')
+                   ->join('users', 'users.id', '=', 'payements.user_id')
+                   ->join('patients', 'patients.id', '=', 'payements.patient_id')
+                   ->join('type_payements', 'type_payements.id', '=', 'payements.type_payement_id')
+                   ->get();
         return view('payements/index', [
-            'payements' => $payements
+            'payements' => $payements,
         ]);
     }
 

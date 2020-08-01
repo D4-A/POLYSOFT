@@ -39,21 +39,21 @@
 			<tr>
 
 			    <th>ID </th>
-			    <th>ID User</th>
-			    <th>ID Patient</th>
+			    <th>Nom du caissier</th>
+			    <th>Nom du Patient</th>
 			    <th>ID Type_Payement</th>
-			    <th>Fait </th>
+			    <th>Date </th>
 			</tr>
 
 		    </thead>
 		    <tbody>
 			<?php foreach($payements as $payement): ?>
 			<tr>
-			    <td> <?= $payement->id; ?></td>
-			    <td> <?= $payement->user_id; ?></td>
-			    <td> <?= $payement->patient_id; ?></td>
-			    <td> <?= $payement->type_payement_id; ?></td>
-			    <td> <?= $payement->created_at; ?></td>
+			    <td> {{ $payement->id }}</td>
+			    <td> {{ $payement->name }}</td>
+			    <td> {{ $payement->nom}}</td>
+			    <td> {{ $payement->name}}</td>
+			    <td> {{ $payement->created_at }}</td>
 			    
 			    <td>
 				<a href="payements/edit/{{$payement->id}}">
