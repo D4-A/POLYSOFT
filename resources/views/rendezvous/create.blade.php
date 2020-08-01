@@ -21,7 +21,7 @@
 	
 	<div class="row">
 	    <div class="col-lg-12">
-		<h1 class="page-header">Add Rendez-vous</h1>
+		<h1 class="page-header">Creer un Rendez-vous</h1>
 	    </div>
 	</div><!--/.row-->
 	<form role="form" action="{{url('rendezVous')}}" method="post">
