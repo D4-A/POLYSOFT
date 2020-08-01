@@ -7,6 +7,7 @@ use App\User;
 use App\Consultation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ExamensController extends Controller
@@ -48,7 +49,7 @@ class ExamensController extends Controller
     {
         $files = $request->file('files');
         $cons_id = $request->get('consultation_id');
-        $user_id = $request->get('user_id');
+        $user_id = Auth::id();
         $nomExamen = $request->get('nom');
         $patient_id = DB::table('consultations')
                     ->where('id',$cons_id)->value('patient_id');
