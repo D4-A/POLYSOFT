@@ -31,8 +31,15 @@
 			
 		    </button>
 		</a>
-		
-		<table class="table">
+		<!-- search feature begin here -->
+		<select class="selectpicker" id="search">
+		    <option value="0"> ID</option>
+		    <option value="1"> Nom</option>
+		</select>
+		<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
+
+		<!-- search feature end here -->
+		<table class="table" id="table">
 
 		    <thead>
 			
