@@ -37,7 +37,7 @@
 		    <option value="1"> Nom</option>
 		    <option value="2"> Commencant a</option>
 		    <option value="3"> Terminant a</option>
-		    <option value="3"> Status</option>		    
+		    <option value="4"> Status</option>		    
 		</select>
 		<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
 
