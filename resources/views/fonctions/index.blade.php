@@ -31,8 +31,13 @@
 			
 		    </button>
 		</a>
+		<select class="selectpicker" id="search">
+		    <option value="0"> ID</option>
+		    <option value="1"> Nom</option>
+		</select>
+		<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
 		
-		<table class="table">
+		<table class="table" id="table">
 
 		    <thead>
 			
