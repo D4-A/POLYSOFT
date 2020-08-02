@@ -26,13 +26,22 @@
         </div><!--/.row-->
     <a href="{{url('/rendezVous/create')}}">
         <button type="submit"  class="btn btn-success">
-        <span class="glyphicon glyphicon-plus"></span>
-        Nouveau rendez-vous
-    
-    </button>
+            <span class="glyphicon glyphicon-plus"></span>
+            Nouveau rendez-vous
+	    
+	</button>
     </a>
-        
-        <table class="table">
+    <!-- search feature begin here -->
+    <select class="selectpicker" id="search">
+	<option value="0"> ID</option>
+	<option value="1"> ID Dr</option>
+	<option value="2"> ID Patient</option>
+	<option value="6"> title</option>
+    </select>
+    <input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
+
+    <!-- search feature end here -->
+    <table class="table" id="table">
 
         <thead>
  
