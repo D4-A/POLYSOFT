@@ -48,7 +48,7 @@
 		<?php foreach($emails as $email): ?>
 		<tr>
 		    <td> <?= $email->id; ?></td>
-		    <td> <?= $email->user_id; ?></td>
+		    <td> <?= $email->name; ?></td>
 		    <td> @if ($email->consultation_id === null)
 			<?= 'none';?>
 		    @else
