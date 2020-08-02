@@ -13,7 +13,7 @@
 
 	<div class="row">
 	    <div class="col-lg-12">
-		<h1 class="page-header">Add Creneaux</h1>
+		<h1 class="page-header">reservez un Creneau</h1>
 	    </div>
 	</div><!--/.row-->
 	<form role="form" action="{{url('creneaux')}}" method="post">
