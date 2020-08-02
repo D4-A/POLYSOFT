@@ -29,7 +29,6 @@
 		    <option value="0"> ID</option>
 		    <option value="1"> Nom Caissier</option>
 		    <option value="2"> Nom Patient</option>
-		    <option value="3"> Nom Payement</option>
 		   
 		</select>
 		<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
@@ -58,7 +57,7 @@
 			<tr>
 			    <td> {{ $payement->id }}</td>
 			    <td> {{ $payement->user_name }}</td>
-			    <td> {{ $payement->nom}}</td>
+			    <td> {{ $payement->nom}} {{ $payement->prenom}}</td>
 			    <td> {{ $payement->name}}</td>
 			    <td> {{ $payement->montant}}</td>
 			    <td> {{ $payement->created_at }}</td>
