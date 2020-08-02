@@ -36,8 +36,8 @@
 	    <thead>
 		<tr>
 		    <th>ID </th>
-		    <th>ID Personnel</th>
-		    <th>ID Consultation</th>
+		    <th>Personel </th>
+		    <th>Consultation ID</th>
 		    <th>Subject</th>
 		    <th>Body </th>
 		    <th>filename </th>
