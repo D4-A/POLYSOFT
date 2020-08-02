@@ -31,16 +31,26 @@
 			
 		    </button>
 		</a>
+		<!-- search feature begin here -->
+		<select class="selectpicker" id="search">
+		    <option value="0"> ID</option>
+		    <option value="1"> ID Caissier</option>
+		    <option value="2"> ID Patient</option>
+		    <option value="3"> ID Payement</option>
+		   
+		</select>
+		<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
 		
-		<table class="table">
+		<!-- search feature end here -->
+		<table class="table" id="table">
 
 		    <thead>
 			
 			<tr>
 
 			    <th>ID </th>
-			    <th>Nom du caissier</th>
-			    <th>Nom du Patient</th>
+			    <th>ID caissier</th>
+			    <th>ID Patient</th>
 			    <th>ID Type_Payement</th>
 			    <th>Date </th>
 			</tr>
@@ -50,9 +60,9 @@
 			<?php foreach($payements as $payement): ?>
 			<tr>
 			    <td> {{ $payement->id }}</td>
-			    <td> {{ $payement->name }}</td>
-			    <td> {{ $payement->nom}}</td>
-			    <td> {{ $payement->name}}</td>
+			    <td> {{ $payement->user_id }}</td>
+			    <td> {{ $payement->patient_id}}</td>
+			    <td> {{ $payement->type_payement_id}}</td>
 			    <td> {{ $payement->created_at }}</td>
 			    
 			    <td>
