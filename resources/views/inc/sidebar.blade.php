@@ -26,9 +26,7 @@
 	</li>
 	<li><a href="{{url('/examens')}}"><em class="fa fa-upload">&nbsp;</em> Examen</a></li>
 	<li><a href="{{url('/emails')}}"><em class="fa fa-envelope">&nbsp;</em> Email</a></li>
-	@can('isAdmin')
 	<li><a href="{{url('/users')}}"><em class="fa fa-user-md">&nbsp;</em> Users</a></li>
-	@endcan
 	<li>
 	    <a class="dropdown-item" href="{{ route('logout') }}"
                onclick="event.preventDefault();

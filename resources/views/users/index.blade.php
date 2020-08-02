@@ -24,6 +24,7 @@
 			<h1 class="page-header">Users</h1>
 		    </div>
 		</div><!--/.row-->
+		@can('isAdmin')
 		<a href="{{url('/users/create')}}">
 		    <button type="submit"  class="btn btn-success">
 			<span class="glyphicon glyphicon-plus"></span>
@@ -31,6 +32,7 @@
 			
 		    </button>
 		</a>
+		@endcan
 		<!-- search feature begin here -->
 		<select class="selectpicker" id="search">
 		    <option value="0"> ID</option>
@@ -56,7 +58,9 @@
 			    <th>Tel </th>
 			    <th>Email </th>
 			    <th>CNI </th>
+			    @can('isAdmin')
 			    <th>Action</th>
+			    @endcan
 			</tr>
 
 		    </thead>
@@ -74,24 +78,25 @@
 			    <td> <?= $user->tel; ?></td>
 			    <td> <?= $user->email; ?></td>
 			    <td> <?= $user->cni; ?></td>
-
+                            @can('isAdmin')
 			    <td>
 				<a href="users/edit/{{$user->id}}">
 				    
 				    <button type="submit" class="btn btn-sm btn-primary">
 					<span class="glyphicon glyphicon-edit"> Edit</span>   
 				    </button>
-
+				    
 				</a>
-
+				
 				
 				<form action="users/destroy/{{$user->id}}" method="post">
 				    @csrf
 				    <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
-                            <span class="glyphicon glyphicon-trash"> Delete</span> 
-                        </button>
-                    </form>                        
-                        </td>
+					<span class="glyphicon glyphicon-trash"> Delete</span> 
+				    </button>
+				</form>                        
+                            </td>
+			    @endcan
             </tr>
             <?php endforeach; ?>
         </tbody>
