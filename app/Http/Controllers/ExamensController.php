@@ -88,24 +88,21 @@ class ExamensController extends Controller
             $message = 'success!! expect This files that already exist: '. join(" ",$fileNotUpload);
         return redirect('examens');
     }
+    public function ajaxfiles(Request $request){
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Examens  $examens
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Examen $examen)
-    {
-        //
+        $cons_id = $request->cons_id;
+        
+        $datas = DB::table('examens')->where('consultation_id',$cons_id)->get();
+        $files = '';
+        foreach($datas as $data){
+            $files .= $data->files . ',';
+         }
+        $files = explode(',',$files);
+        unset($files[count($files) - 1]);
+        
+        return response()->json($files);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Examens  $examens
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Examen $examen)
     {
         $examen = Examen::find($examen->id);
@@ -115,23 +112,6 @@ class ExamensController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Examens  $examens
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Examen $examen)
-    {
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Examens  $examens
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $examen = Examen::find($id);

@@ -53,7 +53,6 @@ class EmailsController extends Controller
         ]);
     }
     public function senddeux(Request $request){
-
         $request->validate([
             'to_email' => 'required',
             'subject' => 'required',

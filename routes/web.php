@@ -73,6 +73,8 @@ Route::put('consultations/{consultation}','ConsultationsController@update');
 Route::post('consultations/destroy/{consultation}','ConsultationsController@destroy');
 
 Route::get('examens','ExamensController@index');
+Route::get('ajaxfiles','ExamensController@ajaxfiles');
+//Route::post('ajaxfiles','ExamensController@ajaxfiles');
 Route::get('examens/create','ExamensController@create');
 Route::post('examens','ExamensController@store');
 Route::get('examens/edit/{examen}','ExamensController@edit');
