@@ -31,9 +31,16 @@
 			
 		    </button>
 		</a>
+		<!-- search feature begin here -->
+		<select class="selectpicker" id="search">
+		    <option value="0"> ID</option>
+		    <option value="3"> Nom Patient</option>
+		    
+		</select>
+		<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
 		
-		<table class="table">
-
+		<!-- search feature end here -->
+		<table class="table" id="table">
 		    <thead>
 			
 			<tr>
