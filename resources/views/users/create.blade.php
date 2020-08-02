@@ -56,7 +56,6 @@
 		    <option value=""> Genre </option>
 		    <option value="Masculin"> Musculin </option>
 		    <option value="Feminin"> Feminin </option>
-		    <option value="No precise"> No precise</option>
 		</select>
 		<label>Age du User</label>
 x		<input class="form-control" name="age" placeholder="Age du user">

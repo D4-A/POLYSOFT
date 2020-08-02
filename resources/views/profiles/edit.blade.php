@@ -59,7 +59,6 @@
                     <select name="genre" class="form-control">
                         <option {{ old('genre',$user->genre) == "Masculin" ? 'selected':'' }}  value="Masculin">Masculin</option>
 			<option {{ old('genre',$user->genre) == "Feminin" ? 'selected':'' }}  value="Feminin">Feminin</option>
-			<option {{ old('genre',$user->genre) == "No precise" ? 'selected':'' }}  value="No precise">No precise</option>
                     </select>
                     @error('genre')
                     <span class="invalid-feedback" role="alert">
