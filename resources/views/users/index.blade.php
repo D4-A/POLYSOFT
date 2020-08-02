@@ -40,8 +40,8 @@
 		<tr>
 
 		    <th>ID </th>
-		    <th>ID Service</th>
-		    <th>ID Fonction</th>
+		    <th>Service</th>
+		    <th>Fonction</th>
 		    <th>Nom </th>
 		    <th>Prenom </th>
 		    <th>Genre </th>
@@ -60,8 +60,8 @@
 		<?php foreach($users as $user): ?>
 		<tr>
 		    <td> <?= $user->id; ?></td>
-		    <td> <?= $user->service_id; ?></td>
-		    <td> <?= $user->fonction_id; ?></td>
+		    <td> <?= $user->serv_name; ?></td>
+		    <td> <?= $user->fonct_name; ?></td>
 		    <td> <?= $user->name; ?></td>
 		    <td> <?= $user->prenom; ?></td>
 		    <td> <?= $user->genre; ?></td>
