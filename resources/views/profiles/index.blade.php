@@ -41,6 +41,26 @@
 		    <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <div class="form-group">
+                                <label class="col-md-3 col-form-label">{{ __('Service') }}</label>
+                                <label class="col-md-6 col-form-label">
+				    <strong>{{ App\Service::find($user->service_id)->name }}
+				    </strong></label>
+                            </div>
+                        </div>
+                    </div>
+		    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="col-md-3 col-form-label">{{ __('Fonction') }}</label>
+                                <label class="col-md-6 col-form-label">
+				    <strong>{{ App\Fonction::find($user->fonction_id)->name }}
+				    </strong></label>
+                            </div>
+                        </div>
+                    </div>
+		    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <div class="form-group">
                                 <label class="col-md-3 col-form-label">{{ __('Genre') }}</label>
                                 <label class="col-md-6 col-form-label">
 				    <strong>{{ $user->genre }}
