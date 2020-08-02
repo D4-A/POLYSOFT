@@ -24,7 +24,12 @@ class PayementsController extends Controller
      */
     public function index()
     {
-        $payements = DB::table('payements')->get();
+        $payements = DB::table('payements')
+                   ->join('users','users.id','payements.user_id')
+                   ->join('patients','patients.id','payements.patient_id')
+                   ->join('type_payements','type_payements.id','payements.type_payement_id')
+                   ->select('type_payements.*','users.name as user_name','patients.*','payements.*')
+                   ->get();
         return view('payements/index', [
             'payements' => $payements,
         ]);

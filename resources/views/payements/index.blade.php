@@ -27,9 +27,9 @@
 		<!-- search feature begin here -->
 		<select class="selectpicker" id="search">
 		    <option value="0"> ID</option>
-		    <option value="1"> ID Caissier</option>
-		    <option value="2"> ID Patient</option>
-		    <option value="3"> ID Payement</option>
+		    <option value="1"> Nom Caissier</option>
+		    <option value="2"> Nom Patient</option>
+		    <option value="3"> Nom Payement</option>
 		   
 		</select>
 		<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
@@ -42,9 +42,10 @@
 			<tr>
 
 			    <th>ID </th>
-			    <th>ID caissier</th>
-			    <th>ID Patient</th>
-			    <th>ID Type_Payement</th>
+			    <th>Nom caissier</th>
+			    <th>Nom Patient</th>
+			    <th>Nom Type_Payement</th>
+			    <th>Montant</th>
 			    <th>Date </th>
 			    @canany(['isAdmin','isCaissier'])
 			    <th>Action</th>
@@ -56,9 +57,10 @@
 			<?php foreach($payements as $payement): ?>
 			<tr>
 			    <td> {{ $payement->id }}</td>
-			    <td> {{ $payement->user_id }}</td>
-			    <td> {{ $payement->patient_id}}</td>
-			    <td> {{ $payement->type_payement_id}}</td>
+			    <td> {{ $payement->user_name }}</td>
+			    <td> {{ $payement->nom}}</td>
+			    <td> {{ $payement->name}}</td>
+			    <td> {{ $payement->montant}}</td>
 			    <td> {{ $payement->created_at }}</td>
 			    @canany(['isAdmin','isCaissier'])
 			    <td>
