@@ -31,17 +31,6 @@
 
 		    </button>
 		</a>
-		<form action="emails/send" method="post">
-		    @csrf
-		    <div class="form-group">
-			<div class="input-group">
-			    <input name="consultation_id" class="form-control">
-			    <span class="">
-				<button type="submit" class="btn btn-info">envoi Examen</button>
-			    </span>
-			</div>
-		    </div>
-		</form>
 
 		<table class="table">
 		    <thead>
