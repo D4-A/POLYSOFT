@@ -20,7 +20,7 @@
 		<span class="fa fa-arrow-right">&nbsp;</span> Type de Payement
 	    </a></li>
 	    <li><a class="" href="{{url('/creneaux')}}">
-		<span class="fa fa-arrow-right">&nbsp;</span> creneau
+		<span class="fa fa-arrow-right">&nbsp;</span> creneaux
 	    </a></li>
 	</ul>
 	</li>

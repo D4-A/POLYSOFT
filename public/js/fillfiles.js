@@ -5,20 +5,20 @@ $.ajaxSetup({
     } 
 });
 
-var a = document.getElementById('files');
-var cons_id = document.getElementById('cons_id');
+let a = document.getElementById('files');
+let cons_id = document.getElementById('cons_id');
 function basename(path) {
    return path.split('/').reverse()[0];
 }
 
 function create_checkbox(balise,file){
-    var checkbox = document.createElement('input');
+    let checkbox = document.createElement('input');
     checkbox.type = "checkbox";
     checkbox.name = "filepath2[]";
     checkbox.value = file;
     checkbox.id = "id";
 
-    var label = document.createElement('label')
+    let label = document.createElement('label')
     label.htmlFor = "id";
     label.appendChild(document.createTextNode(basename(file)));
     
