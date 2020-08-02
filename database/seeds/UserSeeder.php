@@ -22,7 +22,6 @@ class UserSeeder extends Seeder
              'cni' => '345/536',
              'name' => Str::random(10),
              'email' => 'hurd@hurd.com',
-             'role' => 'admin',
              'password' => Hash::make('hurdmach'),
          ]);
          DB::table('users')->insert([

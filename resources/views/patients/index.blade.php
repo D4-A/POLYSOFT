@@ -24,6 +24,7 @@
 			<h1 class="page-header">Patients</h1>
 		    </div>
 		</div><!--/.row-->
+		@canany(['isAdmin','isRecept','isInf'])
 		<a href="{{url('/patients/create')}}">
 		    <button type="submit"  class="btn btn-success">
 			<span class="glyphicon glyphicon-plus"></span>
@@ -31,6 +32,7 @@
 			
 		    </button>
 		</a>
+		@endcan
 		<!-- search feature begin here -->
 		<select class="selectpicker" id="search">
 		    <option value="0"> ID</option>
@@ -81,6 +83,7 @@
 			    <td> <?= $patient->cni; ?></td>
 
 			    <td>
+				@canany(['isAdmin','isRecept','isInf'])
 				<a href="patients/edit/{{$patient->id}}">
 				    
 				    <button type="submit" class="btn btn-sm btn-primary">
@@ -88,15 +91,15 @@
 				    </button>
 
 				</a>
-
-				
+				@endcan
+				@can('isAdmin')
 				<form action="patients/destroy/{{$patient->id}}" method="post">
 				    @csrf
 				    <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
-                            <span class="glyphicon glyphicon-trash"> Delete</span> 
-                        </button>
-                    </form>
-            
+					<span class="glyphicon glyphicon-trash"> Delete</span> 
+				    </button>
+				</form>
+				@endcan
                     
                             
                         

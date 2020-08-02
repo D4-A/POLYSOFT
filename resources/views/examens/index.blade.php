@@ -24,6 +24,7 @@
 			<h1 class="page-header">Examens upload</h1>
 		    </div>
 		</div><!--/.row-->
+		@canany(['isLaborant','isDoctor','isAdmin'])
 		<a href="{{url('/examens/create')}}">
 		    <button type="submit"  class="btn btn-success">
 			<span class="glyphicon glyphicon-plus"></span>
@@ -31,7 +32,7 @@
 			
 		    </button>
 		</a>
-		
+		@endcan
 		<table class="table">
 
 		    <thead>

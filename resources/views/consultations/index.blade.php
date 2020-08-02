@@ -24,6 +24,7 @@
 			<h1 class="page-header">Liste des Consultations</h1>
 		    </div>
 		</div><!--/.row-->
+		@canany(['isAdmin','isDoctor','isInf'])
 		<a href="{{url('/consultations/create')}}">
 		    <button type="submit"  class="btn btn-success">
 			<span class="glyphicon glyphicon-plus"></span>
@@ -31,6 +32,7 @@
 			
 		    </button>
 		</a>
+		@endcan
 		
 		<table class="table">
 
@@ -67,6 +69,7 @@
 			    <td> <?= $consultation->hypothese_dia; ?></td>
 			    <td> <?= $consultation->examen_compl; ?></td>
 			    <td> <?= $consultation->traitement; ?></td>
+			    @canany(['isAdmin','isDoctor','isInf'])
 			    <td>
 				<a href="consultations/show/{{$consultation->id}}">
 				    
@@ -90,6 +93,7 @@
 				    </button>
 				</form>                        
                             </td>
+			    @endcan
 			</tr>
 			<?php endforeach; ?>
 		    </tbody>

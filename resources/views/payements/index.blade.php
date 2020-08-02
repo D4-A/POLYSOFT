@@ -24,6 +24,7 @@
 			<h1 class="page-header">Payements</h1>
 		    </div>
 		</div><!--/.row-->
+		@canany(['isAdmin','isCaissier'])
 		<a href="{{url('/payements/create')}}">
 		    <button type="submit"  class="btn btn-success">
 			<span class="glyphicon glyphicon-plus"></span>
@@ -31,6 +32,7 @@
 			
 		    </button>
 		</a>
+		@endcan
 		<!-- search feature begin here -->
 		<select class="selectpicker" id="search">
 		    <option value="0"> ID</option>
@@ -53,6 +55,9 @@
 			    <th>ID Patient</th>
 			    <th>ID Type_Payement</th>
 			    <th>Date </th>
+			    @canany(['isAdmin','isCaissier'])
+			    <th>Action</th>
+			    @endcan
 			</tr>
 
 		    </thead>
@@ -64,8 +69,9 @@
 			    <td> {{ $payement->patient_id}}</td>
 			    <td> {{ $payement->type_payement_id}}</td>
 			    <td> {{ $payement->created_at }}</td>
-			    
+			    @canany(['isAdmin','isCaissier'])
 			    <td>
+				
 				<a href="payements/edit/{{$payement->id}}">
 				    
 				    <button type="submit" class="btn btn-sm btn-primary">
@@ -74,15 +80,16 @@
 
 				</a>
 
-				
 				<form action="payements/destroy/{{$payement->id}}" method="post">
 				    @csrf
 				    <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
-                            <span class="glyphicon glyphicon-trash"> Delete</span> 
-                        </button>
-                    </form>                        
-                        </td>
-            </tr>
+					<span class="glyphicon glyphicon-trash"> Delete</span> 
+				    </button>
+				</form>
+				
+                            </td>
+			    @endcan
+			</tr>
             <?php endforeach; ?>
         </tbody>
     
