@@ -33,6 +33,10 @@ class AuthServiceProvider extends ServiceProvider
              $id = DB::table('fonctions')->where('name','LIKE','%doct%')->value('id');
              return $user->fonction_id == $id;
          });
+         Gate::define('isInfir', function($user) {
+             $id = DB::table('fonctions')->where('name','LIKE','%inf%')->value('id');
+             return $user->fonction_id == $id;
+         });
          Gate::define('isCassier', function($user) {
              $id = DB::table('fonctions')->where('name','LIKE','%cass%')->value('id');
              return $user->fonction_id == $id;
