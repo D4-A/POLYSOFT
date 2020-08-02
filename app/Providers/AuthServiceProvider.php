@@ -25,16 +25,24 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
         Gate::define('isAdmin', function($user) {
-            return $user->role == 'admin';
-         });
-        
-         Gate::define('isSimpleuser', function($user) {
-             return $user->role == 'simpleuser';
+            $id = DB::table('fonctions')->where('name','LIKE','%admin%')->value('id');
+             return $user->fonction_id == $id;
          });
          Gate::define('isDoctor', function($user) {
-             $id = DB::table('fonctions')->where('name','docteur')->value('id');
+             $id = DB::table('fonctions')->where('name','LIKE','%doct%')->value('id');
+             return $user->fonction_id == $id;
+         });
+         Gate::define('isCassier', function($user) {
+             $id = DB::table('fonctions')->where('name','LIKE','%cass%')->value('id');
+             return $user->fonction_id == $id;
+         });
+         Gate::define('isRecept', function($user) {
+             $id = DB::table('fonctions')->where('name','LIKE','%pt%')->value('id');
+             return $user->fonction_id == $id;
+         });
+         Gate::define('isLaborant', function($user) {
+             $id = DB::table('fonctions')->where('name','LIKE','%bor%')->value('id');
              return $user->fonction_id == $id;
          });
     }

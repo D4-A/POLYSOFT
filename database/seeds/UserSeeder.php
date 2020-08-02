@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
          ]);
          DB::table('users')->insert([
              'service_id' => 1,
-             'fonction_id' => 1,
+             'fonction_id' => 2,
              'prenom' => Str::random(10),
              'tel' => 22,
              'adresse' => 'kibenga',

@@ -15,5 +15,9 @@ class FonctionSeeder extends Seeder
             'name' => 'Admin',
             'diplome' => 'Bac'
         ]);
+        DB::table('fonctions')->insert([
+            'name' => 'Docteur',
+            'diplome' => 'Bac'
+        ]);
     }
 }
