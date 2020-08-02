@@ -22,8 +22,17 @@
 
 	    </button>
 	</a>
+	<!-- search feature begin here -->
+	<select class="selectpicker" id="search">
+	    <option value="0"> ID</option>
+	    <option value="1"> ID Sender</option>
+	    <option value="2"> ID Receiver</option>
 
-	<table class="table">
+	</select>
+	<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
+
+	<!-- search feature end here -->
+	<table class="table" id="table">
 	    <thead>
 		<tr>
 		    <th>ID </th>
