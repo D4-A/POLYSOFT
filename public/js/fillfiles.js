@@ -6,7 +6,7 @@ $.ajaxSetup({
 });
 
 var a = document.getElementById('files');
-
+var cons_id = document.getElementById('cons_id');
 function basename(path) {
    return path.split('/').reverse()[0];
 }
@@ -29,9 +29,9 @@ function create_checkbox(balise,file){
 $("#cons_id").on('change', function(e){
 
     $('form').attr('action', '/sendp');
-    
+
     $.ajax({
-	data: {cons_id: 1},
+	data: {cons_id: cons_id.value},
 	dataType: 'json',
         type:'GET',
         url:"/ajaxfiles",
