@@ -25,7 +25,12 @@ class ConsultationsController extends Controller
      */
     public function index()
     {
-        $consultations = DB::table('consultations')->get();
+        $consultations = DB::table('consultations')
+                   ->join('users', 'users.id','consultations.user_id')
+                   ->join('patients', 'patients.id', 'consultations.patient_id')
+                   ->join('payements', 'payements.id', 'consultations.payement_id')
+                   ->select('users.name as user_name','patients.nom as patient_name' ,'payements.id as pay_id','consultations.*')
+                   ->get();
         return view('consultations/index', [
             'consultations' => $consultations
         ]);

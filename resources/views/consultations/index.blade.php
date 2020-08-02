@@ -24,16 +24,24 @@
 		    </button>
 		</a>
 		@endcan
-		
-		<table class="table">
+	    <!-- search feature begin here -->
+	    <select class="selectpicker" id="search">
+		<option value="0"> ID</option>
+		<option value="1"> Nom medecin</option>
+		<option value="2"> Nom patient</option>
+	    </select>
+	    <input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
+
+	    <!-- search feature end here -->
+	    <table class="table" id="table">
 
 		    <thead>
 			
 			<tr>
 
 			    <th>ID </th>
-			    <th>ID User</th>
-			    <th>ID Patient</th>
+			    <th>User Name </th>
+			    <th>Patient Name</th>
 			    <th>ID Payement</th>
 			    <th>Motif</th>
 			    <th>Antecedent </th>
@@ -50,8 +58,8 @@
 			<?php foreach($consultations as $consultation): ?>
 			<tr>
 			    <td> <?= $consultation->id; ?></td>
-			    <td> <?= $consultation->user_id; ?></td>
-			    <td> <?= $consultation->patient_id; ?></td>
+			    <td> <?= $consultation->user_name; ?></td>
+			    <td> <?= $consultation->patient_name; ?></td>
 			    <td> <?= $consultation->payement_id; ?></td>
 			    <td> <?= $consultation->motif; ?></td>
 			    <td> <?= $consultation->antecedent; ?></td>
