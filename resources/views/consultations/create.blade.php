@@ -16,6 +16,11 @@
 		<h1 class="page-header">Enregistre une Consultation</h1>
 	    </div>
 	</div><!--/.row-->
+	@if ($message = Session::get('error'))
+	    <div class="alert alert-danger">
+		<p>{{ $message }}</p>
+	    </div>
+	@endif
 	<form role="form" action="{{url('consultations')}}" method="post">
 	    @csrf
 	    <div class="form-group">

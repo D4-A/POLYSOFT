@@ -15,6 +15,11 @@
 		<h1 class="page-header">Modifier une Consulation</h1>
 	    </div>
 	</div><!--/.row-->
+	@if ($message = Session::get('error'))
+	    <div class="alert alert-danger">
+		<p>{{ $message }}</p>
+	    </div>
+	@endif
 	<form role="form" action="/consultations/{{$consultation->id}}" method="post">
 	    @csrf
 	    @method('PUT')

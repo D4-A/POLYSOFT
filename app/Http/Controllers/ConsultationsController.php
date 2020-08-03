@@ -76,7 +76,18 @@ class ConsultationsController extends Controller
         $consultation->hypothese_dia = $request->hypothese_dia;
         $consultation->examen_compl = $request->examen_compl;
         $consultation->traitement = $request->traitement;
+        try{
         $consultation->save();
+        }catch(\Exception $e){
+            switch($e->errorInfo[1]){
+            case 1452:
+                return back()->with('error','La facture n\'existe pas');
+            case 1062:
+                return back()->with('error','La facture a ete utilise');
+            default:
+                return back()->with('error','Une erreur est survenu');
+            }
+        }
         return redirect('consultations');
     }
 
@@ -155,7 +166,18 @@ class ConsultationsController extends Controller
         $consultation->hypothese_dia = $request->hypothese_dia;
         $consultation->examen_compl = $request->examen_compl;
         $consultation->traitement = $request->traitement;
-        $consultation->save();
+        try{
+            $consultation->save();
+        }catch(\Exception $e){
+            switch($e->errorInfo[1]){
+            case 1452:
+                return back()->with('error','La facture n\'existe pas');
+            case 1062:
+                return back()->with('error','La facture a ete utilise');
+            default:
+                return back()->with('error','Une erreur est survenu');
+            }
+        }
         return redirect('consultations');
     }
 
