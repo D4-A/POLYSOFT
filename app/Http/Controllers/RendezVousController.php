@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\rendezVous;
+use App\Consultation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -44,9 +45,15 @@ class RendezVousController extends Controller
             'payement_id' => 'required',
             'creneau_id' => 'required',
             'title' => 'required',
-            'description' => 'required',
-            'etat' => 'required'
+            'description' => 'required'
          ]);
+
+        $ispayementInConsultation = Consultation::find($request->payement_id)
+                                  ->first();
+        if($ispayementInConsultation !== null){
+            return back()->with('error','La facture a ete utilise');
+        }
+        
         $rendezvous = new RendezVous();
 
         $rendezvous->user_id = Auth::id();
@@ -55,7 +62,7 @@ class RendezVousController extends Controller
         $rendezvous->creneau_id = $request->creneau_id;
         $rendezvous->title = $request->title;
         $rendezvous->description = $request->description;
-        $rendezvous->etat = $request->etat;
+        $rendezvous->etat = 'pending';
 
         try{
             $rendezvous->save();

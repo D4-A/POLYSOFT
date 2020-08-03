@@ -34,12 +34,6 @@
 		<input class="form-control" name="title" placeholder="Title">
 		<label>Description</label>
 		<input class="form-control" name="description" placeholder="Creneau ID">
-		<label>Etat </label>
-		<select name="etat" id="etat" class="form-control">
-                    <option value="">Choisissez un Etat</option>
-		    <option value="pending">pending</option>
-		    <option value="closed">close</option>
-		</select>
 	    </div>
 	    
 	    <button type="submit" class="btn btn-primary">
