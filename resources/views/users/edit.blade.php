@@ -41,19 +41,19 @@
 			}
 		    @endforeach
                 </select>
-		<label>Prenom du User</label>
+		<label>Prenom</label>
 		<input class="form-control" name="prenom" value="{{$user->prenom}}" placeholder="prenom du user">
-		<label>Genre du User </label>
+		<label>Genre </label>
 		<input class="form-control" name="genre" value="{{$user->genre}}" placeholder="Genre du user">
-		<label>Age du User</label>
-		<input class="form-control" name="age" value="{{$user->age}}" placeholder="Age du user">
-		<label>Adresse du User </label>
+		<label>Annee de Naissance </label>
+		<input class="form-control" name="ans_naiss" value="{{$user->ans_naiss}}" placeholder="Ans_Naiss du user">
+		<label>Adresse </label>
 		<input class="form-control" name="adresse" value="{{$user->adresse}}" placeholder="Adresse du user">
-		<label>Telephone du User</label>
+		<label>Telephone</label>
 		<input class="form-control" name="tel" value="{{$user->tel}}" placeholder="Telephone du users">
-		<label>Email du User </label>
+		<label>Email </label>
 		<input class="form-control" name="email" value="{{$user->email}}" placeholder="Email du user">
-		<label>CNI du User </label>
+		<label>Carte d'identite </label>
 		<input class="form-control" name="cni" value="{{$user->cni}}" placeholder="Cni du user">
 	    </div>
 

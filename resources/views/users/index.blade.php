@@ -45,7 +45,7 @@
 		    <th>Nom </th>
 		    <th>Prenom </th>
 		    <th>Genre </th>
-		    <th>Age </th>
+		    <th>Ans Naiss </th>
 		    <th>Adresse </th>
 		    <th>Tel </th>
 		    <th>Email </th>
@@ -65,7 +65,7 @@
 		    <td> <?= $user->name; ?></td>
 		    <td> <?= $user->prenom; ?></td>
 		    <td> <?= $user->genre; ?></td>
-		    <td> <?= $user->age; ?></td>
+		    <td> <?= $user->ans_naiss; ?></td>
 		    <td> <?= $user->adresse; ?></td>
 		    <td> <?= $user->tel; ?></td>
 		    <td> <?= $user->email; ?></td>

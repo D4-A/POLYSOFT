@@ -26,8 +26,8 @@
 		<input class="form-control" name="prenom" value="{{$patient->prenom}}" placeholder="prenom du patient">
 		<label>Genre du Patient </label>
 		<input class="form-control" name="genre" value="{{$patient->genre}}" placeholder="Genre du patient">
-		<label>Age du Patient</label>
-		<input class="form-control" name="age" value="{{$patient->age}}" placeholder="Age du patient">
+	<label>Annee de naissance du Patient</label>
+		<input class="form-control" name="ans_naiss" value="{{$patient->ans_naiss}}" placeholder="Annee de naissance du patient">
 		<label>Profession du Patient</label>
 		<input class="form-control" name="profession" value="{{$patient->profession}}" placeholder="Profession du patient">
 		<label>Adresse du Patient </label>

@@ -30,8 +30,8 @@
 		    <option value="Feminin">Feminin</option>
 		    <option value="No Precise">No Precise</option>
                 </select>
-		<label>Age du Patient</label>
-		<input class="form-control" name="age" placeholder="Age du patient">
+		<label>Annee de Naissance du Patient</label>
+		<input class="form-control" name="ans_naiss" placeholder="Annee de naissance du patient">
 		<label>Profession du Patient</label>
 		<input class="form-control" name="profession" placeholder="Profession du patient">
 		<label>Adresse du Patient </label>

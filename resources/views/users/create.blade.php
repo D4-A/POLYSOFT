@@ -18,7 +18,7 @@
 	<form role="form" action="{{url('users')}}" method="post">
 	    @csrf
 	    <div class="form-group">
-		<label>Nom du User </label>
+		<label>Nom </label>
 		<input class="form-control" name="name" placeholder="Nom user">
 		<label>Prenom du User</label>
 		<input class="form-control" name="prenom" placeholder="Prenom du user">
@@ -42,21 +42,21 @@
 		    @endforeach
                 </select>
 		
-		<label>Genre du User </label>
+		<label>Genre </label>
 		<select name="genre" id="genre" class="form-control">
 		    <option value=""> Genre </option>
 		    <option value="Masculin"> Musculin </option>
 		    <option value="Feminin"> Feminin </option>
 		</select>
-		<label>Age du User</label>
-		<input class="form-control" name="age" placeholder="Age du user">
-		<label>Adresse du User </label>
+		<label>Ans de Naissance </label>
+		<input class="form-control" name="ans_naiss" placeholder="Ans_Naissy du user">
+		<label>Adresse </label>
 		<input class="form-control" name="adresse" placeholder="Adresse du user">
-		<label>Telephone du User</label>
+		<label>Telephone</label>
 		<input class="form-control" name="tel" placeholder="Telephone du users">
-		<label>Email du User </label>
+		<label>Email </label>
 		<input type="email" class="form-control" name="email" placeholder="Email du user">
-		<label>CNI du User </label>
+		<label>Carte d'identite  </label>
 		<input class="form-control" name="cni" placeholder="Cni du user">
 		    </div>
 		    

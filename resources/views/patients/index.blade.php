@@ -46,7 +46,7 @@
 		    <th>Nom </th>
 		    <th>Prenom </th>
 		    <th>Genre </th>
-		    <th>Age </th>
+		    <th>Ans </th>
 		    <th>Profession </th>
 		    <th>Adresse </th>
 		    <th>Tel </th>
@@ -63,7 +63,7 @@
 		    <td> <?= $patient->nom; ?></td>
 		    <td> <?= $patient->prenom; ?></td>
 		    <td> <?= $patient->genre; ?></td>
-		    <td> <?= $patient->age; ?></td>
+		    <td> <?= $patient->ans_naiss; ?></td>
 		    <td> <?= $patient->profession; ?></td>
 		    <td> <?= $patient->adresse; ?></td>
 		    <td> <?= $patient->tel; ?></td>
