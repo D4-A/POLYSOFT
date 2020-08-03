@@ -31,7 +31,7 @@
 		<tr>
 
 		    <th>ID </th>
-		    <th>ID User</th>
+		    <th>Uploaded by User</th>
 		    <th>ID Consulation</th>
 		    <th>Nom Examen</th>
 		    <th>files </th>
@@ -43,7 +43,7 @@
 		<?php foreach($examens as $examen): ?>
 		<tr>
 		    <td> <?= $examen->id; ?></td>
-		    <td> <?= $examen->user_id; ?></td>
+		    <td> <?= $examen->user_name; ?></td>
 		    <td> <?= $examen->consultation_id; ?></td>
 		    <td> <?= $examen->nom_examen; ?></td>
 		    <td> <?= $examen->files; ?></td>

@@ -23,7 +23,10 @@ class ExamensController extends Controller
      */
     public function index()
     {
-        $examens = DB::table('examens')->get();
+        $examens = DB::table('examens')
+                 ->join('users','users.id','examens.user_id')
+                 ->select('users.name as user_name','examens.*')
+                 ->get();
         return view('examens/index', [
             'examens' => $examens
         ]);
