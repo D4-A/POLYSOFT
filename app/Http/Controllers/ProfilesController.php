@@ -82,7 +82,7 @@ class ProfilesController extends Controller
             'name' => 'required',
             'prenom' => 'required',
             'genre' => 'required',
-            'age' => 'required',
+            'ans_naiss' => 'required',
             'tel' => 'required',
             'adresse' => 'required',
             'cni' => 'required',
@@ -94,7 +94,7 @@ class ProfilesController extends Controller
         $user->name = $request->name;
         $user->prenom = $request->prenom;
         $user->genre = $request->genre;
-        $user->age = $request->age;
+        $user->ans_naiss = $request->ans_naiss;
         $user->adresse = $request->adresse;
         $user->tel = $request->tel;
         $user->email = $request->email;

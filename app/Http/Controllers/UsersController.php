@@ -45,7 +45,7 @@ class UsersController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource in storans_naiss.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -58,7 +58,7 @@ class UsersController extends Controller
             'service_id' => 'required',
             'fonction_id' => 'required',
             'genre' => 'required',
-            'age' => 'required',
+            'ans_naiss' => 'required',
             'tel' => 'required',
             'email' => 'required',
             'cni' => 'required',
@@ -71,7 +71,7 @@ class UsersController extends Controller
         $user->service_id = $request->service_id;
         $user->fonction_id = $request->fonction_id;
         $user->genre = $request->genre;
-        $user->age = $request->age;
+        $user->ans_naiss = $request->ans_naiss;
         $user->adresse = $request->adresse;
         $user->tel = $request->tel;
         $user->email = $request->email;
@@ -116,7 +116,7 @@ class UsersController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified resource in storans_naiss.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\User  $user
@@ -130,7 +130,7 @@ class UsersController extends Controller
             'service_id' => 'required',
             'fonction_id' => 'required',
             'genre' => 'required',
-            'age' => 'required',
+            'ans_naiss' => 'required',
             'tel' => 'required',
             'email' => 'required',
             'cni' => 'required',
@@ -140,7 +140,7 @@ class UsersController extends Controller
         $user->name = $request->name;
         $user->prenom = $request->prenom;
         $user->genre = $request->genre;
-        $user->age = $request->age;
+        $user->ans_naiss = $request->ans_naiss;
         $user->adresse = $request->adresse;
         $user->tel = $request->tel;
         $user->email = $request->email;
@@ -150,7 +150,7 @@ class UsersController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified resource from storans_naiss.
      *
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response

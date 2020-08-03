@@ -1,14 +1,5 @@
 @extends('templates.default_layout')
 @section('content')
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metalusa</title>
-</head>
-<body>
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 	<div class="row">
 	    <ol class="breadcrumb">
@@ -68,12 +59,12 @@
                 </div>
             </div>
 	    <div class="form-group row">
-                <label for="age" class="col-md-3 col-form-label">{{ __('Age') }}</label>
+                <label for="ans_naiss" class="col-md-3 col-form-label">{{ __('Ans_Naiss') }}</label>
 
                 <div class="col-md-9">
-		    <input id="age" type="text" class="form-control @error('age') is-invalid @enderror" name="age" value="{{ old('age') ?? $user->age }}" required autocomplete="off" autofocus>
+		    <input id="ans_naiss" type="text" class="form-control @error('ans_naiss') is-invalid @enderror" name="ans_naiss" value="{{ old('ans_naiss') ?? $user->ans_naiss }}" required autocomplete="off" autofocus>
 
-		    @error('age')
+		    @error('ans_naiss')
 		    <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
 		    </span>
@@ -179,8 +170,4 @@
             </div>
 		    
 	</form>
-</body>
-</html>
-
-
 @endsection

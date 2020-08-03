@@ -18,7 +18,7 @@ class CreatePatientsTable extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->string('genre');
-            $table->integer('age');
+            $table->string('ans_naiss');
             $table->string('profession');
             $table->string('adresse');
             $table->string('tel')->unique();

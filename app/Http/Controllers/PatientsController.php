@@ -31,7 +31,7 @@ class PatientsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource in storans_naiss.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -42,7 +42,7 @@ class PatientsController extends Controller
             'nom' => 'required',
             'prenom' => 'required',
             'genre' => 'required',
-            'age' => 'required',
+            'ans_naiss' => 'required',
             'profession' => 'required',
             'tel' => 'required',
             'email' => 'required',
@@ -54,7 +54,7 @@ class PatientsController extends Controller
         $patient->nom = $request->nom;
         $patient->prenom = $request->prenom;
         $patient->genre = $request->genre;
-        $patient->age = $request->age;
+        $patient->ans_naiss = $request->ans_naiss;
         $patient->profession = $request->profession;
         $patient->adresse = $request->adresse;
         $patient->tel = $request->tel;
@@ -91,7 +91,7 @@ class PatientsController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified resource in storans_naiss.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -103,7 +103,7 @@ class PatientsController extends Controller
             'nom' => 'required',
             'prenom' => 'required',
             'genre' => 'required',
-            'age' => 'required',
+            'ans_naiss' => 'required',
             'profession' => 'required',
             'tel' => 'required',
             'email' => 'required',
@@ -114,7 +114,7 @@ class PatientsController extends Controller
         $patient->nom = $request->nom;
         $patient->prenom = $request->prenom;
         $patient->genre = $request->genre;
-        $patient->age = $request->age;
+        $patient->ans_naiss = $request->ans_naiss;
         $patient->profession = $request->profession;
         $patient->adresse = $request->adresse;
         $patient->tel = $request->tel;
@@ -125,7 +125,7 @@ class PatientsController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified resource from storans_naiss.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
