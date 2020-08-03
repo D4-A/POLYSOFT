@@ -16,6 +16,11 @@
 		<h1 class="page-header">Upload an Examen</h1>
 	    </div>
 	</div><!--/.row-->
+	@if ($message = Session::get('error'))
+	    <div class="alert alert-danger">
+		<p>{{ $message }}</p>
+	    </div>
+	@endif
 	<form role="form" action="{{url('examens')}}" enctype="multipart/form-data" method="post">
 	    @csrf
 	    <div class="form-group">

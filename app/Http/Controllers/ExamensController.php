@@ -69,6 +69,8 @@ class ExamensController extends Controller
 
         if(count($paths) > 0){
             $pathjoined = join(",",$paths);
+
+            try{
             DB::table('examens')->insert(
                 array(
                     'user_id' => $user_id,
@@ -76,6 +78,14 @@ class ExamensController extends Controller
                     'nom_examen' => $nomExamen,
                     'files' => $pathjoined
                 ));
+            }catch(\Exception $e){
+                 switch($e->errorInfo[1]){
+            case 1452:
+                return back()->with('error','La consulation n\'existe pas');
+            default:
+                return back()->with('error','Une erreur est survenu');
+                 }
+            }
             foreach($paths as $path){
                 $file->storeAs('public/uploads', $path);
             }
