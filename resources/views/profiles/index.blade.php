@@ -100,11 +100,7 @@
                 </div>
             </div>
 	    <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group row">
-                    <div class="col-md-6">
-                        <a class="btn btn-primary col-md-12 glyphicon glyphicon-cancel" href="{{ url('home') }}">ANNULER</a>
-                    </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <a class="btn btn-primary col-md-12 glyphicon glyphicon-edit" href="{{url('profile/edit',$user->id) }}">EDITER</a>
                     </div>
                 </div>
