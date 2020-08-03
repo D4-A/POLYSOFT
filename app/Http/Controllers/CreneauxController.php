@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Creneau;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CreneauxController extends Controller
 {
@@ -19,7 +20,10 @@ class CreneauxController extends Controller
      */
     public function index()
     {
-        $creneaux = Creneau::all();
+        $creneaux = DB::table('creneaus')
+                  ->join('users','users.id','creneaus.user_id')
+                  ->select('users.name as user_name','creneaus.*')
+                  ->get();
         return view('creneaux/index',[
             'creneaux' => $creneaux
         ]);

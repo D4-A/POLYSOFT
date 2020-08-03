@@ -25,8 +25,8 @@
 		<!-- search feature begin here -->
 		<select class="selectpicker" id="search">
 		    <option value="0"> ID</option>
-		    <option value="1"> Nom</option>
-		    <option value="4"> status</option>	    
+		    <option value="1"> Docteur</option>
+		    <option value="5"> status</option>	    
 		</select>
 		<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
 
@@ -38,6 +38,7 @@
 			<tr>
 
 			    <th>ID Creneau</th>
+			    <th>ID Docteur</th>
 			    <th>Nom </th>
 			    <th>Commence </th>
 			    <th>Termine</th>
@@ -50,6 +51,7 @@
 			<?php foreach($creneaux as $creneau): ?>
 			<tr>
 			    <td> <?= $creneau->id; ?></td>
+			    <td> <?= $creneau->user_name; ?></td>
 			    <td> <?= $creneau->name; ?></td>
 			    <td> <?= $creneau->start_time; ?></td>
 			    <td> <?= $creneau->end_time; ?></td>
