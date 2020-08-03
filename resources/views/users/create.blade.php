@@ -49,7 +49,7 @@
 		    <option value="Feminin"> Feminin </option>
 		</select>
 		<label>Age du User</label>
-x		<input class="form-control" name="age" placeholder="Age du user">
+		<input class="form-control" name="age" placeholder="Age du user">
 		<label>Adresse du User </label>
 		<input class="form-control" name="adresse" placeholder="Adresse du user">
 		<label>Telephone du User</label>

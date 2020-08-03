@@ -56,7 +56,28 @@ class RendezVousController extends Controller
         $rendezvous->title = $request->title;
         $rendezvous->description = $request->description;
         $rendezvous->etat = $request->etat;
-        $rendezvous->save();
+
+        try{
+            $rendezvous->save();
+        }catch(\Exception $e){
+            switch($e->errorInfo[1]){
+            case 1452:
+                $found_patient = preg_match('/patient/',$e->errorInfo[2]);
+                if($found_patient === 1)
+                    $message = 'Le patient n\'existe pas';
+                $found_pay = preg_match('/pay/',$e->errorInfo[2]);
+                if($found_pay === 1)
+                    $message = 'Le payement n\'existe pas';
+                $found_cren = preg_match('/cren/',$e->errorInfo[2]);
+                if($found_cren === 1)
+                    $message = 'Le creneau n\'existe pas';
+                return back()->with('error',$message);
+            case 1062:
+                return back()->with('error','La facture a ete utilise');
+            default:
+                return back()->with('error','Une erreur est survenu');
+            }
+        }
   
         return redirect('rendezVous');
     }
@@ -111,7 +132,33 @@ class RendezVousController extends Controller
         $rendezvous->title = $request->title;
         $rendezvous->description = $request->description;
         $rendezvous->etat = $request->etat;
-        $rendezvous->save();
+       try{
+            $rendezvous->save();
+       }catch(\Exception $e){
+           switch($e->errorInfo[1]){
+           case 1452:
+               $found_patient = preg_match('/patient/',$e->errorInfo[2]);
+               if($found_patient === 1)
+                   $message = 'Le patient n\'existe pas';
+               $found_pay = preg_match('/pay/',$e->errorInfo[2]);
+               if($found_pay === 1)
+                   $message = 'Le payement n\'existe pas';
+               $found_cren = preg_match('/cren/',$e->errorInfo[2]);
+               if($found_cren === 1)
+                   $message = 'Le creneau n\'existe pas';
+                return back()->with('error',$message);
+           case 1062:
+               $found_pay = preg_match('/pay/',$e->errorInfo[2]);
+               if($found_pay === 1)
+                   $message = 'Le payement deja utilise';
+               $found_cren = preg_match('/cren/',$e->errorInfo[2]);
+               if($found_cren === 1)
+                   $message = 'Le creneau deja pris';
+               return back()->with('error',$message);
+           default:
+               return back()->with('error','Une erreur est survenu');
+            }
+       }
 
         return redirect('rendezVous');
     }

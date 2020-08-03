@@ -15,6 +15,11 @@
 		<h1 class="page-header">Prendre un Rendez-vous</h1>
 	    </div>
 	</div><!--/.row-->
+	@if ($message = Session::get('error'))
+	    <div class="alert alert-danger">
+		<p>{{ $message }}</p>
+	    </div>
+	@endif
 	<form role="form" action="{{url('rendezVous')}}" method="post">
 	    @csrf
 	    <div class="form-group">

@@ -37,10 +37,13 @@ $("#cons_id").on('change', function(e){
         url:"/ajaxfiles",
 	success : function(data, statut){
             data.forEach(item => create_checkbox(a,item));
-       },
-
-       error : function(resultat, statut, erreur){
-	   console.log(erreur);
-       }
+	},
+	
+	error : function(resultat, statut, erreur){
+	   $('form').attr('action', '/emails');
+	},
+	complete : function(resultat, statut){
+	    //$('form').attr('action', '/emails');
+	}
     });
 });
