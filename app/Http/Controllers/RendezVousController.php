@@ -6,6 +6,7 @@ use App\rendezVous;
 use App\Consultation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class RendezVousController extends Controller
 {
@@ -29,15 +30,53 @@ class RendezVousController extends Controller
      */
     public function create()
     {
+        $users = DB::table('users')
+               ->join('fonctions','fonctions.id','users.fonction_id')
+               ->select('fonctions.name as fonct_name','users.*')
+               ->where('fonctions.name','LIKE','%oct%')
+               ->get();
         $days = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi',
                  'Dimanche'];
-        $creneaux = ['08h00-08h30','08h30-09h00','09h00-09h30','09h30-10h00',
-                     '10h00-10h30','11h00-11h30','11h30-12h00', '14h00-14h30',
-                     '14h30-15h00','15h00-15h30','15h30-16h00','16h00-16h30',
-                     '16h30-17h00'];
+        $heures = ['08:00-08:30','08:30-09:00','09:00-09:30','09:30-10:00',
+                   '10:00-10:30','10:30-11:00','11:00-11:30','11:30-12:00', '14:00-14:30',
+                   '14:30-15:00','15:00-15:30','15:30-16:00','16:00-16:30',
+                   '16:30-17:00'];
         return view('rendezvous/create',[
+            'users' => $users,
             'days' => $days,
-            'creneaux' => $creneaux
+            'heures' => $heures
+        ]);
+    }
+    public function refresh($id)
+    {
+        $users = DB::table('users')
+               ->join('fonctions','fonctions.id','users.fonction_id')
+               ->select('fonctions.name as fonct_name','users.*')
+               ->where('fonctions.name','LIKE','%oct%')
+               ->get();
+        $days = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi',
+                 'Dimanche'];
+        $heures = ['08:00-08:30','08:30-09:00','09:00-09:30','09:30-10:00',
+                   '10:00-10:30','10:30-11:00','11:00-11:30','11:30-12:00', '14:00-14:30',
+                   '14:30-15:00','15:00-15:30','15:30-16:00','16:00-16:30',
+                   '16:30-17:00'];
+        $creneaux = DB::table('creneaus')->where('user_id',$id)->get();
+
+        $interval = [];
+        if($creneaux !== null){
+            foreach($creneaux as $creneau){
+                $debut = $creneau->start_time;
+                $day = date('D', strtotime(explode(' ',$debut)[0]));
+                $fin = $creneau->end_time;
+                $debut_fin = substr(explode(' ',$debut)[1],0,5) .'-'. substr(explode(' ',$fin)[1],0,5);
+                $interval += [($debut_fin . '-' . $day) => $creneau->id];
+            }
+        }
+        return view('rendezvous/refresh',[
+            'days' => $days,
+            'heures' => $heures,
+            'interval' => $interval,
+            'users' => $users
         ]);
     }
 
@@ -49,6 +88,7 @@ class RendezVousController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
         $request->validate([
             'patient_id' => 'required',
             'payement_id' => 'required',
