@@ -37,7 +37,8 @@
 	    </select>
 	    <a href="#" id="linkre">
 		<button type="button"  onclick="getComboA()" class="btn btn-success">
-		    refresh
+		    <span class="glyphicon glyphicon-search"></span>
+		    search
 		</button>
 	    </a><br>
 	    <input class="input" type="text" name="patient_id" placeholder="Patient ID">
