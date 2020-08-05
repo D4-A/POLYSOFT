@@ -41,7 +41,6 @@
 		    <th>patient ID</th>
 		    <th>payement ID</th>
 		    <th>creneau ID</th>
-		    <th>Title</th>
 		    <th>Description</th>
 		    <th>Etat</th>
 		    <th>Action</th>
@@ -56,7 +55,6 @@
                     <td> <?= $rendezvous->patient_id; ?></td>
 		    <td> <?= $rendezvous->payement_id; ?></td>
 		    <td> <?= $rendezvous->creneau_id; ?></td>
-		    <td> <?= $rendezvous->title; ?></td>
 		    <td> <?= $rendezvous->description; ?></td>
 		    <td> <?= $rendezvous->etat; ?></td>
                     <td>

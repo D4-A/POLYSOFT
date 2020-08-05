@@ -49,6 +49,9 @@ class RendezVousController extends Controller
     }
     public function refresh($id)
     {
+        if($id === 0)
+            return back();
+        $medecin = DB::table('users')->where('id',$id)->first();
         $users = DB::table('users')
                ->join('fonctions','fonctions.id','users.fonction_id')
                ->select('fonctions.name as fonct_name','users.*')
@@ -60,7 +63,9 @@ class RendezVousController extends Controller
                    '10:00-10:30','10:30-11:00','11:00-11:30','11:30-12:00', '14:00-14:30',
                    '14:30-15:00','15:00-15:30','15:30-16:00','16:00-16:30',
                    '16:30-17:00'];
-        $creneaux = DB::table('creneaus')->where('user_id',$id)->get();
+        $creneaux = DB::table('creneaus')->where('user_id',$id)
+                                         ->where('ouvert',1)
+                                         ->get();
 
         $interval = [];
         if($creneaux !== null){
@@ -76,7 +81,8 @@ class RendezVousController extends Controller
             'days' => $days,
             'heures' => $heures,
             'interval' => $interval,
-            'users' => $users
+            'users' => $users,
+            'medecin' => $medecin
         ]);
     }
 
@@ -88,28 +94,26 @@ class RendezVousController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
         $request->validate([
             'patient_id' => 'required',
             'payement_id' => 'required',
             'creneau_id' => 'required',
-            'title' => 'required',
-            'description' => 'required'
          ]);
-
-        $ispayementInConsultation = Consultation::find($request->payement_id)
+        $ispayementInConsultation = Consultation::where('payement_id',$request->payement_id)
                                   ->first();
         if($ispayementInConsultation !== null){
             return back()->with('error','La facture a ete utilise');
         }
-        
+        $creneau = \App\Creneau::find($request->creneau_id)->first();
+        $creneau->ouvert = 0;
+        $creneau->save();
+
         $rendezvous = new RendezVous();
 
         $rendezvous->user_id = Auth::id();
         $rendezvous->patient_id = $request->patient_id;
         $rendezvous->payement_id = $request->payement_id;
         $rendezvous->creneau_id = $request->creneau_id;
-        $rendezvous->title = $request->title;
         $rendezvous->description = $request->description;
         $rendezvous->etat = 'pending';
 
@@ -131,7 +135,7 @@ class RendezVousController extends Controller
             case 1062:
                 return back()->with('error','La facture a ete utilise');
             default:
-                return back()->with('error','Une erreur est survenu');
+                return back()->with('error',$e->getMessage());
             }
         }
   
@@ -176,7 +180,6 @@ class RendezVousController extends Controller
             'patient_id' => 'required',
             'payement_id' => 'required',
             'creneau_id' => 'required',
-            'title' => 'required',
             'description' => 'required',
             'etat' => 'required'
          ]);
@@ -185,7 +188,6 @@ class RendezVousController extends Controller
         $rendezvous->patient_id = $request->patient_id;
         $rendezvous->payement_id = $request->payement_id;
         $rendezvous->creneau_id = $request->creneau_id;
-        $rendezvous->title = $request->title;
         $rendezvous->description = $request->description;
         $rendezvous->etat = $request->etat;
        try{

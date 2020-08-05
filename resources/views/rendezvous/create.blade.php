@@ -30,7 +30,7 @@
 	    </select>
 	    <a href="#" id="linkre">
 		<button type="button"  onclick="getComboA()" class="btn btn-success">
-		    rendez-vous pour
+		    refresh
 		</button>
 	    </a>
 	    <table class="table table-bordered" id="table">
