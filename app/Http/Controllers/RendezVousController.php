@@ -172,12 +172,25 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
             'rendezvous' => $rendezvous
         ]);
     }
+    public function cons($id)
+    {
+        $rendezvous = RendezVous::find($id);
+        $rendezvous_id = $rendezvous->id;
+        $patient_id = $rendezvous->patient_id;
+        $payement_id = $rendezvous->payement_id;
+
+        return view('rendezvous/cons', [
+            'patient_id' => $patient_id,
+            'payement_id' => $payement_id,
+            'rendezvous_id' => $rendezvous_id
+        ]);
+    }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\rendezVous  $rendezVous
+     * @param  \App\rendezVoudd($payement_id);s  $rendezVous
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, rendezVous $rendezvous)

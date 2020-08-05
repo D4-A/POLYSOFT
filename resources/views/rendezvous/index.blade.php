@@ -20,7 +20,6 @@
             <button type="submit"  class="btn btn-success">
 		<span class="glyphicon glyphicon-plus"></span>
 		Nouveau rendez-vous
-
 	    </button>
 	</a>
 	<!-- search feature begin here -->
@@ -28,6 +27,7 @@
 	    <option value="0"> ID</option>
 	    <option value="1"> Patient Name</option>
 	    <option value="2"> Docteur Name</option>
+	    <option value="5"> Status</option>
 	</select>
 	<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
 
@@ -55,6 +55,13 @@
 		    <td> <?= $rendezvous->description; ?></td>
 		    <td> <?= $rendezvous->etat; ?></td>
                     <td>
+			<a href="rendezVous/cons/{{$rendezvous->id}}">
+
+			    <button type="submit" class="btn btn-sm btn-primary">
+				<span class="glyphicon glyphicon-show"> cons</span>
+			    </button>
+
+			</a>
 			<a href="rendezVous/edit/{{$rendezvous->id}}">
 
 			    <button type="submit" class="btn btn-sm btn-primary">

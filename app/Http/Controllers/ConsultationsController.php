@@ -64,6 +64,11 @@ class ConsultationsController extends Controller
             'examen_compl' => 'required',
             'traitement' => 'required'
          ]);
+        if($request->rendezvous_id){
+            $rendezvous = \App\rendezVous::find($request->rendezvous_id);
+            $rendezvous->etat = 'closed';
+            $rendezvous->save();
+        }
         
         $consultation= new Consultation();
         $consultation->user_id = Auth::id();

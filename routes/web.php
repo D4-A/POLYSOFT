@@ -108,3 +108,4 @@ Route::post('rendezVous','RendezVousController@store');
 Route::get('rendezVous/edit/{rendezvous}','RendezVousController@edit');
 Route::put('rendezVous/{rendezvous}','RendezVousController@update');
 Route::post('rendezVous/destroy/{rendezvous}','RendezVousController@destroy');
+Route::get('rendezVous/cons/{rendezvous}','RendezVousController@cons');
