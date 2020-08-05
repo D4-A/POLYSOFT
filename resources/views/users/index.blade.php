@@ -35,7 +35,7 @@
 
 	<!-- search feature end here -->
 	<table class="table table-bordered" id="table">
-	    <thead>
+	    <thead class="thead-dark">
 
 		<tr>
 
