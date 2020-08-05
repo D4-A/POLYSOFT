@@ -17,7 +17,14 @@ class RendezVousController extends Controller
      */
     public function index()
     {
-        $rendezVous = RendezVous::all();
+        $rendezVous = DB::table('rendez_vouses')
+                    ->join('patients','patients.id','rendez_vouses.patient_id')
+                    ->join('creneaus','creneaus.id','rendez_vouses.creneau_id')
+                    ->join('users','users.id','creneaus.user_id')
+                    ->select('patients.nom as pat_name','users.name as 
+user_name','creneaus.id as creneau_id','rendez_vouses.*')
+                    ->get();
+
         return view('rendezvous/index',[
             'rendezVous' => $rendezVous
         ]);

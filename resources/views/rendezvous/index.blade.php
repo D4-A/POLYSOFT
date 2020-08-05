@@ -26,8 +26,8 @@
 	<!-- search feature begin here -->
 	<select class="selectpicker" id="search">
 	    <option value="0"> ID</option>
-	    <option value="1"> Dr ID</option>
-	    <option value="2"> Patient ID</option>
+	    <option value="1"> Patient Name</option>
+	    <option value="2"> Docteur Name</option>
 	</select>
 	<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
 
@@ -36,8 +36,8 @@
             <thead>
 		<tr>
 		    <th>Rendez-vous ID</th>
-		    <th>patient ID</th>
-		    <th>payement ID</th>
+		    <th>patient Name</th>
+		    <th>Docteur Name</th>
 		    <th>creneau ID</th>
 		    <th>Description</th>
 		    <th>Etat</th>
@@ -49,8 +49,8 @@
 		<?php foreach($rendezVous as $rendezvous): ?>
 		<tr>
                     <td> <?= $rendezvous->id; ?></td>
-                    <td> <?= $rendezvous->patient_id; ?></td>
-		    <td> <?= $rendezvous->payement_id; ?></td>
+                    <td> <?= $rendezvous->pat_name; ?></td>
+		    <td> <?= $rendezvous->user_name; ?></td>
 		    <td> <?= $rendezvous->creneau_id; ?></td>
 		    <td> <?= $rendezvous->description; ?></td>
 		    <td> <?= $rendezvous->etat; ?></td>
