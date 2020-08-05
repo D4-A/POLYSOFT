@@ -15,6 +15,7 @@
 			<h1 class="page-header">Creneaux</h1>
 		    </div>
 		</div><!--/.row-->
+		@canany(['isAdmin','isDoctor'])
 		<a href="{{url('/creneaux/create')}}">
 		    <button type="submit"  class="btn btn-success">
 			<span class="glyphicon glyphicon-plus"></span>
@@ -22,6 +23,7 @@
 			
 		    </button>
 		</a>
+		@endcan
 		<!-- search feature begin here -->
 		<select class="selectpicker" id="search">
 		    <option value="0"> ID</option>

@@ -65,37 +65,37 @@
 				{{$heure}}</th>
 			    <td>
 				@if(isset($interval[$heure . '-Mon']))
-				    <input type="radio" name="creneau_id" value="{{ $interval[$heure . '-Mon']}}"> prendre
+				    <input type="radio" name="creneau_id" value="{{ $interval[$heure . '-Mon']}}"> 
 				@endif
 			    </td>
 			    <td>
 				@if(isset($interval[$heure . '-Tue']))
-				    <input type="radio" name="creneau_id" value="{{ $interval[$heure . '-Tue']}}"> prendre
+				    <input type="radio" name="creneau_id" value="{{ $interval[$heure . '-Tue']}}"> 
 				@endif
 			    </td>
 			    <td>
 				@if(isset($interval[$heure . '-Wed']))
-				    <input type="radio" name="creneau_id" value="{{ $interval[$heure . '-Wed']}}"> prendre
+				    <input type="radio" name="creneau_id" value="{{ $interval[$heure . '-Wed']}}"> 
 				@endif
 			    </td>
 			    <td>
 				@if(isset($interval[$heure . '-Thu']))
-				    <input type="radio" name="creneau_id" value="{{ $interval[$heure . '-Thu']}}"> prendre
+				    <input type="radio" name="creneau_id" value="{{ $interval[$heure . '-Thu']}}"> 
 				@endif
 			    </td>
 			    <td>
 				@if(isset($interval[$heure . '-Fri']))
-				    <input type="radio" name="creneau_id" value="{{ $interval[$heure . '-Fri']}}"> prendre
+				    <input type="radio" name="creneau_id" value="{{ $interval[$heure . '-Fri']}}"> 
 				@endif
 			    </td>
 			    <td>
 				@if(isset($interval[$heure . '-Sat']))
-				    <input type="radio" name="creneau_id" value="{{ $interval[$heure . '-Sat']}}"> prendre
+				    <input type="radio" name="creneau_id" value="{{ $interval[$heure . '-Sat']}}"> 
 				@endif
 			    </td>
 			    <td>
 				@if(isset($interval[$heure . '-Sun']))
-				    <input type="radio" name="creneau_id" value="{{ $interval[$heure . '-Sun']}}"> prendre
+				    <input type="radio" name="creneau_id" value="{{ $interval[$heure . '-Sun']}}"> 
 				@endif
 			    </td>
 			</tr>

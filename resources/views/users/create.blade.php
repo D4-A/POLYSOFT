@@ -20,7 +20,7 @@
 	    <div class="form-group">
 		<label>Nom </label>
 		<input class="form-control" name="name" placeholder="Nom user">
-		<label>Prenom du User</label>
+		<label>Prenom </label>
 		<input class="form-control" name="prenom" placeholder="Prenom du user">
 		<label>Service  </label>
 		<select name="service_id" id="service_id" class="form-control">

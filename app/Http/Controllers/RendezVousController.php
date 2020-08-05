@@ -110,7 +110,6 @@ class RendezVousController extends Controller
 
         $rendezvous = new RendezVous();
 
-        $rendezvous->user_id = Auth::id();
         $rendezvous->patient_id = $request->patient_id;
         $rendezvous->payement_id = $request->payement_id;
         $rendezvous->creneau_id = $request->creneau_id;
@@ -184,7 +183,6 @@ class RendezVousController extends Controller
             'etat' => 'required'
          ]);
         
-        $rendezvous->user_id = Auth::id();
         $rendezvous->patient_id = $request->patient_id;
         $rendezvous->payement_id = $request->payement_id;
         $rendezvous->creneau_id = $request->creneau_id;
