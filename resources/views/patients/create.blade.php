@@ -37,9 +37,9 @@
 		<label>Adresse</label>
 		<input class="form-control" name="adresse" placeholder="Adresse du patient">
 		<label>Telephone </label>
-		<input class="form-control" name="tel" placeholder="Telephone du patients">
+		<input type="number" class="form-control" name="tel" placeholder="Telephone du patients">
 		<label>Email </label>
-		<input class="form-control" name="email" placeholder="Email du patient">
+		<input type="email" class="form-control" name="email" placeholder="Email du patient">
 		<label>CNI </label>
 		<input class="form-control" name="cni" placeholder="Cni du patient">
 	    </div>
