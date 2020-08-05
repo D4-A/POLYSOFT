@@ -18,8 +18,8 @@
 	<form role="form" id="sendaction" action="{{url('emails')}}" enctype="multipart/form-data" method="post">
 	    @csrf
 	    <div class="form-group">
-		<label>Use a consultation_id</label>
-		<input id="cons_id" class="form-control" name="consultation_id" placeholder="Consultation id">
+		<label>For consultation_id</label>
+		<input type="number" min="1" id="cons_id" class="form-control" name="consultation_id" placeholder="Consultation id">
 		<label>Mail to</label>
 		<input class="form-control" name="to_email" placeholder="Email">
 		<label>subject</label>

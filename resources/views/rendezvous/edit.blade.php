@@ -32,8 +32,6 @@
 
 		<label>Creneau ID</label>
 		<input class="form-control" name="creneau_id" value="{{$rendezvous->creneau_id}}" placeholder="Creneau ID">
-		<label>Title</label>
-		<input class="form-control" name="title" value="{{$rendezvous->title}}" placeholder="Title">
 		<label>Description</label>
 		<input class="form-control" name="description" value="{{$rendezvous->description}}" placeholder="Creneau ID">
 		<label>Etat </label>

@@ -103,6 +103,7 @@ Route::post('creneaux/destroy/{creneau}','CreneauxController@destroy');
 
 Route::get('rendezVous','RendezVousController@index');
 Route::get('rendezVous/create','RendezVousController@create');
+Route::get('rendezVous/refresh/{id}','RendezVousController@refresh');
 Route::post('rendezVous','RendezVousController@store');
 Route::get('rendezVous/edit/{rendezvous}','RendezVousController@edit');
 Route::put('rendezVous/{rendezvous}','RendezVousController@update');

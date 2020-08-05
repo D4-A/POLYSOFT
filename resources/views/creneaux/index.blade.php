@@ -76,15 +76,10 @@
 				    <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
 					<span class="glyphicon glyphicon-trash"> Delete</span> 
 				    </button>
-				</form>
-				
-				
-				
-				
+				</form>		
                             </td>
 			</tr>
 			<?php endforeach; ?>
-		    </tbody>
-		    
+		    </tbody>		    
 		</table>
 @endsection
