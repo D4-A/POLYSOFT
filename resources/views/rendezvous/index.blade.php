@@ -26,9 +26,8 @@
 	<!-- search feature begin here -->
 	<select class="selectpicker" id="search">
 	    <option value="0"> ID</option>
-	    <option value="1"> ID Dr</option>
-	    <option value="2"> ID Patient</option>
-	    <option value="6"> title</option>
+	    <option value="1"> Dr ID</option>
+	    <option value="2"> Patient ID</option>
 	</select>
 	<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
 

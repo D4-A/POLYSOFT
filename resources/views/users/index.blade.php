@@ -34,7 +34,7 @@
 	<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
 
 	<!-- search feature end here -->
-	<table class="table" id="table">
+	<table class="table table-bordered" id="table">
 	    <thead>
 
 		<tr>
