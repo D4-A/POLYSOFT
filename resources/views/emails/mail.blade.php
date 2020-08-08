@@ -1,4 +1,4 @@
-Hi {{$nom}}
+Hi,
 
 @isset($body)
 <p>{{$body}} </p>
