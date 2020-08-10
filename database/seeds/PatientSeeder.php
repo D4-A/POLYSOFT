@@ -12,25 +12,25 @@ class PatientSeeder extends Seeder
     public function run()
     {
         DB::table('patients')->insert([
-            'nom' => 'Pfleury',
-            'prenom' => 'Pguy',
-            'genre' => 'PM',
+            'nom' => 'Gateka',
+            'prenom' => 'Audrine',
+            'genre' => 'F',
             'ans_naiss' => '1345',
-            'profession' => 'PEtudiant',
-            'adresse' => 'Pkibenga',
+            'profession' => 'Etudiant',
+            'adresse' => 'kibenga',
             'tel' => 71111111,
-            'email' => 'gfleury@disroot.org',
+            'email' => 'audrine@gnu.org',
             'cni' => 'P6666',
         ]);
         DB::table('patients')->insert([
-            'nom' => 'P2fleury',
-            'prenom' => 'P2guy',
+            'nom' => 'ngabirano',
+            'prenom' => 'brice',
             'genre' => 'P2M',
             'ans_naiss' => '12234',
-            'profession' => 'P2Etudiant',
-            'adresse' => 'P2kibenga',
+            'profession' => 'Etudiant',
+            'adresse' => 'ngangara',
             'tel' => 711111112,
-            'email' => 'g2fleury@disroot.org',
+            'email' => 'brice@gnu.org',
             'cni' => 'P26666',
         ]);
     }

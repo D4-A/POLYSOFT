@@ -19,13 +19,5 @@ class TypePayementSeeder extends Seeder
             'name' => 'Cons Dr generaliste',
             'montant' => '10000'
         ]);
-        DB::table('type_payements')->insert([
-            'name' => 'Cons Dr specialiste',
-            'montant' => '10000'
-        ]);
-        DB::table('type_payements')->insert([
-            'name' => 'Examen',
-            'montant' => '1500'
-        ]);
     }
 }

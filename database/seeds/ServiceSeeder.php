@@ -14,5 +14,8 @@ class ServiceSeeder extends Seeder
         DB::table('services')->insert([
             'name' => 'Administration'
         ]);
+        DB::table('services')->insert([
+            'name' => 'pediatrie'
+        ]);
     }
 }
