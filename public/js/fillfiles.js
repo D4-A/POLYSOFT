@@ -16,36 +16,51 @@ function create_checkbox(balise,file){
     checkbox.type = "checkbox";
     checkbox.name = "filepath2[]";
     checkbox.value = file;
-    checkbox.id = "id";
+    checkbox.id = "checkid";
 
     let label = document.createElement('label')
-    label.htmlFor = "id";
+    label.htmlFor = "checkid";
+    label.id = "labelcheckid";
     label.appendChild(document.createTextNode(basename(file)));
     
     balise.appendChild(checkbox);
     balise.appendChild(label);
 
 }
+
 $("#cons_id").on('change', function(e){
 
-    $('form').attr('action', '/sendp');
+    if(cons_id.value === '')
+    {
+	$('form').attr('action', '/emails');
 
-    $.ajax({
-	data: {cons_id: cons_id.value},
-	dataType: 'json',
-        type:'GET',
-        url:"/ajaxfiles",
-	success : function(data, statut){
-            data.forEach(item => create_checkbox(a,item));
-	},
-	
-	error : function(resultat, statut, erreur){
-	   $('form').attr('action', '/emails');
-	},
-	complete : function(resultat, statut){
-	    //$('form').attr('action', '/emails');
-	}
-    });
-
-    
+	const cbs = document.querySelectorAll('#checkid');
+	const lbcbs = document.querySelectorAll('#labelcheckid');
+	cbs.forEach((cb) => {
+	    cb.remove();
+	});
+	lbcbs.forEach((lbcb) => {
+	    lbcb.remove();
+	});
+    }
+    else
+    {
+	$('form').attr('action', '/sendp');
+	$.ajax({
+	    data: {cons_id: cons_id.value},
+	    dataType: 'json',
+            type:'GET',
+            url:"/ajaxfiles",
+	    success : function(data, statut){
+		data.forEach(item => create_checkbox(a,item));
+	    },
+	    
+	    error : function(resultat, statut, erreur){
+		$('form').attr('action', '/emails');
+	    },
+	    complete : function(resultat, statut){
+	    }
+	})
+    }	      
 });
+
