@@ -1,4 +1,5 @@
 @extends('templates.default_layout')
+@section('title', 'Ajout d\'un payement')
 @section('content')
 
 <!DOCTYPE html>
