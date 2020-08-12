@@ -1,4 +1,5 @@
 @extends('templates.default_layout')
+@section('title', 'Editer un rendez-vous')
 @section('content')
 
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
@@ -7,13 +8,13 @@
 		<li><a href="#">
 		    <em class="fa fa-calendar"></em>
 		</a></li>
-		<li class="active">Fonctions</li>
+		<li class="active">Rendez-vous</li>
 	    </ol>
 	</div><!--/.row-->
 
 	<div class="row">
 	    <div class="col-lg-12">
-		<h1 class="page-header">Modifier Un creneau</h1>
+		<h1 class="page-header">Modifier Un rendez-vous</h1>
 	    </div>
 	</div><!--/.row-->
 	@if ($message = Session::get('error'))
