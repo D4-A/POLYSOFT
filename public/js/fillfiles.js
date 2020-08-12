@@ -27,21 +27,24 @@ function create_checkbox(balise,file){
     balise.appendChild(label);
 
 }
+function delete_old_checkbox()
+{
+    const cbs = document.querySelectorAll('#checkid');
+    const lbcbs = document.querySelectorAll('#labelcheckid');
+    cbs.forEach((cb) => {
+	cb.remove();
+    });
+    lbcbs.forEach((lbcb) => {
+	lbcb.remove();
+    });
+}
 
 $("#cons_id").on('change', function(e){
 
     if(cons_id.value === '')
     {
 	$('form').attr('action', '/emails');
-
-	const cbs = document.querySelectorAll('#checkid');
-	const lbcbs = document.querySelectorAll('#labelcheckid');
-	cbs.forEach((cb) => {
-	    cb.remove();
-	});
-	lbcbs.forEach((lbcb) => {
-	    lbcb.remove();
-	});
+	delete_old_checkbox();
     }
     else
     {
@@ -52,6 +55,7 @@ $("#cons_id").on('change', function(e){
             type:'GET',
             url:"/ajaxfiles",
 	    success : function(data, statut){
+		delete_old_checkbox();
 		data.forEach(item => create_checkbox(a,item));
 	    },
 	    
