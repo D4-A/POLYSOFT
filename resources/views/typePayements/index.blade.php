@@ -17,6 +17,7 @@
 		<h1 class="page-header">Type Payements</h1>
 	    </div>
 	</div><!--/.row-->
+	@canany(['isAdmin','isCaissier'])
 	<a href="{{url('/typePayements/create')}}">
 	    <button type="submit"  class="btn btn-success">
 		<span class="glyphicon glyphicon-plus"></span>
@@ -24,6 +25,8 @@
 
 	    </button>
 	</a>
+	@endcan
+	
 	<!-- search feature begin here -->
 	<select class="selectpicker" id="search">
 	    <option value="0"> ID</option>
@@ -41,7 +44,9 @@
 		    <th>ID TypePayement</th>
 		    <th>Nom TypePayement</th>
 		    <th>Montant </th>
+		    @canany(['isAdmin','isCaissier'])
 		    <th>Action</th>
+		    @endcan
 		</tr>
 
 	    </thead>
@@ -51,6 +56,7 @@
 		    <td> <?= $typePayement->id; ?></td>
 		    <td> <?= $typePayement->name; ?></td>
 		    <td> <?= $typePayement->montant; ?></td>
+		    @canany(['isAdmin','isCaissier'])
 		    <td>
 			<a href="typePayements/edit/{{$typePayement->id}}">
 
@@ -67,11 +73,8 @@
 				<span class="glyphicon glyphicon-trash"> Delete</span>
                             </button>
 			</form>
-
-
-
-
                     </td>
+		    @endcan
 		</tr>
 		<?php endforeach; ?>
             </tbody>

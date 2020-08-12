@@ -16,12 +16,14 @@
 		<h1 class="page-header">Rendez-vous</h1>
 	    </div>
         </div><!--/.row-->
+	@canany(['isAdmin','isRecept'])
 	<a href="{{url('/rendezVous/create')}}">
             <button type="submit"  class="btn btn-success">
 		<span class="glyphicon glyphicon-plus"></span>
 		Nouveau rendez-vous
 	    </button>
 	</a>
+	@endcan
 	<!-- search feature begin here -->
 	<select class="selectpicker" id="search">
 	    <option value="0"> ID</option>
@@ -62,6 +64,7 @@
 			    </button>
 
 			</a>
+			@canany(['isAdmin','isRecept'])
 			<a href="rendezVous/edit/{{$rendezvous->id}}">
 
 			    <button type="submit" class="btn btn-sm btn-primary">
@@ -77,6 +80,7 @@
 				<span class="glyphicon glyphicon-trash"> Delete</span>
                             </button>
 			</form>
+			@endcan
                     </td>
 		</tr>
 		<?php endforeach; ?>

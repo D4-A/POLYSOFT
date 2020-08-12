@@ -16,6 +16,7 @@
 		<h1 class="page-header">Fonctions</h1>
 	    </div>
 	</div><!--/.row-->
+	@can('isAdmin')
 	<a href="{{url('/fonctions/create')}}">
 	    <button type="submit"  class="btn btn-success">
 		<span class="glyphicon glyphicon-plus"></span>
@@ -23,6 +24,7 @@
 
 	    </button>
 	</a>
+	@endcan
 	<select class="selectpicker" id="search">
 	    <option value="0"> ID</option>
 	    <option value="1"> Nom</option>
@@ -39,7 +41,9 @@
 		    <th>ID Fonction</th>
 		    <th>Nom Fonction</th>
 		    <th>Diplome </th>
+		    @can('isAdmin')
 		    <th>Action</th>
+		    @endcan
 		</tr>
 
 	    </thead>
@@ -49,6 +53,7 @@
 		    <td> <?= $fonction->id; ?></td>
 		    <td> <?= $fonction->name; ?></td>
 		    <td> <?= $fonction->diplome; ?></td>
+		    @can('isAdmin')
 		    <td>
 			<a href="fonctions/edit/{{$fonction->id}}">
 
@@ -66,6 +71,7 @@
 			    </button>
 			</form>
                     </td>
+		    @endcan
 		</tr>
 		<?php endforeach; ?>
 	    </tbody>

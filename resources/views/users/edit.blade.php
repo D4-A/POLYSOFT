@@ -12,14 +12,14 @@
 
 	<div class="row">
 	    <div class="col-lg-12">
-		<h1 class="page-header">Modifier Users</h1>
+		<h1 class="page-header">Modifier un utilisateur</h1>
 	    </div>
 	</div><!--/.row-->
 	<form role="form" action="/users/{{$user->id}}" method="post">
 	    @csrf
 	    @method('PUT')
 	    <div class="form-group">
-		<label>Nom du User </label>
+		<label>Nom </label>
 		<input class="form-control" name="name" value="{{$user->name}}" placeholder="Nom user">
 		<label>Service  </label>
 		<select name="service_id" id="service_id" class="form-control">
@@ -32,7 +32,7 @@
 		    @endforeach
                 </select>
 
-		<label>Fonction Occupe </label>
+		<label>Fonction</label>
 		<select name="fonction_id" id="fonction_id" class="form-control">
                     <option placeholder="" value="{{$fonction->id}}">{{$fonction->name}}</option>
 
