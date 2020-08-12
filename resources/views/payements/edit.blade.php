@@ -13,15 +13,13 @@
 
 	<div class="row">
 	    <div class="col-lg-12">
-		<h1 class="page-header">Modifier Service</h1>
+		<h1 class="page-header">Modifie un Payement</h1>
 	    </div>
 	</div><!--/.row-->
 	<form role="form" action="/payements/{{$payement->id}}" method="post">
 	    @csrf
 	    @method('PUT')
 	    <div class="form-group">
-		<label>User ID </label>
-		<input class="form-control" name="user_id" value="{{$payement->user_id}}" placeholder="Nom payement">
 
 		<label>Patient ID</label>
 		<input class="form-control" name="patient_id" value="{{$payement->patient_id}}" placeholder="Nom payement">
