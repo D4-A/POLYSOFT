@@ -22,7 +22,7 @@
 	    @method('PUT')
 	    <div class="form-group">
 		<label>Service Name</label>
-		<input class="form-control" name="name" value="{{$service->name}}" placeholder="Name service">
+		<input class="form-control" name="name" value="{{$service->name}}" placeholder="Name service" required>
 		    </div>
 		    
 		    <button type="submit" class="btn btn-primary">

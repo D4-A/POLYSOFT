@@ -42,9 +42,9 @@
 		    search
 		</button>
 	    </a><br>
-	    <input class="input" type="text" name="patient_id" placeholder="Patient ID">
-	    <input class="input" type="text" name="payement_id" placeholder="Payement ID">
-	    <input class="input" type="text" name="description" placeholder="Description Informative">
+	    <input class="input" type="text" name="patient_id" placeholder="Patient ID" required>
+	    <input class="input" type="text" name="payement_id" placeholder="Payement ID" required>
+	    <input class="input" type="text" name="description" placeholder="Description informative">
 	    <table class="table table-bordered" id="table">
 		@if ($message = Session::get('error'))
 		    <div class="alert alert-danger">

@@ -22,11 +22,11 @@
 	    @method('PUT')
 	    <div class="form-group">
 		<label>User ID</label>
-		<input class="form-control" name="user_id" value="{{$examen->consultation_id}}" placeholder="User examen">
+		<input class="form-control" name="user_id" value="{{$examen->consultation_id}}" placeholder="User examen" required>
 		<label>Consulation ID</label>
-		<input class="form-control" name="consultation_id" value="{{$examen->user_id}}" placeholder="Consultation ID">
+		<input class="form-control" name="consultation_id" value="{{$examen->user_id}}" placeholder="Consultation ID" required>
 		<label>Nom</label>
-		<input class="form-control" name="nom" value="{{$examen->nom_examen}}" placeholder="User examen">
+		<input class="form-control" name="nom" value="{{$examen->nom_examen}}" placeholder="User examen" required>
 		<label>files to upload </label>
 		<input type="file" name="files[]" id="file" required multiple>
 

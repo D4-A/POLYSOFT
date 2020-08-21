@@ -26,19 +26,16 @@
 	    @csrf
 	    <div class="form-group">
 		<label>Consulation ID</label>
-		<input class="form-control" name="consultation_id" placeholder="Consultation ID">
+		<input class="form-control" name="consultation_id" placeholder="Consultation ID" required>
 		<label>Nom</label>
-		<input class="form-control" name="nom" placeholder="User examen">
+		<input class="form-control" name="nom" placeholder="User examen" required>
 		<label>files to upload </label>
 		<input type="file" name="files[]" id="file" required multiple>
-
 	    </div>
 
 	    <button type="submit" class="btn btn-primary">
 		<span class="glyphicon glyphicon-save"> </span>
-
 		Enregistre</button>
-
 	</form>
 
 @endsection

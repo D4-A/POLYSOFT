@@ -21,9 +21,9 @@
 	    @csrf
 	    <div class="form-group">
 		<label>Fonction Name</label>
-		<input class="form-control" name="name" placeholder="Name fonction">
+		<input class="form-control" name="name" placeholder="Name fonction" required>
 		<label>Fonction Diplome</label>
-		<input class="form-control" name="diplome" placeholder="Name diplome">
+		<input class="form-control" name="diplome" placeholder="Name diplome" required>
 	    </div>
 
 	    <button type="submit" class="btn btn-primary">

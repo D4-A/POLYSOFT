@@ -27,12 +27,12 @@
 	    @method('PUT')
 	    <div class="form-group">
 		<label>Patient ID</label>
-		<input class="form-control" name="patient_id" value="{{$rendezvous->patient_id}}" placeholder="Patient ID">
+		<input class="form-control" name="patient_id" value="{{$rendezvous->patient_id}}" placeholder="Patient ID" required>
 		<label>Payement ID</label>
-		<input class="form-control" name="payement_id" value="{{$rendezvous->payement_id}}" placeholder="Payement ID">
+		<input class="form-control" name="payement_id" value="{{$rendezvous->payement_id}}" placeholder="Payement ID" required>
 
 		<label>Creneau ID</label>
-		<input class="form-control" name="creneau_id" value="{{$rendezvous->creneau_id}}" placeholder="Creneau ID">
+		<input class="form-control" name="creneau_id" value="{{$rendezvous->creneau_id}}" placeholder="Creneau ID" required>
 		<label>Description</label>
 		<input class="form-control" name="description" value="{{$rendezvous->description}}" placeholder="Creneau ID">
 		<label>Etat </label>

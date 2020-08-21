@@ -22,8 +22,8 @@
 	    @method('PUT')
 	    <div class="form-group">
 		<label>Service Name</label>
-		<input class="form-control" name="name" value="{{$fonction->name}}" placeholder="Name service">
-		<input class="form-control" name="diplome" value="{{$fonction->diplome}}" placeholder="Name fonction">
+		<input class="form-control" name="name" value="{{$fonction->name}}" placeholder="Name service" required>
+		<input class="form-control" name="diplome" value="{{$fonction->diplome}}" placeholder="Name fonction" required>
 	    </div>
 
 	    <button type="submit" class="btn btn-primary">

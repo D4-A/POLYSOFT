@@ -21,11 +21,11 @@
 	    @csrf
 	    <div class="form-group">
 		<label>Creneau Name</label>
-		<input class="form-control" name="name" placeholder="Name creneau">
+		<input class="form-control" name="name" placeholder="Name creneau" required>
 		<label>Creneau Start at</label>
-		<input type="datetime-local" class="form-control" name="start_time" placeholder="A partir de">
+		<input type="datetime-local" class="form-control" name="start_time" placeholder="A partir de" required>
 		<label>Creneau End at </label>
-		<input type="datetime-local" class="form-control" name="end_time" placeholder="jusqu'a">
+		<input type="datetime-local" class="form-control" name="end_time" placeholder="jusqu'a" required>
 		<label class="radio-inline">
 		    <input type="radio" name="ouvert" value="true" checked>Ouvert
 		</label>

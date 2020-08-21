@@ -20,7 +20,7 @@
 	    @csrf
 	    <div class="form-group">
 		<label>Service Name</label>
-		<input class="form-control" name="name" placeholder="Name service">
+		<input class="form-control" name="name" placeholder="Name service" required>
 	    </div>
 
 	    <button type="submit" class="btn btn-primary">

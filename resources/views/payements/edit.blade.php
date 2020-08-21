@@ -23,10 +23,10 @@
 	    <div class="form-group">
 
 		<label>Patient ID</label>
-		<input class="form-control" name="patient_id" value="{{$payement->patient_id}}" placeholder="Nom payement">
+		<input class="form-control" name="patient_id" value="{{$payement->patient_id}}" placeholder="Nom payement" required>
 
 		<label>Type_Payement ID</label>
-		<select name="type_payement_id" id="type_payement_id" class="form-control">
+		<select name="type_payement_id" id="type_payement_id" class="form-control" required>
                     <option placeholder="" value="{{$type_payement->id}}">
 			{{$type_payement->name}}</option>
 

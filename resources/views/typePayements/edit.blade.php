@@ -22,8 +22,8 @@
 	    @method('PUT')
 	    <div class="form-group">
 		<label>Service Name</label>
-		<input class="form-control" name="name" value="{{$typePayement->name}}" placeholder="Name service">
-		<input class="form-control" name="montant" value="{{$typePayement->montant}}" placeholder="Name typePayement">
+		<input class="form-control" name="name" value="{{$typePayement->name}}" placeholder="Name service" required>
+		<input class="form-control" name="montant" value="{{$typePayement->montant}}" placeholder="Name typePayement" required>
 		    </div>
 		    
 		    <button type="submit" class="btn btn-primary">

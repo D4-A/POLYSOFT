@@ -26,25 +26,25 @@
 	    @csrf
 	    <div class="form-group">
 		<label>Patient  </label>
-		<input class="form-control" name="patient_id" placeholder="Patient Id">
+		<input class="form-control" name="patient_id" placeholder="Patient Id" required>
 		<label> Payement</label>
-		<input class="form-control" name="payement_id" placeholder="Payement">
+		<input class="form-control" name="payement_id" placeholder="Payement" required>
 		<label> Motif</label>
-		<input class="form-control" name="motif" placeholder="Motif">
+		<input class="form-control" name="motif" placeholder="Motif" required>
 		<label>Antecedent</label>
-		<input class="form-control" name="antecedent" placeholder="Maladie deja infecte">
+		<input class="form-control" name="antecedent" placeholder="Maladie deja infecte" required>
 		<label>Motif de consulation </label>
-		<input class="form-control" name="motif" placeholder="Motif de consultation">
+		<input class="form-control" name="motif" placeholder="Motif de consultation" required>
 		<label>Historique de la maladie</label>
-		<input class="form-control" name="historique" placeholder="Historique de la maladie">
+		<input class="form-control" name="historique" placeholder="Historique de la maladie" required>
 		<label>Examen Physique</label>
-		<input class="form-control" name="examen_physique" placeholder="Examen Physique">
+		<input class="form-control" name="examen_physique" placeholder="Examen Physique" required>
 		<label>Hypothese diagnostic </label>
-		<input class="form-control" name="hypothese_dia" placeholder="Hypothese dignostic">
+		<input class="form-control" name="hypothese_dia" placeholder="Hypothese dignostic" required>
 		<label>Examen complentaire</label>
-		<input class="form-control" name="examen_compl" placeholder="Examen complentaire">
+		<input class="form-control" name="examen_compl" placeholder="Examen complentaire" required>
 		<label>Taitement </label>
-		<input class="form-control" name="traitement" placeholder="Traitement">
+		<input class="form-control" name="traitement" placeholder="Traitement" required>
 	    </div>
 
 	    <button type="submit" class="btn btn-primary">

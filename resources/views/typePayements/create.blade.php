@@ -21,9 +21,9 @@
 	    @csrf
 	    <div class="form-group">
 		<label>TypePayement Name</label>
-		<input class="form-control" name="name" placeholder="Name typePayement">
+		<input class="form-control" name="name" placeholder="Name typePayement" required>
 		<label>TypePayement Montant</label>
-		<input class="form-control" name="montant" placeholder="montant">
+		<input class="form-control" name="montant" placeholder="montant" required>
 		    </div>
 		    
 		    <button type="submit" class="btn btn-primary">
