@@ -29,7 +29,6 @@
 		    <option value="">sectionne le Genre</option>
                     <option value="Masculin">Masculin</option>
 		    <option value="Feminin">Feminin</option>
-		    <option value="No Precise">No Precise</option>
                 </select>
 		<label>Annee de Naissance </label>
 		<input class="form-control" name="ans_naiss" placeholder="Annee de naissance du patient" required>
