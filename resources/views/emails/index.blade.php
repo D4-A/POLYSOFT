@@ -13,13 +13,13 @@
 
 	<div class="row">
 	    <div class="col-lg-12">
-		<h1 class="page-header">Email</h1>
+		<h1 class="page-header">Emails</h1>
 	    </div>
 	</div><!--/.row-->
 	<a href="{{url('/emails/create')}}">
 	    <button type="submit"  class="btn btn-success">
-		<span class="glyphicon glyphicon-plus"></span>
-		Nouveau Email
+		<span class="glyphicon glyphicon-send"></span>
+		Envoye un Email
 
 	    </button>
 	</a>

@@ -14,7 +14,7 @@
 
 	<div class="row">
 	    <div class="col-lg-12">
-		<h1 class="page-header">Upload an Examen</h1>
+		<h1 class="page-header">Ajouter un examen</h1>
 	    </div>
 	</div><!--/.row-->
 	@if ($message = Session::get('error'))
@@ -27,9 +27,9 @@
 	    <div class="form-group">
 		<label>Consulation ID</label>
 		<input class="form-control" name="consultation_id" placeholder="Consultation ID" required>
-		<label>Nom</label>
+		<label>Nom de l'examen</label>
 		<input class="form-control" name="nom" placeholder="User examen" required>
-		<label>files to upload </label>
+		<label>fichiers a ajouter</label>
 		<input type="file" name="files[]" id="file" required multiple>
 	    </div>
 

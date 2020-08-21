@@ -5,7 +5,7 @@
 	<li><a href="{{url('/payements')}}"><em class="fa fa-money">&nbsp;</em> Payement</a></li>
 	<li><a href="{{url('/consultations')}}"><em class="fa fa-hospital-o">&nbsp;</em> Consultations</a></li>
 	<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
-	    <em class="fa fa-plus">&nbsp;</em> Autres resources <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+	    <em class="fa fa-plus">&nbsp;</em> Autres resources <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"></span>
 	</a>
 	<ul class="children collapse" id="sub-item-1">
 	    <li><a class="" href="{{url('/services')}}">

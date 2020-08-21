@@ -13,7 +13,7 @@
 
 	<div class="row">
 	    <div class="col-lg-12">
-		<h1 class="page-header">Examens upload</h1>
+		<h1 class="page-header">Examens Ajoutes</h1>
 	    </div>
 	</div><!--/.row-->
 	@canany(['isLaborant','isDoctor','isAdmin'])

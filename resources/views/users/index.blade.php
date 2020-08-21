@@ -14,14 +14,14 @@
 
 	<div class="row">
 	    <div class="col-lg-12">
-		<h1 class="page-header">Users</h1>
+		<h1 class="page-header">Liste des utilisateurs</h1>
 	    </div>
 	</div><!--/.row-->
 	@can('isAdmin')
 	<a href="{{url('/users/create')}}">
 	    <button type="submit"  class="btn btn-success">
 		<span class="glyphicon glyphicon-plus"></span>
-		Nouveau User
+		Nouveau utilisateur
 
 	    </button>
 	</a>

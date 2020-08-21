@@ -13,7 +13,7 @@
 
 	<div class="row">
 	    <div class="col-lg-12">
-		<h1 class="page-header">Add Users</h1>
+		<h1 class="page-header">Ajout d'un utilisateur</h1>
 	    </div>
 	</div><!--/.row-->
 	<form role="form" action="{{url('users')}}" method="post">
