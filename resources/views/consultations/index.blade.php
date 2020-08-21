@@ -51,7 +51,9 @@
 			    <th>Hypothese diagnostique </th>
 			    <th>Examen compl </th>
 			    <th>Traitement </th>
+				@canany(['isAdmin','isDoctor','isInf','isLaborant'])
 			    <th>Action</th>
+				@endcan
 			</tr>
 
 		    </thead>
