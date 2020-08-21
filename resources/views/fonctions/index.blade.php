@@ -21,7 +21,7 @@
 	<a href="{{url('/fonctions/create')}}">
 	    <button type="submit"  class="btn btn-success">
 		<span class="glyphicon glyphicon-plus"></span>
-		Nouveau service
+		Nouveau fonction
 
 	    </button>
 	</a>

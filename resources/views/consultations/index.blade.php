@@ -10,7 +10,7 @@
 			<li class="active">Consultations</li>
 		    </ol>
 		</div><!--/.row-->
-		
+
 		<div class="row">
 		    <div class="col-lg-12">
 			<h1 class="page-header">Liste des Consultations</h1>
@@ -21,7 +21,7 @@
 		    <button type="submit"  class="btn btn-success">
 			<span class="glyphicon glyphicon-plus"></span>
 			Nouveau Consultation
-			
+
 		    </button>
 		</a>
 		@endcan
@@ -37,11 +37,11 @@
 	    <table class="table" id="table">
 
 		    <thead>
-			
+
 			<tr>
 
 			    <th>ID </th>
-			    <th>User Name </th>
+			    <th>Dr Name </th>
 			    <th>Patient Name</th>
 			    <th>ID Payement</th>
 			    <th>Motif</th>
@@ -73,32 +73,46 @@
 			    <td> <?= $consultation->traitement; ?></td>
 			    @canany(['isAdmin','isDoctor','isInf'])
 			    <td>
+				@endcan
+				@canany(['isAdmin','isDoctor','isInf','isLaborant'])
+				@can('isLaborant')
+				<td>
+				@endcan
 				<a href="consultations/show/{{$consultation->id}}">
-				    
+
 				    <button type="submit" class="btn btn-sm btn-primary">
-					<span class="glyphicon glyphicon-show"> Show</span>   
+					<span class="glyphicon glyphicon-show"> Show</span>
 				    </button>
 
 				</a>
+				@can('isLaborant')
+				<td>
+				@endcan
+				@endcan
+				@canany(['isAdmin','isDoctor','isInf'])
 				<a href="consultations/edit/{{$consultation->id}}">
-				    
+
 				    <button type="submit" class="btn btn-sm btn-primary">
-					<span class="glyphicon glyphicon-edit"> Edit</span>   
+					<span class="glyphicon glyphicon-edit"> Edit</span>
 				    </button>
 
 				</a>
-				
+				@endcan
+
+				@canany(['isAdmin','isDoctor','isInf'])
 				<form action="consultations/destroy/{{$consultation->id}}" method="post">
 				    @csrf
 				    <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
-					<span class="glyphicon glyphicon-trash"> Delete</span> 
+					<span class="glyphicon glyphicon-trash"> Delete</span>
 				    </button>
-				</form>                        
+				</form>
+				@endcan
+				@canany(['isAdmin','isDoctor','isInf'])
                             </td>
 			    @endcan
 			</tr>
 			<?php endforeach; ?>
 		    </tbody>
-		    
+
 		</table>
 @endsection

@@ -29,7 +29,7 @@
 	<!-- search feature begin here -->
 	<select class="selectpicker" id="search">
 	    <option value="0"> ID</option>
-	    <option value="3"> Nom Personel</option>
+	    <option value="1"> Nom Personel</option>
 
 	</select>
 	<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
@@ -41,10 +41,10 @@
 		<tr>
 
 		    <th>ID </th>
-		    <th>Service</th>
-		    <th>Fonction</th>
-		    <th>Nom </th>
+			<th>Nom </th>
 		    <th>Prenom </th>
+			<th>Fonction</th>
+		    <th>Service</th>
 		    <th>Genre </th>
 		    <th>Ans Naiss </th>
 		    <th>Adresse </th>
@@ -61,10 +61,10 @@
 		<?php foreach($users as $user): ?>
 		<tr>
 		    <td> <?= $user->id; ?></td>
-		    <td> <?= $user->serv_name; ?></td>
-		    <td> <?= $user->fonct_name; ?></td>
-		    <td> <?= $user->name; ?></td>
+			<td> <?= $user->name; ?></td>
 		    <td> <?= $user->prenom; ?></td>
+			<td> <?= $user->fonct_name; ?></td>
+		    <td> <?= $user->serv_name; ?></td>
 		    <td> <?= $user->genre; ?></td>
 		    <td> <?= $user->ans_naiss; ?></td>
 		    <td> <?= $user->adresse; ?></td>

@@ -10,7 +10,7 @@
 		<li class="active">Users</li>
 	    </ol>
 	</div><!--/.row-->
-	
+
 	<div class="row">
 	    <div class="col-lg-12">
 		<h1 class="page-header">Add Users</h1>
@@ -26,30 +26,30 @@
 		<label>Service  </label>
 		<select name="service_id" id="service_id" class="form-control">
                     <option placeholder="" value="">Service</option>
-		    
+
                     @foreach($services as $service){
 			<option value="{{$service->id}}">{{$service->name}}</option>
 			}
 		    @endforeach
                 </select>
-		
+
 		<label>Fonction Occupe </label>
 		<select name="fonction_id" id="fonction_id" class="form-control">
                     <option placeholder="" value="">Fonction</option>
-		    
+
                     @foreach($fonctions as $fonction){
 			<option value="{{$fonction->id}}">{{$fonction->name}}</option>
 			}
 		    @endforeach
                 </select>
-		
+
 		<label>Genre </label>
 		<select name="genre" id="genre" class="form-control">
 		    <option value=""> Genre </option>
-		    <option value="Masculin"> Musculin </option>
+		    <option value="Masculin"> Masculin </option>
 		    <option value="Feminin"> Feminin </option>
 		</select>
-		<label>Ans de Naissance </label>
+		<label>Annee de Naissance </label>
 		<input class="form-control" name="ans_naiss" placeholder="Ans_Naissy du user">
 		<label>Adresse </label>
 		<input class="form-control" name="adresse" placeholder="Adresse du user">
@@ -60,12 +60,12 @@
 		<label>Carte d'identite  </label>
 		<input class="form-control" name="cni" placeholder="Cni du user">
 		    </div>
-		    
+
 		    <button type="submit" class="btn btn-primary">
 			<span class="glyphicon glyphicon-save"> </span>
-			
+
 			Enregistre</button>
-		    
+
 	</form>
 
 @endsection
