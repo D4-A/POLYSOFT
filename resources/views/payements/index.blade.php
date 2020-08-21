@@ -13,7 +13,7 @@
 		
 		<div class="row">
 		    <div class="col-lg-12">
-			<h1 class="page-header">Payements</h1>
+			<h1 class="page-header">Liste des payements</h1>
 		    </div>
 		</div><!--/.row-->
 		@canany(['isAdmin','isCaissier'])

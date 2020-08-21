@@ -14,7 +14,7 @@
 
 	<div class="row">
 	    <div class="col-lg-12">
-		<h1 class="page-header">Patients</h1>
+		<h1 class="page-header">Liste des patients</h1>
 	    </div>
 	</div><!--/.row-->
 	@canany(['isAdmin','isRecept','isInf'])

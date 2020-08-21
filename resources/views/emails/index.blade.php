@@ -26,9 +26,7 @@
 	<!-- search feature begin here -->
 	<select class="selectpicker" id="search">
 	    <option value="0"> ID</option>
-	    <option value="1"> ID Sender</option>
-	    <option value="2"> ID Receiver</option>
-
+	    <option value="1"> Cons ID</option>
 	</select>
 	<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
 
@@ -37,11 +35,11 @@
 	    <thead>
 		<tr>
 		    <th>ID </th>
+		    <th>Consultation ID</th>	
 		    <th>Personel </th>
-		    <th>Consultation ID</th>
-		    <th>Subject</th>
-		    <th>Body </th>
-		    <th>filename </th>
+		    <th>Sujet</th>
+		    <th>Message </th>
+		    <th>fichiers </th>
 		    <th>Action</th>
 		</tr>
 	    </thead>
@@ -49,13 +47,13 @@
 		<?php foreach($emails as $email): ?>
 		<tr>
 		    <td> <?= $email->id; ?></td>
-		    <td> <?= $email->name; ?></td>
-		    <td> @if ($email->consultation_id === null)
+		     <td> @if ($email->consultation_id === null)
 			<?= 'none';?>
 		    @else
 			<?= $email->consultation_id;?>
 		    @endif
 		    </td>
+		    <td> <?= $email->name; ?></td>
 		    <td> <?= $email->subject; ?></td>
 		    <td> <?= $email->body; ?></td>
 		    <td> @if ($email->filename === null)
