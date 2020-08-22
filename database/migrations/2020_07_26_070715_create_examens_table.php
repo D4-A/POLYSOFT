@@ -17,7 +17,7 @@ class CreateExamensTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('consultation_id');
-	    $table->unsignedBigInteger('payment_id');
+	    $table->unsignedBigInteger('payment_id')->unique();
             $table->string('nom_examen');
             $table->string('files');
             $table->timestamps();

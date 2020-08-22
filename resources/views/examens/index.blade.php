@@ -42,11 +42,11 @@
 		<tr>
 
 		    <th>ID </th>
-		    <th>Uploaded by User</th>
+		    <th>Nom Examen</th>
+		    <th>Laborantin</th>
 		    <th>ID Consulation</th>
 		    <th>ID Payement</th>
-		    <th>Nom Examen</th>
-		    <th>files </th>
+		    <th>fichiers </th>
 		    <th>Action</th>
 		</tr>
 
@@ -55,10 +55,10 @@
 		<?php foreach($examens as $examen): ?>
 		<tr>
 		    <td> <?= $examen->id; ?></td>
+		    <td> <?= $examen->nom_examen; ?></td>
 		    <td> <?= $examen->user_name; ?></td>
 		    <td> <?= $examen->consultation_id; ?></td>
 		    <td> <?= $examen->payment_id; ?></td>
-		    <td> <?= $examen->nom_examen; ?></td>
 		    <td> <?= $examen->files; ?></td>
 
 		    <td>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Examen;
 use App\User;
 use App\Consultation;
+use App\rendezVous;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -54,10 +55,13 @@ class ExamensController extends Controller
         $files = $request->file('files');
         $cons_id = $request->get('consultation_id');
 	$payment_id = $request->get('payment_id');
-	$chech_if_pay_used = DB::table('payements')
-	->where('id', $payment_id)->first();
-
-	if($chech_if_pay_used !== null){
+	$chech_if_pay_used_in_cons = Consultation::where('payement_id',$request->payment_id)
+                                  ->first();
+	$chech_if_pay_used_in_rendzvous = rendezVous::where('payement_id',$request->payment_id)
+                                  ->first();
+	
+	if(($chech_if_pay_used_in_cons !== null) ||
+	   ($chech_if_pay_used_in_rendzvous !== null)){
 	   return back()->with('error', 'La facture a ete utilise');
 	}	  
 
@@ -87,6 +91,7 @@ class ExamensController extends Controller
                 array(
                     'user_id' => $user_id,
                     'consultation_id' => $cons_id,
+		    'payment_id' => $payment_id,
                     'nom_examen' => $nomExamen,
                     'files' => $pathjoined
                 ));
@@ -94,8 +99,10 @@ class ExamensController extends Controller
                  switch($e->errorInfo[1]){
             case 1452:
                 return back()->with('error','La consulation n\'existe pas');
+	    case 1062:
+	        return back()->with('error', 'La facture a ete utilise');
             default:
-                return back()->with('error','Une erreur est survenu');
+                return back()->with('error','Une erreur est survenu: '. $e->getMessage());
                  }
             }
             foreach($paths as $path){
