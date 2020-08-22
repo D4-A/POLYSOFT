@@ -25,10 +25,12 @@
 	<form role="form" action="{{url('examens')}}" enctype="multipart/form-data" method="post">
 	    @csrf
 	    <div class="form-group">
-		<label>Consulation ID</label>
-		<input class="form-control" name="consultation_id" placeholder="Consultation ID" required>
 		<label>Nom de l'examen</label>
 		<input class="form-control" name="nom" placeholder="User examen" required>
+		<label>Consulation ID</label>
+		<input class="form-control" name="consultation_id" placeholder="Consultation ID" required>
+		<label>Payement ID</label>
+		<input class="form-control" name="payment_id" placeholder="Payement ID" required>
 		<label>fichiers a ajouter</label>
 		<input type="file" name="files[]" id="file" required multiple>
 	    </div>

@@ -44,6 +44,7 @@
 		    <th>ID </th>
 		    <th>Uploaded by User</th>
 		    <th>ID Consulation</th>
+		    <th>ID Payement</th>
 		    <th>Nom Examen</th>
 		    <th>files </th>
 		    <th>Action</th>
@@ -56,6 +57,7 @@
 		    <td> <?= $examen->id; ?></td>
 		    <td> <?= $examen->user_name; ?></td>
 		    <td> <?= $examen->consultation_id; ?></td>
+		    <td> <?= $examen->payment_id; ?></td>
 		    <td> <?= $examen->nom_examen; ?></td>
 		    <td> <?= $examen->files; ?></td>
 

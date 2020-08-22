@@ -25,7 +25,8 @@ class ExamensController extends Controller
     {
         $examens = DB::table('examens')
                  ->join('users','users.id','examens.user_id')
-                 ->select('users.name as user_name','examens.*')
+		 ->join('payements', 'payements.id','examens.payment_id')
+                 ->select('payements.id as payment_id','users.name as user_name','examens.*')
                  ->get();
         return view('examens/index', [
             'examens' => $examens
@@ -52,7 +53,15 @@ class ExamensController extends Controller
     {
         $files = $request->file('files');
         $cons_id = $request->get('consultation_id');
-        $user_id = Auth::id();
+	$payment_id = $request->get('payment_id');
+	$chech_if_pay_used = DB::table('payements')
+	->where('id', $payment_id)->first();
+
+	if($chech_if_pay_used !== null){
+	   return back()->with('error', 'La facture a ete utilise');
+	}	  
+
+	$user_id = Auth::id();
         $nomExamen = $request->get('nom');
         $patient_id = DB::table('consultations')
                     ->where('id',$cons_id)->value('patient_id');
