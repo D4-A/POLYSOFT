@@ -14,6 +14,7 @@
 				    </li>
 				    <li class="dropdown"><a href="{{url('/profile')}}">
 					<em class="fa fa-user"></em>
+					{{Auth::user()->name}}
 				    </a>
 				   
 				    </li>
