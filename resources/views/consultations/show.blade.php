@@ -1,5 +1,5 @@
 @extends('templates.default_layout')
-@section('title', 'Afficher une consulation')
+@section('title', 'AFFICHER CONSULTATION')
 @section('content')
 
     <!DOCTYPE html>
