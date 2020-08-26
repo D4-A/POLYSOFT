@@ -1,5 +1,5 @@
 @extends('templates.default_layout')
-@section('title', 'Mon profile')
+@section('title', 'MON PROFILE')
 @section('content')
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 	<div class="row">
