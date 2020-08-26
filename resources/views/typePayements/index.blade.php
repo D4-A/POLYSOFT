@@ -1,5 +1,5 @@
 @extends('templates.default_layout')
-@section('title', 'liste des payements')
+@section('title', 'LISTE TYPE-PAIEMENT')
 @section('content')
 
 
