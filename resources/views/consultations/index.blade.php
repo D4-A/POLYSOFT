@@ -1,13 +1,15 @@
 @extends('templates.default_layout')
 @section('title', 'LISTE DES CONSULTATIONS')
 @section('content')
-	    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
-		    <ol class="breadcrumb">
-			<li><a href="#">
-			    <em class="fa fa-hospital-o"></em>
-			</a></li>
-			<li class="active">Consultations</li>
+		    <ol class="breadcrumb" style="height:50px;padding-top:15px;">
+				<li>
+					<a href="#">
+						<em class="fa fa-hospital-o"></em>
+					</a>
+				</li>
+				<li class="active">Consultations</li>
 		    </ol>
 		</div><!--/.row-->
 
@@ -15,104 +17,111 @@
 		    <div class="col-lg-12">
 			<h1 class="page-header">Liste des Consultations</h1>
 		    </div>
+		</div><!--/.row--><br>
+		
+		<div class="row col-lg-12" style="padding-bottom:30px;">
+			<div class="col-lg-6 text-left" style="padding:0;">
+			@canany(['isAdmin','isDoctor','isInf'])
+			<a href="{{url('/consultations/create')}}">
+				<button type="submit"  class="btn btn-success">
+					<span class="glyphicon glyphicon-plus" style="padding-right:8px;"></span>Nouveau Consultation
+				</button>
+			</a>
+			@endcan
+			</div>
+			<!-- search feature begin here -->
+			<div class="col-lg-6 text-right" style="padding:0;">
+				<div class="col-lg-4" style="padding-right:10px;">
+					<h5 class="text-right"><strong>CONSULTATION PAR</strong></h5>
+				</div>
+				<div class="col-lg-3" style="padding:0;">
+					<select class="form-control" id="search">
+						<option value="0"> ID</option>
+						<option value="1"> Nom_Medecin</option>
+						<option value="2"> Nom_Patient</option>
+					</select>
+				</div>
+				<div class="col-lg-5" style="padding-left:5px;">
+					<input style="height:34px;" class="input form-control" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
+				</div>
+			</div>
+			<!-- search feature end here -->
 		</div><!--/.row-->
-		@canany(['isAdmin','isDoctor','isInf'])
-		<a href="{{url('/consultations/create')}}">
-		    <button type="submit"  class="btn btn-success">
-			<span class="glyphicon glyphicon-plus"></span>
-			Nouveau Consultation
 
-		    </button>
-		</a>
-		@endcan
-	    <!-- search feature begin here -->
-	    <select class="selectpicker" id="search">
-		<option value="0"> ID</option>
-		<option value="1"> Nom medecin</option>
-		<option value="2"> Nom patient</option>
-	    </select>
-	    <input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
+	    <table class="table table-condensed table-striped table-bordered" id="table">
 
-	    <!-- search feature end here -->
-	    <table class="table" id="table">
-
-		    <thead>
-
-			<tr>
-
-			    <th>ID </th>
-			    <th>Dr Name </th>
-			    <th>Patient Name</th>
-			    <th>ID Payement</th>
-			    <th>Motif</th>
-			    <th>Antecedent </th>
-			    <th>Historique </th>
-			    <th>Examen Physique </th>
-			    <th>Hypothese diagnostique </th>
-			    <th>Examen compl </th>
-			    <th>Traitement </th>
-				@canany(['isAdmin','isDoctor','isInf','isLaborant'])
-			    <th>Action</th>
-				@endcan
-			</tr>
+			<thead style="background-color:#ccc;">
+				<tr>
+					<th scope="col" style="text-align:center;">ID </th>
+					<th scope="col">Nom_Dr</th>
+					<th scope="col">Nom_Patient</th>
+					<!--<th scope="col">ID_Paiement</th>-->
+					<th scope="col">Motif</th>
+					<th scope="col">Antécedent </th>
+					<th scope="col">Historique </th>
+					<th scope="col">Exam_Physique </th>
+					<th scope="col">Hyp_Diagno </th>
+					<th scope="col">Exam_Compl </th>
+					<th scope="col">Traitement </th>
+					@canany(['isAdmin','isDoctor','isInf','isLaborant'])
+					<th scope="col">Actions</th>
+					@endcan
+				</tr>
 
 		    </thead>
 		    <tbody>
-			<?php foreach($consultations as $consultation): ?>
-			<tr>
-			    <td> <?= $consultation->id; ?></td>
-			    <td> <?= $consultation->user_name; ?></td>
-			    <td> <?= $consultation->patient_name; ?></td>
-			    <td> <?= $consultation->payement_id; ?></td>
-			    <td> <?= $consultation->motif; ?></td>
-			    <td> <?= $consultation->antecedent; ?></td>
-			    <td> <?= $consultation->historique; ?></td>
-			    <td> <?= $consultation->examen_physique; ?></td>
-			    <td> <?= $consultation->hypothese_dia; ?></td>
-			    <td> <?= $consultation->examen_compl; ?></td>
-			    <td> <?= $consultation->traitement; ?></td>
-			    @canany(['isAdmin','isDoctor','isInf'])
-			    <td>
-				@endcan
-				@canany(['isAdmin','isDoctor','isInf','isLaborant'])
-				@can('isLaborant')
-				<td>
-				@endcan
-				<a href="consultations/show/{{$consultation->id}}">
+				<?php foreach($consultations as $consultation): ?>
+				<tr>
+					<th scope="row" style="text-align:center;"> <?= $consultation->id; ?></th>
+					<td> <?= $consultation->user_name; ?></td>
+					<td> <?= $consultation->patient_name; ?></td>
+					<td> <?= $consultation->motif; ?></td>
+					<td> <?= $consultation->antecedent; ?></td>
+					<td> <?= $consultation->historique; ?></td>
+					<td> <?= $consultation->examen_physique; ?></td>
+					<td> <?= $consultation->hypothese_dia; ?></td>
+					<td> <?= $consultation->examen_compl; ?></td>
+					<td> <?= $consultation->traitement; ?></td>
+					@canany(['isAdmin','isDoctor','isInf'])
+					<td style="display:flex;">
+					@endcan
+					@canany(['isAdmin','isDoctor','isInf','isLaborant'])
+						@can('isLaborant')
+						
+						@endcan
+						<a href="consultations/show/{{$consultation->id}}" style="padding-right:10px;">
+							<button type="submit" class="btn btn-sm btn-primary">
+								<span class="glyphicon glyphicon-eye-open"> </span> Show
+							</button>
+						</a>
+						@can('isLaborant')
+						
+						@endcan
+					@endcan
 
-				    <button type="submit" class="btn btn-sm btn-primary">
-					<span class="glyphicon glyphicon-show"> Show</span>
-				    </button>
+					@canany(['isAdmin','isDoctor','isInf'])
+						<a href="consultations/edit/{{$consultation->id}}" style="padding-right:10px;">
+							<button type="submit" class="btn btn-sm btn-primary">
+								<span class="glyphicon glyphicon-edit"> </span> Edit
+							</button>
+						</a>
+					@endcan
 
-				</a>
-				@can('isLaborant')
-				<td>
-				@endcan
-				@endcan
-				@canany(['isAdmin','isDoctor','isInf'])
-				<a href="consultations/edit/{{$consultation->id}}">
-
-				    <button type="submit" class="btn btn-sm btn-primary">
-					<span class="glyphicon glyphicon-edit"> Edit</span>
-				    </button>
-
-				</a>
-				@endcan
-
-				@canany(['isAdmin','isDoctor','isInf'])
-				<form action="consultations/destroy/{{$consultation->id}}" method="post">
-				    @csrf
-				    <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
-					<span class="glyphicon glyphicon-trash"> Delete</span>
-				    </button>
-				</form>
-				@endcan
-				@canany(['isAdmin','isDoctor','isInf'])
-                            </td>
-			    @endcan
-			</tr>
-			<?php endforeach; ?>
+					@canany(['isAdmin','isDoctor','isInf'])
+					<form action="consultations/destroy/{{$consultation->id}}" method="post">
+						@csrf
+						<button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
+							<span class="glyphicon glyphicon-trash"> </span> Delete
+						</button>
+					</form>
+					@endcan
+					@canany(['isAdmin','isDoctor','isInf'])
+					</td>
+					@endcan
+				</tr>
+				<?php endforeach; ?>
 		    </tbody>
 
 		</table>
+	</div>
 @endsection

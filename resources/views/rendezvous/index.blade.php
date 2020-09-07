@@ -3,89 +3,99 @@
 @section('content')
 
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-	<div class="row">
-	    <ol class="breadcrumb">
-		<li><a href="#">
-		    <em class="fa fa-calendar"></em>
-		</a></li>
-		<li class="active">Rendez vous</li>
-	    </ol>
-	</div><!--/.row-->
+		<div class="row">
+			<ol class="breadcrumb" style="height:50px;padding-top:15px;">
+				<li>
+					<a href="#">
+						<em class="fa fa-calendar"></em>
+					</a>
+				</li>
+				<li class="active">Rendez-Vous</li>
+			</ol>
+		</div><!--/.row-->
 
-	<div class="row">
-	    <div class="col-lg-12">
-		<h1 class="page-header">Rendez-vous</h1>
-	    </div>
-        </div><!--/.row-->
-	@canany(['isAdmin','isRecept'])
-	<a href="{{url('/rendezVous/create')}}">
-            <button type="submit"  class="btn btn-success">
-		<span class="glyphicon glyphicon-plus"></span>
-		Nouveau rendez-vous
-	    </button>
-	</a>
-	@endcan
-	<!-- search feature begin here -->
-	<select class="selectpicker" id="search">
-	    <option value="0"> ID</option>
-	    <option value="1"> Patient Name</option>
-	    <option value="2"> Docteur Name</option>
-	    <option value="5"> Status</option>
-	</select>
-	<input class="input" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
+		<div class="row">
+			<div class="col-lg-12">
+			<h1 class="page-header">Liste des Rendez-Vous</h1>
+			</div>
+		</div><!--/.row--><br>
 
-	<!-- search feature end here -->
-	<table class="table" id="table">
-            <thead>
-		<tr>
-		    <th>Rendez-vous ID</th>
-		    <th>patient Name</th>
-		    <th>Docteur Name</th>
-		    <th>creneau ID</th>
-		    <th>Description</th>
-		    <th>Etat</th>
-		    <th>Action</th>
-		</tr>
+		<div class="row col-lg-12" style="padding-bottom:30px;">
+			<div class="col-lg-4 text-left" style="padding:0;">
+				@canany(['isAdmin','isRecept'])
+				<a href="{{url('/rendezVous/create')}}">
+					<button type="submit"  class="btn btn-success">
+						<span class="glyphicon glyphicon-plus" style="padding-right:8px;"></span>Nouveau Rendez-Vous
+					</button>
+				</a>
+				@endcan
+			</div>
+			<!-- search feature begin here -->
+			<div class="col-lg-6 text-right" style="padding:0;">
+				<div class="col-lg-4" style="padding-right:10px;">
+					<h5 class="text-right"><strong>RE-VOUS PAR</strong></h5>
+				</div>
+				<div class="col-lg-3" style="padding:0;">
+					<select class="form-control" id="search">
+						<option value="0"> ID</option>
+						<option value="1"> Nom_Patient</option>
+						<option value="2"> Nom_Docteur</option>
+						<option value="5"> Status</option>
+					</select>
+				</div>
+				<div class="col-lg-5" style="padding-left:5px;">
+					<input style="height:34px;" class="input form-control" type="text" id="input" onkeyup="incrementalsearch('input','table')" placeholder="Search regex">
+				</div>
+			</div>
+			<!-- search feature end here -->
+		</div><!--/.row-->
 
+		<table class="table table-striped" id="table" style="width:900px;">
+
+		    <thead style="background-color:#ccc;">
+				<tr>
+					<th scope="col">Re-V ID</th>
+					<th scope="col">Nom_Patient</th>
+					<th scope="col">Nom_Docteur</th>
+					<th scope="col">CréneauID</th>
+					<th scope="col">Déscription</th>
+					<th scope="col">Etat</th>
+					<th scope="col" class="text-center">Actions</th>
+				</tr>
             </thead>
             <tbody>
-		<?php foreach($rendezVous as $rendezvous): ?>
-		<tr>
-                    <td> <?= $rendezvous->id; ?></td>
-                    <td> <?= $rendezvous->pat_name; ?></td>
-		    <td> <?= $rendezvous->user_name; ?></td>
-		    <td> <?= $rendezvous->creneau_id; ?></td>
-		    <td> <?= $rendezvous->description; ?></td>
-		    <td> <?= $rendezvous->etat; ?></td>
-                    <td>
-			<a href="rendezVous/cons/{{$rendezvous->id}}">
+				<?php foreach($rendezVous as $rendezvous): ?>
+					<tr>
+						<th scope="row" style="text-align:center;"> <?= $rendezvous->id; ?></th>
+						<td> <?= $rendezvous->pat_name; ?></td>
+						<td> <?= $rendezvous->user_name; ?></td>
+						<td> <?= $rendezvous->creneau_id; ?></td>
+						<td> <?= $rendezvous->description; ?></td>
+						<td> <?= $rendezvous->etat; ?></td>
+						<td style="display:flex;">
+							<a href="rendezVous/cons/{{$rendezvous->id}}" style="padding-right:10px;">
+								<button type="submit" class="btn btn-sm btn-primary">
+									<span class="glyphicon glyphicon-eye-open" style="padding-right:8px;"> </span>Consulter
+								</button>
+							</a>
+							@canany(['isAdmin','isRecept'])
+							<a href="rendezVous/edit/{{$rendezvous->id}}" style="padding-right:10px;">
+								<button type="submit" class="btn btn-sm btn-primary">
+								<span class="glyphicon glyphicon-edit" style="padding-right:8px;"> </span>Edit
+								</button>
+							</a>
 
-			    <button type="submit" class="btn btn-sm btn-primary">
-				<span class="glyphicon glyphicon-show"> cons</span>
-			    </button>
-
-			</a>
-			@canany(['isAdmin','isRecept'])
-			<a href="rendezVous/edit/{{$rendezvous->id}}">
-
-			    <button type="submit" class="btn btn-sm btn-primary">
-				<span class="glyphicon glyphicon-edit"> Edit</span>
-			    </button>
-
-			</a>
-
-
-			<form action="rendezVous/destroy/{{$rendezvous->id}}" method="post">
-			    @csrf
-                            <button type="submit" class="btn btn-sm btn-danger">
-				<span class="glyphicon glyphicon-trash"> Delete</span>
-                            </button>
-			</form>
-			@endcan
-                    </td>
-		</tr>
-		<?php endforeach; ?>
+							<form action="rendezVous/destroy/{{$rendezvous->id}}" method="post">
+								@csrf
+								<button type="submit" class="btn btn-sm btn-danger">
+									<span class="glyphicon glyphicon-trash" style="padding-right:8px;"> </span>Delete
+								</button>
+							</form>
+							@endcan
+						</td>
+					</tr>
+				<?php endforeach; ?>
             </tbody>
-
         </table>
+	</div>
 @endsection

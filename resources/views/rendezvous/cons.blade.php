@@ -4,7 +4,7 @@
 
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 	<div class="row">
-	    <ol class="breadcrumb">
+	    <ol class="breadcrumb" style="height:50px;padding-top:15px;">
 		<li><a href="#">
 		    <em class="fa fa-hospital-o"></em>
 		</a></li>
