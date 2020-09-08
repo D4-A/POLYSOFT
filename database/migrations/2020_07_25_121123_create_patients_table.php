@@ -22,7 +22,7 @@ class CreatePatientsTable extends Migration
             $table->string('profession');
             $table->string('adresse');
             $table->string('tel')->unique();
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable();
             $table->string('cni')->unique();
             $table->timestamps();
         });

@@ -45,7 +45,6 @@ class PatientsController extends Controller
             'ans_naiss' => 'required',
             'profession' => 'required',
             'tel' => 'required',
-            'email' => 'required',
             'cni' => 'required',
             'adresse' => 'required'
          ]);
@@ -106,7 +105,6 @@ class PatientsController extends Controller
             'ans_naiss' => 'required',
             'profession' => 'required',
             'tel' => 'required',
-            'email' => 'required',
             'cni' => 'required',
             'adresse' => 'required'
          ]);

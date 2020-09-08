@@ -43,7 +43,7 @@
 					<label style="padding-left:10px;">Téléphone </label>
 					<input type="text" class="form-control" name="tel" placeholder="Téléphone du patient" required><br>
 					<label style="padding-left:10px;">Email </label>
-					<input type="email" class="form-control" name="email" placeholder="Email du patient" required><br>
+					<input type="email" class="form-control" name="email" placeholder="Email du patient"><br>
 					<label style="padding-left:10px;">CNI </label>
 					<input type="text" class="form-control" name="cni" placeholder="Numéro Carte_Identité du patient" required><br>
 				</div>

@@ -40,7 +40,7 @@
 				<label style="padding-left:10px;">Téléphone </label>
 				<input type="text" class="form-control" name="tel" value="{{$patient->tel}}" placeholder="Téléphone du patient" required><br>
 				<label style="padding-left:10px;">Email  </label>
-				<input type="email" class="form-control" name="email" value="{{$patient->email}}" placeholder="Email du patient" required><br>
+				<input type="email" class="form-control" name="email" value="{{$patient->email}}" placeholder="Email du patient" ><br>
 				<label style="padding-left:10px;">CNI  </label>
 				<input type="text" class="form-control" name="cni" value="{{$patient->cni}}" placeholder="Numéro Carte_Identité du patient" required><br>
 				</div>
