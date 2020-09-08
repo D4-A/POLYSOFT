@@ -71,7 +71,7 @@
 			<tbody>
 				<?php foreach($users as $user): ?>
 					<tr>
-						<th scope="row" style="text-align:center;"> <?= $user->id; ?></th>
+						<td scope="row" style="text-align:center;"> <?= $user->id; ?></td>
 						<td> <?= $user->name; ?></td>
 						<td> <?= $user->prenom; ?></td>
 						<td> <?= $user->fonct_name; ?></td>

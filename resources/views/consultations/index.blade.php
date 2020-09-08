@@ -72,7 +72,7 @@
 		    <tbody>
 				<?php foreach($consultations as $consultation): ?>
 				<tr>
-					<th scope="row" style="text-align:center;"> <?= $consultation->id; ?></th>
+					<td scope="row" style="text-align:center;"> <?= $consultation->id; ?></td>
 					<td> <?= $consultation->user_name; ?></td>
 					<td> <?= $consultation->patient_name; ?></td>
 					<td> <?= $consultation->motif; ?></td>

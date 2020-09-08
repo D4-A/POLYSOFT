@@ -62,8 +62,8 @@
 			<tbody>
 				<?php foreach($services as $service): ?>
 					<tr>
-						<th scope="row" style="text-align:center;"> <?= $service->id; ?></th>
-						<th scope="row"> <?= $service->name; ?></th>
+						<td scope="row" style="text-align:center;"> <?= $service->id; ?></td>
+						<td scope="row"> <?= $service->name; ?></td>
 						<td style="display:flex;">
 							<a href="services/edit/{{$service->id}}" style="padding-right:10px;">
 								@can('isAdmin')

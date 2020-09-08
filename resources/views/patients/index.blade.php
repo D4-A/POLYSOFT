@@ -72,7 +72,7 @@
 			<tbody>
 				<?php foreach($patients as $patient): ?>
 					<tr>
-						<th scope="row" style="text-align:center;"> <?= $patient->id; ?></th>
+						<td scope="row" style="text-align:center;"> <?= $patient->id; ?></td>
 						<td> <?= $patient->nom; ?></td>
 						<td> <?= $patient->prenom; ?></td>
 						<td> <?= $patient->genre; ?></td>

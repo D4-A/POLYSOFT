@@ -62,7 +62,7 @@
 			<tbody>
 				<?php foreach($emails as $email): ?>
 					<tr>
-						<th scope="row" style="text-align:center;"> <?= $email->id; ?></th>
+						<td scope="row" style="text-align:center;"> <?= $email->id; ?></td>
 						<td>
 							@if ($email->consultation_id === null)
 							<?= 'none';?>

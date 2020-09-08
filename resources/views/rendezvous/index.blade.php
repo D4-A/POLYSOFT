@@ -66,7 +66,7 @@
             <tbody>
 				<?php foreach($rendezVous as $rendezvous): ?>
 					<tr>
-						<th scope="row" style="text-align:center;"> <?= $rendezvous->id; ?></th>
+						<td scope="row" style="text-align:center;"> <?= $rendezvous->id; ?></td>
 						<td> <?= $rendezvous->pat_name; ?></td>
 						<td> <?= $rendezvous->user_name; ?></td>
 						<td> <?= $rendezvous->creneau_id; ?></td>

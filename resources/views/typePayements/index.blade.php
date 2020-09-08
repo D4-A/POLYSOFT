@@ -64,7 +64,7 @@
 			<tbody>
 				<?php foreach($typePayements as $typePayement): ?>
 					<tr>
-						<th scope="row" style="text-align:center;"> <?= $typePayement->id; ?></th>
+						<td scope="row" style="text-align:center;"> <?= $typePayement->id; ?></td>
 						<td> <?= $typePayement->name; ?></td>
 						<td> <?= $typePayement->montant; ?></td>
 						@canany(['isAdmin','isCaissier'])

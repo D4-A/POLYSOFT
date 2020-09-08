@@ -12,10 +12,10 @@ function incrementalsearch(inputname,tablename) {
     key = document.getElementById('search').value;
     
     input = document.getElementById(inputname,tablename);
+
     filter = input.value.toUpperCase();
     table = document.getElementById(tablename);
     tr = table.getElementsByTagName("tr");
-    
     for (i = 0; i < tr.length; i++) {
 	td = tr[i].getElementsByTagName("td")[key];
 	if (td) {

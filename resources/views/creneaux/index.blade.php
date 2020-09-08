@@ -65,7 +65,7 @@
 		    <tbody>
 				<?php foreach($creneaux as $creneau): ?>
 					<tr>
-						<th scope="row" style="text-align:center;"> <?= $creneau->id; ?></th>
+						<td scope="row" style="text-align:center;"> <?= $creneau->id; ?></td>
 						<td> <?= $creneau->user_name; ?></td>
 						<td> <?= $creneau->name; ?></td>
 						<td> <?= $creneau->start_time; ?></td>
