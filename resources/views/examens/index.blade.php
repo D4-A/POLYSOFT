@@ -66,7 +66,7 @@
 			<tbody>
 				<?php foreach($examens as $examen): ?>
 					<tr>
-						<th scope="row" style="text-align:center;"> <?= $examen->id; ?></th>
+						<td scope="row" style="text-align:center;"> <?= $examen->id; ?></td>
 						<td> <?= $examen->nom_examen; ?></td>
 						<td> <?= $examen->user_name; ?></td>
 						<td> <?= $examen->consultation_id; ?></td>

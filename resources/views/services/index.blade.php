@@ -59,31 +59,30 @@
 					@endcan
 				</tr>
 			</thead>
-			<tbody>
+				<tbody>
 				<?php foreach($services as $service): ?>
 					<tr>
-						<td scope="row" style="text-align:center;"> <?= $service->id; ?></td>
-						<td scope="row"> <?= $service->name; ?></td>
+						<td scope="row"> <?= $service->id; ?></td>
+						<td> <?= $service->name; ?></td>
+						@can('isAdmin')
 						<td style="display:flex;">
 							<a href="services/edit/{{$service->id}}" style="padding-right:10px;">
-								@can('isAdmin')
 								<button type="submit" class="btn btn-sm btn-primary">
-									<span class="glyphicon glyphicon-edit"> Edit</span>
+								<span class="glyphicon glyphicon-edit"> Edit</span>
 								</button>
-								@endcan
 							</a>
+
 							<form action="services/destroy/{{$service->id}}" method="post">
 								@csrf
-								@can('isAdmin')
 								<button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
-								<span class="glyphicon glyphicon-trash"> Delete</span>
+								    <span class="glyphicon glyphicon-trash"> Delete</span>
 								</button>
-								@endcan
 							</form>
 						</td>
+						@endcan
 					</tr>
-				<?php endforeach; ?>
-			</tbody>
+					<?php endforeach; ?>
+				</tbody>
 		</table>
 	</div>
 @endsection
