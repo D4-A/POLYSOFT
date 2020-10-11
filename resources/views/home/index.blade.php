@@ -17,7 +17,7 @@
 		<h1 class="page-header">Bienvenue à la POLYCLINIQUE DU NORD</h1>
 	    </div>
 		<div class="col-lg-12">
-		<img src="" alt="Photo Home">
+		<img src="{{asset('plogin/images/log2.png')}}" style="width:82%;height:500px;" alt="Photo Home">
 	    </div>
 	</div>
 	<!--/.row-->
