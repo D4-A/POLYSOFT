@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class UserSeeder extends Seeder
 {
@@ -12,7 +13,7 @@ class UserSeeder extends Seeder
     public function run()
     {
          DB::table('users')->insert([
-             'service_id' => 1,
+             'service_id' => 'SV01',
              'fonction_id' => 1,
              'name' => 'Fleury',
              'prenom' => 'Guy',
@@ -25,7 +26,7 @@ class UserSeeder extends Seeder
              'password' => Hash::make('hurdmach'),
          ]);
          DB::table('users')->insert([
-             'service_id' => 2,
+             'service_id' => 'SV02',
              'fonction_id' => 2,
              'name' => 'Nelly',
              'prenom' => 'Ken',

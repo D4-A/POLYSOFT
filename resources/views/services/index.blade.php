@@ -60,28 +60,29 @@
 				</tr>
 			</thead>
 				<tbody>
-				<?php foreach($services as $service): ?>
-					<tr>
-						<td scope="row"> <?= $service->id; ?></td>
-						<td> <?= $service->name; ?></td>
-						@can('isAdmin')
-						<td style="display:flex;">
-							<a href="services/edit/{{$service->id}}" style="padding-right:10px;">
-								<button type="submit" class="btn btn-sm btn-primary">
-								<span class="glyphicon glyphicon-edit"> Edit</span>
-								</button>
-							</a>
-
-							<form action="services/destroy/{{$service->id}}" method="post">
-								@csrf
-								<button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
-								    <span class="glyphicon glyphicon-trash"> Delete</span>
-								</button>
-							</form>
-						</td>
-						@endcan
-					</tr>
-					<?php endforeach; ?>
+				    @foreach($services as $key => $service)
+				    <tr>
+					<td scope="row"> {{$key}}</td>
+					<td> {{$service->id}}</td>
+					<td> {{$service->name}}</td>
+					@can('isAdmin')
+					<td style="display:flex;">
+					    <a href="services/edit/{{$service->id}}" style="padding-right:10px;">
+						<button type="submit" class="btn btn-sm btn-primary">
+						    <span class="glyphicon glyphicon-edit"> Edit</span>
+						</button>
+					    </a>
+					    
+					    <form action="services/destroy/{{$service->id}}" method="post">
+						@csrf
+						<button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
+						    <span class="glyphicon glyphicon-trash"> Delete</span>
+						</button>
+					    </form>
+					</td>
+					@endcan
+				    </tr>
+				    @endforeach
 				</tbody>
 		</table>
 	</div>
