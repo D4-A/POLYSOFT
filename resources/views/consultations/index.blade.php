@@ -58,12 +58,7 @@
 		    <th scope="col">Nom_Patient</th>
 		    <!--<th scope="col">ID_Paiement</th>-->
 		    <th scope="col">Motif</th>
-		    <th scope="col">Antécedent </th>
-		    <th scope="col">Historique </th>
-		    <th scope="col">Exam_Physique </th>
-		    <th scope="col">Hyp_Diagno </th>
-		    <th scope="col">Exam_Compl </th>
-		    <th scope="col">Traitement </th>
+		    <th scope="col">Date</th>
 		    @canany(['isAdmin','isDoctor','isInf','isLaborant'])
 		    <th scope="col">Actions</th>
 		    @endcan
@@ -78,12 +73,7 @@
 		    <td> <?= $consultation->user_name; ?></td>
 		    <td> <?= $consultation->patient_name; ?></td>
 		    <td> <?= $consultation->motif; ?></td>
-		    <td> <?= $consultation->antecedent; ?></td>
-		    <td> <?= $consultation->historique; ?></td>
-		    <td> <?= $consultation->examen_physique; ?></td>
-		    <td> <?= $consultation->hypothese_dia; ?></td>
-		    <td> <?= $consultation->examen_compl; ?></td>
-		    <td> <?= $consultation->traitement; ?></td>
+		    <td> <?= $consultation->updated_at; ?></td>
 		    @canany(['isAdmin','isDoctor','isInf'])
 		    <td style="display:flex;">
 			@endcan
