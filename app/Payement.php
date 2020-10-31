@@ -15,7 +15,7 @@ class Payement extends Model
         self::creating(function ($model) {
                 $model->id = IdGenerator::generate
                            (['table' => 'payements',
-                             'length' => 4, 'prefix' => 'S']);
+                             'length' => 10, 'prefix' => 'PAY']);
             });
     }
 }
