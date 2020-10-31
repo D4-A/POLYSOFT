@@ -13,8 +13,8 @@ class UserSeeder extends Seeder
     public function run()
     {
          DB::table('users')->insert([
-             'service_id' => 'SV01',
-             'fonction_id' => 1,
+             'service_id' => 'S001',
+             'fonction_id' => 'F001',
              'name' => 'Fleury',
              'prenom' => 'Guy',
              'tel' => 22222,
@@ -26,8 +26,8 @@ class UserSeeder extends Seeder
              'password' => Hash::make('hurdmach'),
          ]);
          DB::table('users')->insert([
-             'service_id' => 'SV02',
-             'fonction_id' => 2,
+             'service_id' => 'S002',
+             'fonction_id' => 'F002',
              'name' => 'Nelly',
              'prenom' => 'Ken',
              'tel' => 22,

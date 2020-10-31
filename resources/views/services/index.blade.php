@@ -51,17 +51,18 @@
 		<table class="table table-striped" id="table" style="width:700px;">
 
 		    <thead style="background-color:#ccc;">
-				<tr>
-					<th scope="col">ID_Service</th>
-					<th scope="col">Nom du service</th>
-					@can('isAdmin')
-					<th scope="col">Actions</th>
-					@endcan
-				</tr>
+			<tr>
+			    <th scope="col">NUM</th>
+			    <th scope="col">ID Service</th>
+			    <th scope="col">Nom du service</th>
+			    @can('isAdmin')
+			    <th scope="col">Actions</th>
+			    @endcan
+			</tr>
 			</thead>
 				<tbody>
 				    @foreach($services as $key => $service)
-				    <tr>
+					<tr>
 					<td scope="row"> {{$key}}</td>
 					<td> {{$service->id}}</td>
 					<td> {{$service->name}}</td>

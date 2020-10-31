@@ -7,13 +7,15 @@ use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class Service extends Model
 {
-     public static function boot()
+    protected $keyType = 'string';
+    public $incrementing = false;
+    public static function boot()
     {
         parent::boot();
         self::creating(function ($model) {
                 $model->id = IdGenerator::generate
-                             (['table' => 'services',
-                               'length' => 4, 'prefix' => 'SV']);
+                           (['table' => 'services',
+                             'length' => 4, 'prefix' => 'S']);
             });
     }
 }

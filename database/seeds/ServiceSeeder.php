@@ -15,13 +15,13 @@ class ServiceSeeder extends Seeder
         DB::table('services')->insert([
             'id' => IdGenerator::generate
                              (['table' => 'services',
-                               'length' => 4, 'prefix' => 'SV']),
+                               'length' => 4, 'prefix' => 'S']),
             'name' => 'Administration'
         ]);
         DB::table('services')->insert([
             'id' => IdGenerator::generate
                              (['table' => 'services',
-                               'length' => 4, 'prefix' => 'SV']),
+                               'length' => 4, 'prefix' => 'S']),
             'name' => 'pediatrie'
         ]);
     }

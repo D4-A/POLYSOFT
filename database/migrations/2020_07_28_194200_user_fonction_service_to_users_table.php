@@ -15,9 +15,9 @@ class UserFonctionServiceToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-                $table->foreign('service_id',32)->references('id')->on('services')
+            $table->foreign('service_id',32)->references('id')->on('services')
                   ->onDelete('cascade');
-            $table->foreign('fonction_id')->references('id')->on('fonctions')
+            $table->foreign('fonction_id',33)->references('id')->on('fonctions')
                   ->onDelete('cascade');
         });
     }
