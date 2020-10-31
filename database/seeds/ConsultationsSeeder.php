@@ -12,7 +12,7 @@ class ConsultationsSeeder extends Seeder
     public function run()
     {
          DB::table('consultations')->insert([
-             'user_id' => 1,
+             'user_id' => 'USER000001',
              'patient_id' => 1,
              'payement_id' => 1,
              'motif' => 'eeee',
@@ -24,7 +24,7 @@ class ConsultationsSeeder extends Seeder
              'traitement' => 'Pyeyye',
         ]);
          DB::table('consultations')->insert([
-             'user_id' => 1,
+             'user_id' => 'USER000002',
              'patient_id' => 2,
              'payement_id' => 2,
              'motif' => 'reeee',

@@ -13,6 +13,9 @@ class UserSeeder extends Seeder
     public function run()
     {
          DB::table('users')->insert([
+             'id' => IdGenerator::generate
+                             (['table' => 'users',
+                               'length' => 10, 'prefix' => 'USER']),
              'service_id' => 'S001',
              'fonction_id' => 'F001',
              'name' => 'Fleury',
@@ -26,6 +29,9 @@ class UserSeeder extends Seeder
              'password' => Hash::make('hurdmach'),
          ]);
          DB::table('users')->insert([
+             'id' => IdGenerator::generate
+                             (['table' => 'users',
+                               'length' => 10, 'prefix' => 'USER']),
              'service_id' => 'S002',
              'fonction_id' => 'F002',
              'name' => 'Nelly',

@@ -15,14 +15,14 @@ class CreateCreneausTable extends Migration
     {
         Schema::create('creneaus', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->string('user_id');
             $table->string('name')->default('rendez-vous');
             $table->dateTime('start_time',0);
             $table->dateTime('end_time',0);
             $table->boolean('ouvert')->default(true);
             $table->timestamps();
 
-            $table->foreign('user_id')
+            $table->foreign('user_id',36)
                   ->references('id')->on('users')->onDelete('cascade');
         });
     }
