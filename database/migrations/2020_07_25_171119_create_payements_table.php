@@ -14,22 +14,22 @@ class CreatePayementsTable extends Migration
     public function up()
     {
         Schema::create('payements', function (Blueprint $table) {
-            $table->id();
-            $table->string('user_id');
-            $table->unsignedBigInteger('patient_id');
-            $table->string('type_payement_id');
-            $table->timestamps();
-            
-            $table->foreign('user_id',35)->references('id')->on('users')
-                  ->onDelete('cascade');
-            $table->foreign('patient_id')->references('id')->on('patients')
-                  ->onDelete('cascade');
-            $table->foreign('type_payement_id',34)->references('id')
-                  ->on('type_payements')
-                  ->onDelete('cascade');
-        });
+                $table->string('id',32)->index();
+                $table->string('user_id');
+                $table->unsignedBigInteger('patient_id');
+                $table->string('type_payement_id');
+                $table->timestamps();
+                
+                $table->foreign('user_id',35)->references('id')->on('users')
+                      ->onDelete('cascade');
+                $table->foreign('patient_id')->references('id')->on('patients')
+                      ->onDelete('cascade');
+                $table->foreign('type_payement_id',34)->references('id')
+                      ->on('type_payements')
+                      ->onDelete('cascade');
+            });
     }
-
+    
     /**
      * Reverse the migrations.
      *

@@ -36,9 +36,9 @@
 				</div>
 				<div class="col-lg-3" style="padding:0;">
 					<select class="form-control" id="search">
-						<option value="0"> ID</option>
-						<option value="1"> Nom du Caissier</option>
-						<option value="2"> Nom du Patient</option>
+						<option value="1"> ID</option>
+						<option value="2"> Nom du Caissier</option>
+						<option value="3"> Nom du Patient</option>
 					</select>
 				</div>
 				<div class="col-lg-5" style="padding-left:5px;">
@@ -52,10 +52,11 @@
 
 		    <thead style="background-color:#ccc;">
 				<tr>
-					<th scope="col" style="text-align:center;">ID </th>
-					<th scope="col">Nom_caissier</th>
-					<th scope="col">Nom_Patient</th>
-					<th scope="col">Type_Paiement</th>
+					<th scope="col" style="text-align:center;">NUM </th>
+					<th scope="col">ID PAYMENT</th>
+					<th scope="col">Nom caissier</th>
+					<th scope="col">Nom Patient</th>
+					<th scope="col">Type Paiement</th>
 					<th scope="col">Montant</th>
 					<th scope="col">Date </th>
 					@canany(['isAdmin','isCaissier'])
@@ -65,36 +66,37 @@
 		    </thead>
 
 		    <tbody>
-				<?php foreach($payements as $payement): ?>
-					<tr>
-						<td scope="row" style="text-align:center;"> {{ $payement->id }}</td>
-						<td> {{ $payement->user_name }}</td>
-						<td> {{ $payement->nom}} {{ $payement->prenom}}</td>
-						<td> {{ $payement->name}}</td>
-						<td> {{ $payement->montant}}</td>
-						<td> {{ $payement->created_at }}</td>
-
-						@canany(['isAdmin','isCaissier'])
-						<td style="display:flex;text-align:center;">
-							<a href="payements/edit/{{$payement->id}}" style="padding-right:10px;">
-								<button type="submit" class="btn btn-sm btn-primary">
-									<span class="glyphicon glyphicon-edit"> Edit</span>   
-								</button>
-							</a>
-
-							<form action="payements/destroy/{{$payement->id}}" method="post">
-								@csrf
-								<button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
-									<span class="glyphicon glyphicon-trash"> Delete</span> 
-								</button>
-							</form>
-						
-						</td>
-						@endcan
-					</tr>
-				<?php endforeach; ?>
-        	</tbody>
-    
+			<?php foreach($payements as $key => $payement): ?>
+			<tr>
+			    <td scope="row" style="text-align:center;"> {{ $key }}</td>
+			    <td> {{ $payement->id }}</td>
+			    <td> {{ $payement->user_name }}</td>
+			    <td> {{ $payement->nom}} {{ $payement->prenom}}</td>
+			    <td> {{ $payement->name}}</td>
+			    <td> {{ $payement->montant}}</td>
+			    <td> {{ $payement->created_at }}</td>
+			    
+			    @canany(['isAdmin','isCaissier'])
+			    <td style="display:flex;text-align:center;">
+				<a href="payements/edit/{{$payement->id}}" style="padding-right:10px;">
+				    <button type="submit" class="btn btn-sm btn-primary">
+					<span class="glyphicon glyphicon-edit"> Edit</span>   
+				    </button>
+				</a>
+				
+				<form action="payements/destroy/{{$payement->id}}" method="post">
+				    @csrf
+				    <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
+					<span class="glyphicon glyphicon-trash"> Delete</span> 
+				    </button>
+				</form>
+				
+			    </td>
+			    @endcan
+			</tr>
+			<?php endforeach; ?>
+        	    </tbody>
+		    
         </table>
 	</div>
 @endsection

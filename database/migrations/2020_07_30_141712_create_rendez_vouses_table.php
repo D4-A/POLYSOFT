@@ -16,7 +16,7 @@ class CreateRendezVousesTable extends Migration
         Schema::create('rendez_vouses', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('patient_id');
-            $table->unsignedBigInteger('payement_id')->unique();
+            $table->string('payement_id')->unique();
             $table->unsignedBigInteger('creneau_id')->unique();
             $table->string('description')->nullable();
             $table->string('etat');
@@ -24,7 +24,7 @@ class CreateRendezVousesTable extends Migration
 
             $table->foreign('patient_id')
                   ->references('id')->on('patients')->onDelete('cascade');
-            $table->foreign('payement_id')
+            $table->foreign('payement_id',42)
                   ->references('id')->on('payements')->onDelete('cascade');
             $table->foreign('creneau_id')
                   ->references('id')->on('creneaus')->onDelete('cascade');
