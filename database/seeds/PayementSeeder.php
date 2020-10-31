@@ -17,7 +17,7 @@ class PayementSeeder extends Seeder
                              (['table' => 'payements',
                                'length' => 10, 'prefix' => 'PAY']),
             'user_id' => 'USER000001',
-            'patient_id' => 1,
+            'patient_id' => 'PN00000001',
             'type_payement_id' => 'T001'
         ]);
          DB::table('payements')->insert([
@@ -25,7 +25,7 @@ class PayementSeeder extends Seeder
                              (['table' => 'payements',
                                'length' => 10, 'prefix' => 'PAY']),
             'user_id' => 'USER000002',
-            'patient_id' => 1,
+            'patient_id' => 'PN00000001',
             'type_payement_id' => 'T002'
         ]);
            DB::table('payements')->insert([
@@ -33,7 +33,7 @@ class PayementSeeder extends Seeder
                              (['table' => 'payements',
                                'length' => 10, 'prefix' => 'PAY']),
             'user_id' => 'USER000002',
-            'patient_id' => 1,
+            'patient_id' => 'PN00000001',
             'type_payement_id' => 'T003'
         ]);
     }

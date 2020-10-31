@@ -37,11 +37,11 @@
 				</div>
 				<div class="col-lg-3" style="padding:0;">
 					<select class="form-control" id="search">
-						<option value="0"> ID</option>
-						<option value="1"> Nom</option>
-						<option value="2"> Prenom</option>
-						<option value="8"> Email</option>
-						<option value="9"> CNI</option>
+						<option value="1"> ID</option>
+						<option value="2"> Nom</option>
+						<option value="3"> Prenom</option>
+						<option value="9"> Email</option>
+						<option value="10"> CNI</option>
 					</select>
 				</div>
 				<div class="col-lg-5" style="padding-left:5px;">
@@ -55,7 +55,8 @@
 
 			<thead style="background-color:#ccc;">
 				<tr>
-					<th scope="col" style="text-align:center;">ID </th>
+					<th scope="col" style="text-align:center;">NUM </th>
+					<th scope="col">ID </th>
 					<th scope="col">Nom </th>
 					<th scope="col">Prénom </th>
 					<th scope="col">Genre </th>
@@ -70,40 +71,41 @@
 			</thead>
 			
 			<tbody>
-				<?php foreach($patients as $patient): ?>
-					<tr>
-						<td scope="row" style="text-align:center;"> <?= $patient->id; ?></td>
-						<td> <?= $patient->nom; ?></td>
-						<td> <?= $patient->prenom; ?></td>
-						<td> <?= $patient->genre; ?></td>
-						<td> <?= $patient->ans_naiss; ?></td>
-						<td> <?= $patient->profession; ?></td>
-						<td> <?= $patient->adresse; ?></td>
-						<td> <?= $patient->tel; ?></td>
-						<td> <?= $patient->email; ?></td>
-						<td> <?= $patient->cni; ?></td>
-
-						<td style="display:flex;">
-							@canany(['isAdmin','isRecept','isInf'])
-							<a href="patients/edit/{{$patient->id}}" style="padding-right:10px;">
-								<button type="submit" class="btn btn-sm btn-primary">
-									<span class="glyphicon glyphicon-edit"></span> Edit
-								</button>
-							</a>
-							@endcan
-							@can('isAdmin')
-							<form action="patients/destroy/{{$patient->id}}" method="post">
-								@csrf
-								<button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
-									<span class="glyphicon glyphicon-trash"></span> Delete
-								</button>
-							</form>
-							@endcan
-						</td>
-					</tr>
-				<?php endforeach; ?>
+			    <?php foreach($patients as $key => $patient): ?>
+			    <tr>
+				<td scope="row" style="text-align:center;"> <?= $key; ?></td>
+				<td> <?= $patient->id; ?></td>
+				<td> <?= $patient->nom; ?></td>
+				<td> <?= $patient->prenom; ?></td>
+				<td> <?= $patient->genre; ?></td>
+				<td> <?= $patient->ans_naiss; ?></td>
+				<td> <?= $patient->profession; ?></td>
+				<td> <?= $patient->adresse; ?></td>
+				<td> <?= $patient->tel; ?></td>
+				<td> <?= $patient->email; ?></td>
+				<td> <?= $patient->cni; ?></td>
+						
+				<td style="display:flex;">
+				    @canany(['isAdmin','isRecept','isInf'])
+				    <a href="patients/edit/{{$patient->id}}" style="padding-right:10px;">
+					<button type="submit" class="btn btn-sm btn-primary">
+					    <span class="glyphicon glyphicon-edit"></span> Edit
+					</button>
+				    </a>
+				    @endcan
+				    @can('isAdmin')
+				    <form action="patients/destroy/{{$patient->id}}" method="post">
+					@csrf
+					<button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
+					    <span class="glyphicon glyphicon-trash"></span> Delete
+					</button>
+				    </form>
+				    @endcan
+				</td>
+			    </tr>
+			    <?php endforeach; ?>
 			</tbody>
-
-        </table>
+			
+		</table>
 	</div>
 @endsection

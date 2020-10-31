@@ -16,7 +16,7 @@ class CreateConsultationsTable extends Migration
         Schema::create('consultations', function (Blueprint $table) {
             $table->id(); 
             $table->string('user_id'); 
-            $table->unsignedBigInteger('patient_id');
+            $table->string('patient_id');
             $table->string('payement_id')->unique();
             $table->string('motif');
             $table->string('antecedent');
@@ -29,7 +29,7 @@ class CreateConsultationsTable extends Migration
 
             $table->foreign('user_id',37)->references('id')->on('users')
                   ->onDelete('cascade');
-            $table->foreign('patient_id')->references('id')->on('patients')
+            $table->foreign('patient_id',44)->references('id')->on('patients')
                   ->onDelete('cascade');
             $table->foreign('payement_id',40)->references('id')
                   ->on('payements')->onDelete('cascade');
