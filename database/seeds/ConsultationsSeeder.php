@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class ConsultationsSeeder extends Seeder
 {
@@ -12,6 +13,9 @@ class ConsultationsSeeder extends Seeder
     public function run()
     {
          DB::table('consultations')->insert([
+             'id' => IdGenerator::generate
+                             (['table' => 'consultations',
+                               'length' => 10, 'prefix' => 'CONS']),
              'user_id' => 'USER000001',
              'patient_id' => 'PN00000001',
              'payement_id' => 'PAY0000001',
@@ -24,6 +28,9 @@ class ConsultationsSeeder extends Seeder
              'traitement' => 'Pyeyye',
         ]);
          DB::table('consultations')->insert([
+             'id' => IdGenerator::generate
+                             (['table' => 'consultations',
+                               'length' => 10, 'prefix' => 'CONS']),
              'user_id' => 'USER000002',
              'patient_id' => 'PN00000002',
              'payement_id' => 'PAY0000002',
