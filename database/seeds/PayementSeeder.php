@@ -14,17 +14,17 @@ class PayementSeeder extends Seeder
          DB::table('payements')->insert([
             'user_id' => 1,
             'patient_id' => 1,
-            'type_payement_id' => 1
+            'type_payement_id' => 'T001'
         ]);
           DB::table('payements')->insert([
             'user_id' => 1,
             'patient_id' => 1,
-            'type_payement_id' => 2
+            'type_payement_id' => 'T002'
         ]);
            DB::table('payements')->insert([
             'user_id' => 1,
             'patient_id' => 1,
-            'type_payement_id' => 2
+            'type_payement_id' => 'T003'
         ]);
     }
 }
