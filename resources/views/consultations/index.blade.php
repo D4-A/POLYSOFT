@@ -37,8 +37,8 @@
 		<div class="col-lg-3" style="padding:0;">
 		    <select class="form-control" id="search">
 			<option value="1"> ID</option>
-			<option value="2"> Nom_Medecin</option>
-			<option value="3"> Nom_Patient</option>
+			<option value="2"> Nom Medecin</option>
+			<option value="3"> Nom Patient</option>
 		    </select>
 		</div>
 		<div class="col-lg-5" style="padding-left:5px;">
@@ -54,8 +54,8 @@
 		<tr>
 		    <th scope="col" style="text-align:center;">NUM </th>
 		    <th scope="col">ID</th>
-		    <th scope="col">Nom_Dr</th>
-		    <th scope="col">Nom_Patient</th>
+		    <th scope="col">Nom Dr</th>
+		    <th scope="col">Nom Patient</th>
 		    <!--<th scope="col">ID_Paiement</th>-->
 		    <th scope="col">Motif</th>
 		    <th scope="col">Date</th>

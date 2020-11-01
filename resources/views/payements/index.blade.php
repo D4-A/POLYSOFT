@@ -53,7 +53,7 @@
 		    <thead style="background-color:#ccc;">
 				<tr>
 					<th scope="col" style="text-align:center;">NUM </th>
-					<th scope="col">ID PAYMENT</th>
+					<th scope="col">ID </th>
 					<th scope="col">Nom caissier</th>
 					<th scope="col">Nom Patient</th>
 					<th scope="col">Type Paiement</th>

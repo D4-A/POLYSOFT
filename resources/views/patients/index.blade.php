@@ -67,6 +67,7 @@
 					<th scope="col">E-mail </th>
 					<th scope="col">C.N.ID </th>
 					<th scope="col" style="text-align:center;">Actions</th>
+					
 				</tr>
 			</thead>
 			
@@ -86,7 +87,7 @@
 				<td> <?= $patient->cni; ?></td>
 						
 				<td style="display:flex;">
-				    @canany(['isAdmin','isRecept','isInf'])
+				    @canany(['isAdmin','isRecept','isInf','isDoctor'])
 				    <a href="patients/edit/{{$patient->id}}" style="padding-right:10px;">
 					<button type="submit" class="btn btn-sm btn-primary">
 					    <span class="glyphicon glyphicon-edit"></span> Edit
