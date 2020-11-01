@@ -23,7 +23,7 @@
 				@csrf
 				<div class="form-group">
 					<label style="padding-left:10px;">Consultation ID</label>
-					<input type="number" min="1" id="cons_id" class="form-control" name="consultation_id" placeholder="Consultation_ID" required><br>
+					<input id="cons_id" class="form-control" name="consultation_id" placeholder="Consultation_ID" required><br>
 					<label style="padding-left:10px;">Adresse Email</label>
 					<input class="form-control" name="to_email" placeholder="Email_Adress" required><br>
 					<label style="padding-left:10px;">Sujet du message</label>
