@@ -29,12 +29,14 @@
 
 				<label style="padding-left:10px;">Type de paiement</label>
 				<select name="type_payement_id" id="type_payement_id" class="form-control" required><br>
-					<option placeholder="" value="{{$type_payement->id}}">{{$type_payement->name}}</option>
-
-					@foreach($type_payements as $type_payement){
-						<option value="{{$type_payement->id}}">{{$type_payement->name}}</option>
+				    @foreach($type_payements as $type_payement){
+					@if($type_payement->id === $payement->type_payement_id)
+					    <option value="{{$type_payement->id}}" selected>{{$type_payement->name}}</option>
+					@else
+					    <option value="{{$type_payement->id}}">{{$type_payement->name}}</option>
+					@endif
 					}
-					@endforeach
+				    @endforeach
 				</select><br>
 			</div>
 

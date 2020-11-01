@@ -86,14 +86,10 @@ class PayementsController extends Controller
      */
     public function edit(Payement $payement)
     {
-        $payement= Payement::find($payement->id);
-        $type_payement = DB::table('type_payements')->where('id',$payement->type_payement_id)
-                                                    ->first();
         $type_payements = TypePayement::all();
         return view('payements/edit', [
             'payement' => $payement,
-            'type_payements' => $type_payements,
-            'type_payement' => $type_payement
+            'type_payements' => $type_payements
         ]);
     }
 
