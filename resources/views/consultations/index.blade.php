@@ -73,7 +73,7 @@
 		    <td> <?= $consultation->user_name; ?></td>
 		    <td> <?= $consultation->patient_name; ?></td>
 		    <td> <?= $consultation->motif; ?></td>
-		    <td> <?= $consultation->updated_at; ?></td>
+		    <td> <?= $consultation->created_at; ?></td>
 		    @canany(['isAdmin','isDoctor','isInf'])
 		    <td style="display:flex;">
 			@endcan

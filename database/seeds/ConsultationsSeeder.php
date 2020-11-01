@@ -26,6 +26,7 @@ class ConsultationsSeeder extends Seeder
              'hypothese_dia' => 'yeyey',
              'examen_compl' => 'yeyye',
              'traitement' => 'Pyeyye',
+             'created_at' => '2020-11-01'
         ]);
          DB::table('consultations')->insert([
              'id' => IdGenerator::generate
@@ -41,6 +42,7 @@ class ConsultationsSeeder extends Seeder
              'hypothese_dia' => 'ryeyey',
              'examen_compl' => 'ryeyye',
              'traitement' => 'rrPyeyye',
+             'created_at' => '2020-11-01'
         ]);
     }
 }
