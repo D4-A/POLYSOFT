@@ -14,7 +14,7 @@ class CreateFonctionsTable extends Migration
     public function up()
     {
         Schema::create('fonctions', function (Blueprint $table) {
-            $table->id();
+            $table->string('id',32)->index();
             $table->string('name');
             $table->string('diplome');
             $table->timestamps();

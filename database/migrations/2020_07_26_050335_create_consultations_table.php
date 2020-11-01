@@ -14,28 +14,28 @@ class CreateConsultationsTable extends Migration
     public function up()
     {
         Schema::create('consultations', function (Blueprint $table) {
-            $table->id(); 
-            $table->unsignedBigInteger('user_id'); 
-            $table->unsignedBigInteger('patient_id');
-            $table->unsignedBigInteger('payement_id')->unique();
-            $table->string('motif');
-            $table->string('antecedent');
-            $table->string('historique'); 
-            $table->string('examen_physique');
-            $table->string('hypothese_dia');
-            $table->string('examen_compl'); 
-            $table->string('traitement'); 
-            $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')
-                ->onDelete('cascade');
-            $table->foreign('patient_id')->references('id')->on('patients')
-                ->onDelete('cascade');
-            $table->foreign('payement_id')->references('id')->on('payements')
-                ->onDelete('cascade');
-        });
+                $table->string('id',32)->index(); 
+                $table->string('user_id'); 
+                $table->string('patient_id');
+                $table->string('payement_id')->unique();
+                $table->string('motif');
+                $table->string('antecedent');
+                $table->string('historique'); 
+                $table->string('examen_physique');
+                $table->string('hypothese_dia');
+                $table->string('examen_compl'); 
+                $table->string('traitement'); 
+                $table->timestamps();
+                
+                $table->foreign('user_id',37)->references('id')->on('users')
+                      ->onDelete('cascade');
+                $table->foreign('patient_id',44)->references('id')
+                      ->on('patients')->onDelete('cascade');
+                $table->foreign('payement_id',40)->references('id')
+                      ->on('payements')->onDelete('cascade');
+            });
     }
-
+    
     /**
      * Reverse the migrations.
      *

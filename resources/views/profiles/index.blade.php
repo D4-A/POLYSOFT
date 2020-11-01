@@ -28,7 +28,7 @@
                 <div class="form-group">
                     <label class="col-md-3 col-form-label">{{ __('Nom et Prénom') }}</label>
                     <div class="col-md-6 col-form-label">
-                        {{ $user->name }} {{ $user->prenom }}
+                        {{ $user->prenom }} {{ $user->name }}
                     </div>
                 </div>
             </div>
@@ -72,12 +72,22 @@
                     </div>
                 </div>
             </div>
+	    <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label class="col-md-3 col-form-label">{{ __('Adresse') }}</label>
+                        <div class="col-md-6 col-form-label">
+                            {{ $user->adresse }}
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <div class="form-group">
-                        <label class="col-md-3 col-form-label">{{ __('Téléphone et Adresse') }}</label>
+                        <label class="col-md-3 col-form-label">{{ __('Téléphone') }}</label>
                         <div class="col-md-6 col-form-label">
-                            {{ $user->tel }} / {{ $user->adresse }}
+                            {{ $user->tel }} 
                         </div>
                     </div>
                 </div>
@@ -106,11 +116,6 @@
                 <div class="col-md-6">
                     <a class="btn btn-primary col-md-12" href="{{url('profile/edit',$user->id) }}">
                         <span class="glyphicon glyphicon-edit" style="padding-right:8px;"> </span>EDITER
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <a class="btn btn-danger col-md-12" href="{{url('home') }}">
-                        <span class="glyphicon glyphicon-remove" style="padding-right:8px;"> </span>ANNULER
                     </a>
                 </div>
             </div>

@@ -14,21 +14,21 @@ class CreateRendezVousesTable extends Migration
     public function up()
     {
         Schema::create('rendez_vouses', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('patient_id');
-            $table->unsignedBigInteger('payement_id')->unique();
-            $table->unsignedBigInteger('creneau_id')->unique();
-            $table->string('description')->nullable();
-            $table->string('etat');
-            $table->timestamps();
-
-            $table->foreign('patient_id')
-                  ->references('id')->on('patients')->onDelete('cascade');
-            $table->foreign('payement_id')
-                  ->references('id')->on('payements')->onDelete('cascade');
-            $table->foreign('creneau_id')
-                  ->references('id')->on('creneaus')->onDelete('cascade');
-        });
+                $table->string('id',32)->index();
+                $table->string('patient_id');
+                $table->string('payement_id')->unique();
+                $table->string('creneau_id')->unique();
+                $table->string('description')->nullable();
+                $table->string('etat');
+                $table->timestamps();
+                
+                $table->foreign('patient_id',45)
+                      ->references('id')->on('patients')->onDelete('cascade');
+                $table->foreign('payement_id',42)
+                      ->references('id')->on('payements')->onDelete('cascade');
+                $table->foreign('creneau_id',48)
+                      ->references('id')->on('creneaus')->onDelete('cascade');
+            });
     }
 
     /**

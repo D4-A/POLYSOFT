@@ -38,9 +38,9 @@
 				</div>
 				<div class="col-lg-3" style="padding:0;">
 					<select class="form-control" id="search">
-						<option value="0"> ID</option>
-						<option value="1"> Nom</option>
-						<option value="2"> Diplôme</option>
+						<option value="1"> ID</option>
+						<option value="2"> Nom</option>
+						<option value="3"> Diplôme</option>
 					</select>
 				</div>
 				<div class="col-lg-5" style="padding-left:5px;">
@@ -53,42 +53,44 @@
 		<table class="table table-striped" id="table" style="width:700px;">
 
 			<thead style="background-color:#ccc;">
-				<tr>
-					<th scope="col">ID_Fonction</th>
-					<th scope="col">Nom Fonction</th>
-					<th scope="col">Diplôme </th>
-					@can('isAdmin')
-					<th scope="col">Actions</th>
-					@endcan
-				</tr>
+			    <tr>
+				<th scope="col">NUM</th>
+				<th scope="col">ID Fonction</th>
+				<th scope="col">Nom Fonction</th>
+				<th scope="col">Diplôme </th>
+				@can('isAdmin')
+				<th scope="col">Actions</th>
+				@endcan
+			    </tr>
 			</thead>
 
 			<tbody>
-				<?php foreach($fonctions as $fonction): ?>
+			    <?php foreach($fonctions as $key => $fonction): ?>
 					<tr>
-						<td scope="row"> <?= $fonction->id; ?></td>
-						<td> <?= $fonction->name; ?></td>
-						<td> <?= $fonction->diplome; ?></td>
-						@can('isAdmin')
-						<td style="display:flex;">
-							<a href="fonctions/edit/{{$fonction->id}}" style="padding-right:10px;">
-								<button type="submit" class="btn btn-sm btn-primary">
-								<span class="glyphicon glyphicon-edit"> Edit</span>
-								</button>
-							</a>
+					    <td scope="row"> <?= $key; ?></td>
+					    <td> <?= $fonction->id; ?></td>
+					    <td> <?= $fonction->name; ?></td>
+					    <td> <?= $fonction->diplome; ?></td>
+					    @can('isAdmin')
+					    <td style="display:flex;">
+						<a href="fonctions/edit/{{$fonction->id}}" style="padding-right:10px;">
+						    <button type="submit" class="btn btn-sm btn-primary">
+							<span class="glyphicon glyphicon-edit"> Edit</span>
+						    </button>
+						</a>
 
-							<form action="fonctions/destroy/{{$fonction->id}}" method="post">
-								@csrf
-								<button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
-								<span class="glyphicon glyphicon-trash"> Delete</span>
-								</button>
-							</form>
-						</td>
-						@endcan
+						<form action="fonctions/destroy/{{$fonction->id}}" method="post">
+						    @csrf
+						    <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
+							<span class="glyphicon glyphicon-trash"> Delete</span>
+						    </button>
+						</form>
+					    </td>
+					    @endcan
 					</tr>
-				<?php endforeach; ?>
+					<?php endforeach; ?>
 			</tbody>
-
+			
 		</table>
-	</div>
+    </div>
 @endsection

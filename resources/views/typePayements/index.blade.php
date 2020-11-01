@@ -52,41 +52,43 @@
 		<table class="table table-striped" id="table" style="width:700px;">
 
 		    <thead style="background-color:#ccc;">
-				<tr>
-					<th scope="col">ID TypePaie</th>
-					<th scope="col">Nom TypePaiement</th>
-					<th scope="col">Montant</th>
-					@canany(['isAdmin','isCaissier'])
-					<th scope="col">Actions</th>
-					@endcan
-				</tr>
-			</thead>
-			<tbody>
-				<?php foreach($typePayements as $typePayement): ?>
-					<tr>
-						<td scope="row" style="text-align:center;"> <?= $typePayement->id; ?></td>
-						<td> <?= $typePayement->name; ?></td>
-						<td> <?= $typePayement->montant; ?></td>
-						@canany(['isAdmin','isCaissier'])
-						<td style="display:flex;">
-							<a href="typePayements/edit/{{$typePayement->id}}" style="padding-right:10px;">
-								<button type="submit" class="btn btn-sm btn-primary">
-									<span class="glyphicon glyphicon-edit"> Edit</span>
-								</button>
-							</a>
-
-							<form action="typePayements/destroy/{{$typePayement->id}}" method="post">
+			<tr>
+			    <th scope="col">NUM</th>
+			    <th scope="col">ID TYPE</th>
+			    <th scope="col">Nom TypePaiement</th>
+			    <th scope="col">Montant</th>
+			    @canany(['isAdmin','isCaissier'])
+			    <th scope="col">Actions</th>
+			    @endcan
+			</tr>
+		    </thead>
+		    <tbody>
+			<?php foreach($typePayements as $key => $typePayement): ?>
+			<tr>
+			    <td scope="row" style="text-align:center;"> <?= $key; ?></td>
+			    <td> <?= $typePayement->id; ?></td>
+			    <td> <?= $typePayement->name; ?></td>
+			    <td> <?= $typePayement->montant; ?></td>
+			    @canany(['isAdmin','isCaissier'])
+			    <td style="display:flex;">
+				<a href="typePayements/edit/{{$typePayement->id}}" style="padding-right:10px;">
+				    <button type="submit" class="btn btn-sm btn-primary">
+					<span class="glyphicon glyphicon-edit"> Edit</span>
+				    </button>
+				</a>
+				
+				<form action="typePayements/destroy/{{$typePayement->id}}" method="post">
 								@csrf
-								<button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
-									<span class="glyphicon glyphicon-trash"> Delete</span>
-								</button>
-							</form>
-						</td>
-						@endcan
-					</tr>
-				<?php endforeach; ?>
-			</tbody>
-
+				    <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
+					<span class="glyphicon glyphicon-trash"> Delete</span>
+				    </button>
+				</form>
+			    </td>
+			    @endcan
+			</tr>
+			<?php endforeach; ?>
+		    </tbody>
+		    
 		</table>
-	</div>
+    </div>
 @endsection

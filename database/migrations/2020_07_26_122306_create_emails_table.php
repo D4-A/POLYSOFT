@@ -14,19 +14,19 @@ class CreateEmailsTable extends Migration
     public function up()
     {
         Schema::create('emails', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('consultation_id')->nullable();
-            $table->string('subject');
-            $table->string('body');
-            $table->string('filename')->nullable();
-            $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')
-                ->onDelete('cascade');
-            $table->foreign('consultation_id')->references('id')->on('consultations')
-                ->onDelete('cascade');
-        });
+                $table->string('id',32)->index();
+                $table->string('user_id');
+                $table->string('consultation_id')->nullable();
+                $table->string('subject');
+                $table->string('body');
+                $table->string('filename')->nullable();
+                $table->timestamps();
+                
+                $table->foreign('user_id',38)->references('id')->on('users')
+                      ->onDelete('cascade');
+                $table->foreign('consultation_id',47)->references('id')
+                      ->on('consultations')->onDelete('cascade');
+            });
     }
 
     /**

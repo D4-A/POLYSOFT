@@ -14,13 +14,13 @@ class CreateTypePayementsTable extends Migration
     public function up()
     {
         Schema::create('type_payements', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->double('montant');
-            $table->timestamps();
-        });
+                $table->string('id',32)->index();
+                $table->string('name');
+                $table->double('montant');
+                $table->timestamps();
+            });
     }
-
+    
     /**
      * Reverse the migrations.
      *

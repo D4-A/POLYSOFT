@@ -37,10 +37,10 @@
 				</div>
 				<div class="col-lg-3" style="padding:0;">
 					<select class="form-control" id="search">
-						<option value="0"> ID</option>
-						<option value="1"> Nom_Patient</option>
-						<option value="2"> Nom_Docteur</option>
-						<option value="5"> Status</option>
+						<option value="1"> ID</option>
+						<option value="2"> Nom_Patient</option>
+						<option value="3"> Nom_Docteur</option>
+						<option value="6"> Status</option>
 					</select>
 				</div>
 				<div class="col-lg-5" style="padding-left:5px;">
@@ -54,6 +54,7 @@
 
 		    <thead style="background-color:#ccc;">
 				<tr>
+				        <th scope="col">NUM</th>
 					<th scope="col">Re-V ID</th>
 					<th scope="col">Nom_Patient</th>
 					<th scope="col">Nom_Docteur</th>
@@ -64,9 +65,10 @@
 				</tr>
             </thead>
             <tbody>
-				<?php foreach($rendezVous as $rendezvous): ?>
+		<?php foreach($rendezVous as $key => $rendezvous): ?>
 					<tr>
-						<td scope="row" style="text-align:center;"> <?= $rendezvous->id; ?></td>
+						<td scope="row" style="text-align:center;"> <?= $key; ?></td>
+						<td> <?= $rendezvous->id; ?></td>
 						<td> <?= $rendezvous->pat_name; ?></td>
 						<td> <?= $rendezvous->user_name; ?></td>
 						<td> <?= $rendezvous->creneau_id; ?></td>
