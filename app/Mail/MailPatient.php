@@ -10,12 +10,6 @@ use Illuminate\Queue\SerializesModels;
 class MailPatient extends Mailable
 {
     use Queueable, SerializesModels;
-    public $alone; // true if message is not attached to an Examen 
-    public $personel;
-    public $to_mail;
-    public $subject;
-    public $body;
-    public $data;
     /**
      * Create a new message instance.
      *
@@ -41,8 +35,8 @@ class MailPatient extends Mailable
                       ->with('nom',$this->personel)
                       ->with('body', $this->body)
                       ->subject($this->subject);
-        if($this->files != null){
-            if($this->alone == false){
+        if($this->files !== null){
+            if($this->alone === false){
                 foreach($this->files as $filePath){
                     $email->attach(
                         storage_path('app/public/uploads/' . $filePath));
