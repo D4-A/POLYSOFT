@@ -100,9 +100,8 @@ class FonctionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Fonction $fonction)
     {
-        $fonction= Fonction::find($id);
         $fonction->delete();
         return redirect('fonctions');
     }

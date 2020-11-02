@@ -119,9 +119,8 @@ class PayementsController extends Controller
      * @param  \App\Payement  $payement
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Payement $payement)
     {
-        $payement = Payement::find($id)->first();
         $payement->delete();
         return redirect('payements');
     }

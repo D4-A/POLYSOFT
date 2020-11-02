@@ -155,9 +155,8 @@ class UsersController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        $user = User::find($id)->first();
         $user->delete();
         return redirect('users');
     }

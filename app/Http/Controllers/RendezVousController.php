@@ -245,9 +245,8 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
      * @param  \App\rendezVous  $rendezVous
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(rendezVous $rendezvous)
     {
-        $rendezvous = RendezVous::find($id);
         $rendezvous->delete();
         return redirect('rendezVous');
     }

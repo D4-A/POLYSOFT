@@ -128,9 +128,8 @@ class PatientsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Patient $patient)
     {
-        $patient= Patient::find($id);
         $patient->delete();
         return redirect('patients');
     }

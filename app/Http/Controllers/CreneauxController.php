@@ -121,7 +121,6 @@ class CreneauxController extends Controller
      */
     public function destroy(Creneau $creneau)
     {
-        $creneau= Creneau::find($creneau->id);
         $creneau->delete();
         return redirect('creneaux');
     }

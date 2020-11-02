@@ -192,9 +192,8 @@ class ConsultationsController extends Controller
      * @param  \App\Consultation  $consultation
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Consultation $consultation)
     {
-        $consultation = Consultation::find($id)->first();
         $consultation->delete();
         return redirect('consultations');
     }

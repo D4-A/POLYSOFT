@@ -141,10 +141,10 @@ class ExamensController extends Controller
         ]);
     }
 
-    public function destroy($id)
+    public function destroy(Examen $examen)
     {
-        $examen = Examen::find($id);
-        $path_filename = DB::table('examens')->where('id',$id)->value('files');
+        $path_filename = DB::table('examens')
+                         ->where('id',$examen->id)->value('files');
         $datas = explode(',',$path_filename);
         foreach($datas as $data){
             Storage::delete('public/uploads/' . $data);
