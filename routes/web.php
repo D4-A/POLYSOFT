@@ -73,13 +73,12 @@ Route::put('consultations/{consultation}','ConsultationsController@update');
 Route::post('consultations/destroy/{consultation}','ConsultationsController@destroy');
 
 Route::get('examens','ExamensController@index');
-Route::get('ajaxfiles','ExamensController@ajaxfiles');
-//Route::post('ajaxfiles','ExamensController@ajaxfiles');
 Route::get('examens/create','ExamensController@create');
 Route::post('examens','ExamensController@store');
 Route::get('examens/edit/{examen}','ExamensController@edit');
 Route::put('examens/{examen}','ExamensController@update');
 Route::post('examens/destroy/{examen}','ExamensController@destroy');
+Route::get('ajaxfiles','ExamensController@ajaxfiles');
 
 Route::get('emails','EmailsController@index');
 Route::get('emails/create','EmailsController@create');
@@ -88,7 +87,8 @@ Route::post('sendp','EmailsController@senddeux');
 Route::post('emails','EmailsController@store');
 Route::post('emails/destroy/{email}','EmailsController@destroy');
 
-Route::get('download/{patient}/{consultation}/{filename}', 'ConsultationsController@download');
+Route::get('download/{patient}/{consultation}/{filename}',
+           'ConsultationsController@download');
 
 Route::get('profile','ProfilesController@index');
 Route::get('profile/edit/{profile}','ProfilesController@edit');
