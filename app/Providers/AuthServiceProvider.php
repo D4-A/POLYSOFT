@@ -27,27 +27,27 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
         Gate::define('isAdmin', function($user) {
             $id = DB::table('fonctions')->where('name','LIKE','%admin%')->value('id');
-             return $user->fonction_id == $id;
+             return $user->fonction_id === $id;
          });
          Gate::define('isDoctor', function($user) {
              $id = DB::table('fonctions')->where('name','LIKE','%doct%')->value('id');
-             return $user->fonction_id == $id;
+             return $user->fonction_id === $id;
          });
          Gate::define('isInfir', function($user) {
              $id = DB::table('fonctions')->where('name','LIKE','%inf%')->value('id');
-             return $user->fonction_id == $id;
+             return $user->fonction_id === $id;
          });
          Gate::define('isCaissier', function($user) {
              $id = DB::table('fonctions')->where('name','LIKE','%caiss%')->value('id');
-             return $user->fonction_id == $id;
+             return $user->fonction_id === $id;
          });
          Gate::define('isRecept', function($user) {
              $id = DB::table('fonctions')->where('name','LIKE','%pt%')->value('id');
-             return $user->fonction_id == $id;
+             return $user->fonction_id === $id;
          });
          Gate::define('isLaborant', function($user) {
              $id = DB::table('fonctions')->where('name','LIKE','%bor%')->value('id');
-             return $user->fonction_id == $id;
+             return $user->fonction_id === $id;
          });
     }
 }
