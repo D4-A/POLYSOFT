@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class ExamensController extends Controller
 {
@@ -89,6 +90,9 @@ class ExamensController extends Controller
             try{
             DB::table('examens')->insert(
                 array(
+                    'id' => IdGenerator::generate
+                    (['table' => 'examens',
+                      'length' => 5, 'prefix' => 'EX']),
                     'user_id' => $user_id,
                     'consultation_id' => $cons_id,
 		    'payment_id' => $payment_id,

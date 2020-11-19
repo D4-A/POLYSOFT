@@ -48,7 +48,7 @@
 	    <!-- search feature end here -->
 	</div><!--/.row-->
 	
-	<table class="table table-striped" id="table" style="width:650px;">
+	<table class="table table-striped" id="table" style="width:100%;">
 	    
 	    <thead style="background-color:#ccc;">
 		<tr>
