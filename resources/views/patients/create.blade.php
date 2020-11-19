@@ -41,7 +41,7 @@
 					<label style="padding-left:10px;">Adresse</label>
 					<input type="text" class="form-control" name="adresse" placeholder="Adresse du patient" required><br>
 					<label style="padding-left:10px;">Téléphone </label>
-					<input type="text" class="form-control" name="tel" placeholder="Téléphone du patient" required><br>
+					<input type="text" maxlength="8" class="form-control" name="tel" placeholder="Téléphone du patient" required><br>
 					<label style="padding-left:10px;">Email </label>
 					<input type="email" class="form-control" name="email" placeholder="Email du patient"><br>
 					<label style="padding-left:10px;">CNI </label>

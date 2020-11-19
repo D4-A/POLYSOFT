@@ -69,7 +69,7 @@
 					<label style="padding-left:10px;">Adresse</label>
 					<input class="form-control" name="adresse" value="{{$user->adresse}}" placeholder="Adresse de l'utilisateur" required><br>
 					<label style="padding-left:10px;">Téléphone</label>
-					<input class="form-control" name="tel" value="{{$user->tel}}" placeholder="Téléphone de l'utilisateur" required><br>
+					<input class="form-control" maxlength="8" name="tel" value="{{$user->tel}}" placeholder="Téléphone de l'utilisateur" required><br>
 					<label style="padding-left:10px;">E-mail</label>
 					<input class="form-control" name="email" value="{{$user->email}}" placeholder="Email de l'utilisateur" required><br>
 					<label style="padding-left:10px;">Carte d'Identité</label>
