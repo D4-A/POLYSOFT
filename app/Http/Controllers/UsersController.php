@@ -137,6 +137,7 @@ class UsersController extends Controller
             'adresse' => 'required',
          ]);
         
+    
         $user->name = $request->name;
         $user->prenom = $request->prenom;
         $user->genre = $request->genre;
