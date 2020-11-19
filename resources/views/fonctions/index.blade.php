@@ -68,7 +68,7 @@
 			    <?php foreach($fonctions as $key => $fonction): ?>
 					<tr>
 					    <td scope="row"> <?= $key; ?></td>
-					    <th> <?= $fonction->id; ?></th>
+					    <td> <?= $fonction->id; ?></td>
 					    <td> <?= $fonction->name; ?></td>
 					    <td> <?= $fonction->diplome; ?></td>
 					    @can('isAdmin')

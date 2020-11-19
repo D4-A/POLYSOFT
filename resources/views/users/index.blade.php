@@ -52,14 +52,13 @@
 
 			<thead style="background-color:#ccc;">
 				<tr>
-					<!--<th scope="col" style="text-align:center;">NUM </th>-->
+					<th scope="col" style="text-align:center;">NUM </th>
 					<th scope="col">ID</th>
 					<th scope="col">Nom</th>
 					<th scope="col">Prénom </th>
 					<th scope="col">Fonction</th>
 					<th scope="col">Service</th>
 					<th scope="col">Genre</th>
-					<th scope="col">DateNaiss</th>
 					<th scope="col">Adresse</th>
 					<th scope="col">Tél</th>
 					<th scope="col">Email</th>
@@ -72,14 +71,13 @@
 			<tbody>
 				<?php foreach($users as $key => $user): ?>
 					<tr>
-						<!--<td scope="row" style="text-align:center;"> <?= $key; ?></td>-->
-						<th> <?= $user->id; ?></th>
+						<td scope="row" style="text-align:center;"> <?= $key; ?></td>
+						<td> <?= $user->id; ?></td>
 						<td> <?= $user->name; ?></td>
 						<td> <?= $user->prenom; ?></td>
 						<td> <?= $user->fonct_name; ?></td>
 						<td> <?= $user->serv_name; ?></td>
 						<td> <?= $user->genre; ?></td>
-						<td> <?= $user->ans_naiss; ?></td>
 						<td> <?= $user->adresse; ?></td>
 						<td> <?= $user->tel; ?></td>
 						<td> <?= $user->email; ?></td>

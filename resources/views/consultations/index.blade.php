@@ -69,7 +69,7 @@
 		<?php foreach($consultations as $key => $consultation): ?>
 		<tr>
 		    <td scope="row" style="text-align:center;"> <?= $key; ?></td>
-		    <th> <?= $consultation->id; ?></th>
+		    <td> <?= $consultation->id; ?></td>
 		    <td>Dr <?= $consultation->user_name; ?></td>
 		    <td> <?= $consultation->patient_name; ?> </td>
 		    <td> <?= $consultation->motif; ?></td>

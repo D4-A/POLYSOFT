@@ -37,8 +37,8 @@
 				</div>
 				<div class="col-lg-3" style="padding:0;">
 					<select class="form-control" id="search">
-						<option value="0"> ID</option>
-						<option value="1"> Nom</option>
+						<option value="1"> ID</option>
+						<option value="2"> Nom</option>
 					</select>
 				</div>
 				<div class="col-lg-5" style="padding-left:5px;">
@@ -64,7 +64,7 @@
 				    @foreach($services as $key => $service)
 					<tr>
 					<td scope="row"> {{$key}}</td>
-					<th> {{$service->id}}</th>
+					<td> {{$service->id}}</td>
 					<td> {{$service->name}}</td>
 					@can('isAdmin')
 					<td style="display:flex;">
