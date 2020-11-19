@@ -15,7 +15,7 @@ class Consultation extends Model
         self::creating(function ($model) {
                 $model->id = IdGenerator::generate
                            (['table' => 'consultations',
-                             'length' => 10, 'prefix' => 'CONS']);
+                             'length' => 7, 'prefix' => 'CONS']);
             });
     }
 }

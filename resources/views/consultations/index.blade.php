@@ -53,14 +53,14 @@
 	    <thead style="background-color:#ccc;">
 		<tr>
 		    <th scope="col" style="text-align:center;">NUM </th>
-		    <th scope="col">ID</th>
-		    <th scope="col">Nom Dr</th>
-		    <th scope="col">Nom Patient</th>
+		    <th scope="col" style="text-align:center;">CONSID</th>
+		    <th scope="col" style="text-align:center;">Nom Médecin</th>
+		    <th scope="col" style="text-align:center;">Nom Patient</th>
 		    <!--<th scope="col">ID_Paiement</th>-->
-		    <th scope="col">Motif</th>
-		    <th scope="col">Date</th>
+		    <th scope="col" style="text-align:center;">Motif</th>
+		    <th scope="col" style="text-align:center;">Date</th>
 		    @canany(['isAdmin','isDoctor','isInf','isLaborant'])
-		    <th scope="col">Actions</th>
+		    <th scope="col" style="text-align:center;">Actions</th>
 		    @endcan
 		</tr>
 		
@@ -69,9 +69,9 @@
 		<?php foreach($consultations as $key => $consultation): ?>
 		<tr>
 		    <td scope="row" style="text-align:center;"> <?= $key; ?></td>
-		    <td> <?= $consultation->id; ?></td>
-		    <td> <?= $consultation->user_name; ?></td>
-		    <td> <?= $consultation->patient_name; ?></td>
+		    <th> <?= $consultation->id; ?></th>
+		    <td>Dr <?= $consultation->user_name; ?></td>
+		    <td> <?= $consultation->patient_name; ?> </td>
 		    <td> <?= $consultation->motif; ?></td>
 		    <td> <?= $consultation->created_at; ?></td>
 		    @canany(['isAdmin','isDoctor','isInf'])

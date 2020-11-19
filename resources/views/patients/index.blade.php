@@ -51,13 +51,13 @@
 			<!-- search feature end here -->
 		</div><!--/.row-->
 		
-		<table class="table table-striped" id="table">
+		<table class="table table-condensed table-striped table-bordered" style="width:700px;" id="table">
 
 			<thead style="background-color:#ccc;">
 				<tr>
-					<th scope="col" style="text-align:center;">NUM </th>
+					<!--<th scope="col" style="text-align:center;">NUM </th>-->
 					<th scope="col">ID </th>
-					<th scope="col">Nom </th>
+					<th scope="col">Nom</th>
 					<th scope="col">Prénom </th>
 					<th scope="col">Genre </th>
 					<th scope="col">Date_Naiss </th>
@@ -74,8 +74,8 @@
 			<tbody>
 			    <?php foreach($patients as $key => $patient): ?>
 			    <tr>
-				<td scope="row" style="text-align:center;"> <?= $key; ?></td>
-				<td> <?= $patient->id; ?></td>
+				<!--<td scope="row" style="text-align:center;"> <?= $key; ?></td>-->
+				<th> <?= $patient->id; ?></th>
 				<td> <?= $patient->nom; ?></td>
 				<td> <?= $patient->prenom; ?></td>
 				<td> <?= $patient->genre; ?></td>

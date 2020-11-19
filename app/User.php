@@ -46,7 +46,7 @@ class User extends Authenticatable
         self::creating(function ($model) {
                 $model->id = IdGenerator::generate
                            (['table' => 'users',
-                             'length' => 10, 'prefix' => 'USER']);
+                             'length' => 5, 'prefix' => 'US']);
             });
     }
 }

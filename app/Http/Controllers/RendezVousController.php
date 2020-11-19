@@ -56,7 +56,7 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
     }
     public function refresh($id)
     {
-        if($id === 'USER000001')
+        if($id === 'U0001')
             return back();
         $medecin = DB::table('users')->where('id',$id)->first();
         $users = DB::table('users')

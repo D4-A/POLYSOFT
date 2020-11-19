@@ -17,14 +17,14 @@ class FonctionSeeder extends Seeder
                              (['table' => 'fonctions',
                                'length' => 4, 'prefix' => 'F']),
             'name' => 'Admin',
-            'diplome' => 'Bac'
+            'diplome' => 'Baccalauréat'
         ]);
         DB::table('fonctions')->insert([
             'id' => IdGenerator::generate
                              (['table' => 'fonctions',
                                'length' => 4, 'prefix' => 'F']),
             'name' => 'Docteur',
-            'diplome' => 'Bac'
+            'diplome' => 'Doctorat'
         ]);
     }
 }

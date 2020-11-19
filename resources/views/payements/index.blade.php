@@ -69,7 +69,7 @@
 			<?php foreach($payements as $key => $payement): ?>
 			<tr>
 			    <td scope="row" style="text-align:center;"> {{ $key }}</td>
-			    <td> {{ $payement->id }}</td>
+			    <th> {{ $payement->id }}</th>
 			    <td> {{ $payement->user_name }}</td>
 			    <td> {{ $payement->nom}} {{ $payement->prenom}}</td>
 			    <td> {{ $payement->name}}</td>

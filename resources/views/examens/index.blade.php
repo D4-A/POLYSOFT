@@ -68,7 +68,7 @@
 		<?php foreach($examens as $key => $examen): ?>
 		<tr>
 		    <td scope="row" style="text-align:center;"> <?= $key; ?></td>
-		    <td> <?= $examen->id; ?></td>
+		    <th> <?= $examen->id; ?></th>
 		    <td> <?= $examen->nom_examen; ?></td>
 		    <td> <?= $examen->user_name; ?></td>
 		    <td> <?= $examen->consultation_id; ?></td>

@@ -15,30 +15,30 @@ class PatientSeeder extends Seeder
         DB::table('patients')->insert([
             'id' => IdGenerator::generate
                              (['table' => 'patients',
-                               'length' => 10, 'prefix' => 'PN']),
-            'nom' => 'IRAMBANA',
-            'prenom' => 'Patrick',
-            'genre' => 'Feminin',
-            'ans_naiss' => '1345',
-            'profession' => 'Etudiant',
+                               'length' => 5, 'prefix' => 'PN']),
+            'nom' => 'IRAMBONA',
+            'prenom' => 'Patricia',
+            'genre' => 'Féminin',
+            'ans_naiss' => '1995-05-25',
+            'profession' => 'Etudiante',
             'adresse' => 'kibenga',
-            'tel' => 71111111,
-            'email' => 'patrick@gnu.org',
-            'cni' => 'P6666',
+            'tel' => 71100100,
+            'email' => 'patricia@gnu.org',
+            'cni' => '123.123/8523',
         ]);
         DB::table('patients')->insert([
             'id' => IdGenerator::generate
                              (['table' => 'patients',
-                               'length' => 10, 'prefix' => 'PN']),
-            'nom' => 'ngabirano',
-            'prenom' => 'brice',
+                               'length' => 5, 'prefix' => 'PN']),
+            'nom' => 'NDIZEYE',
+            'prenom' => 'Philippe',
             'genre' => 'Masculin',
-            'ans_naiss' => '1224',
-            'profession' => 'Etudiant',
-            'adresse' => 'ngangara',
-            'tel' => 7111119,
-            'email' => 'brice@gnu.org',
-            'cni' => 'P26666',
+            'ans_naiss' => '1986-06-12',
+            'profession' => 'Sans',
+            'adresse' => 'Ngangara',
+            'tel' => 71200200,
+            'email' => 'philippe@gnu.org',
+            'cni' => '789.785/2545',
         ]);
     }
 }

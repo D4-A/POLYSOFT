@@ -66,7 +66,7 @@
 			<?php foreach($typePayements as $key => $typePayement): ?>
 			<tr>
 			    <td scope="row" style="text-align:center;"> <?= $key; ?></td>
-			    <td> <?= $typePayement->id; ?></td>
+			    <th> <?= $typePayement->id; ?></th>
 			    <td> <?= $typePayement->name; ?></td>
 			    <td> <?= $typePayement->montant; ?></td>
 			    @canany(['isAdmin','isCaissier'])

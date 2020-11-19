@@ -15,7 +15,7 @@ class Fonction extends Model
         self::creating(function ($model) {
                 $model->id = IdGenerator::generate
                            (['table' => 'fonctions',
-                             'length' => 4, 'prefix' => 'S']);
+                             'length' => 4, 'prefix' => 'F']);
             });
     }
 }

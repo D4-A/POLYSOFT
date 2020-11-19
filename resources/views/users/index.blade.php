@@ -52,7 +52,7 @@
 
 			<thead style="background-color:#ccc;">
 				<tr>
-					<th scope="col" style="text-align:center;">NUM </th>
+					<!--<th scope="col" style="text-align:center;">NUM </th>-->
 					<th scope="col">ID</th>
 					<th scope="col">Nom</th>
 					<th scope="col">Prénom </th>
@@ -63,7 +63,7 @@
 					<th scope="col">Adresse</th>
 					<th scope="col">Tél</th>
 					<th scope="col">Email</th>
-					<th scope="col">C.N.ID </th>
+					<!--<th scope="col">C.N.ID </th>-->
 					@can('isAdmin')
 					<th scope="col">Actions</th>
 					@endcan
@@ -72,8 +72,8 @@
 			<tbody>
 				<?php foreach($users as $key => $user): ?>
 					<tr>
-						<td scope="row" style="text-align:center;"> <?= $key; ?></td>
-						<td> <?= $user->id; ?></td>
+						<!--<td scope="row" style="text-align:center;"> <?= $key; ?></td>-->
+						<th> <?= $user->id; ?></th>
 						<td> <?= $user->name; ?></td>
 						<td> <?= $user->prenom; ?></td>
 						<td> <?= $user->fonct_name; ?></td>
@@ -83,7 +83,7 @@
 						<td> <?= $user->adresse; ?></td>
 						<td> <?= $user->tel; ?></td>
 						<td> <?= $user->email; ?></td>
-						<td> <?= $user->cni; ?></td>
+						<!--<td> <?= $user->cni; ?></td>-->
 						@can('isAdmin')
 						<td style="display:flex;">
 							<a href="users/edit/{{$user->id}}" style="padding-right:10px;">

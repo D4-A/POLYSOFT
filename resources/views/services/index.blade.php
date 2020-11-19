@@ -64,7 +64,7 @@
 				    @foreach($services as $key => $service)
 					<tr>
 					<td scope="row"> {{$key}}</td>
-					<td> {{$service->id}}</td>
+					<th> {{$service->id}}</th>
 					<td> {{$service->name}}</td>
 					@can('isAdmin')
 					<td style="display:flex;">

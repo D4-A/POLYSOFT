@@ -15,7 +15,7 @@ class Patient extends Model
         self::creating(function ($model) {
                 $model->id = IdGenerator::generate
                            (['table' => 'patients',
-                             'length' => 10, 'prefix' => 'PN']);
+                             'length' => 5, 'prefix' => 'PN']);
             });
     }
 }

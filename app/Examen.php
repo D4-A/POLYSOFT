@@ -15,7 +15,7 @@ class Examen extends Model
         self::creating(function ($model) {
                 $model->id = IdGenerator::generate
                            (['table' => 'examens',
-                             'length' => 10, 'prefix' => 'EX']);
+                             'length' => 5, 'prefix' => 'EX']);
             });
     }
 }

@@ -22,7 +22,7 @@ class ServiceSeeder extends Seeder
             'id' => IdGenerator::generate
                              (['table' => 'services',
                                'length' => 4, 'prefix' => 'S']),
-            'name' => 'pediatrie'
+            'name' => 'Pédiatrie'
         ]);
     }
 }

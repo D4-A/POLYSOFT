@@ -23,14 +23,14 @@ class TypePayementSeeder extends Seeder
             'id' => IdGenerator::generate
                              (['table' => 'type_payements',
                                'length' => 4, 'prefix' => 'T']),
-            'name' => 'Cons Dr generaliste',
+            'name' => 'Cons Dr généraliste',
             'montant' => '10000'
         ]);
         DB::table('type_payements')->insert([
             'id' => IdGenerator::generate
                              (['table' => 'type_payements',
                                'length' => 4, 'prefix' => 'T']),
-            'name' => 'Cons Dr specialiste',
+            'name' => 'Cons Dr spécialiste',
             'montant' => '10000'
         ]);
     }

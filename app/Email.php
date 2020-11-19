@@ -15,7 +15,7 @@ class Email extends Model
         self::creating(function ($model) {
                 $model->id = IdGenerator::generate
                            (['table' => 'emails',
-                             'length' => 10, 'prefix' => 'EM']);
+                             'length' => 5, 'prefix' => 'EM']);
             });
     }
 }

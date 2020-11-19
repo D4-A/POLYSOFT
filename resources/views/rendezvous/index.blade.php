@@ -68,7 +68,7 @@
 		<?php foreach($rendezVous as $key => $rendezvous): ?>
 					<tr>
 						<td scope="row" style="text-align:center;"> <?= $key; ?></td>
-						<td> <?= $rendezvous->id; ?></td>
+						<th> <?= $rendezvous->id; ?></th>
 						<td> <?= $rendezvous->pat_name; ?></td>
 						<td> <?= $rendezvous->user_name; ?></td>
 						<td> <?= $rendezvous->creneau_id; ?></td>

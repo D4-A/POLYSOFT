@@ -15,7 +15,7 @@ class rendezVous extends Model
         self::creating(function ($model) {
                 $model->id = IdGenerator::generate
                            (['table' => 'rendez_vouses',
-                             'length' => 10, 'prefix' => 'RV']);
+                             'length' => 5, 'prefix' => 'RV']);
             });
     }
 }

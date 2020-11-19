@@ -15,7 +15,7 @@ class Creneau extends Model
         self::creating(function ($model) {
                 $model->id = IdGenerator::generate
                            (['table' => 'creneaus',
-                             'length' => 10, 'prefix' => 'CRE']);
+                             'length' => 6, 'prefix' => 'CRE']);
             });
     }
 }
