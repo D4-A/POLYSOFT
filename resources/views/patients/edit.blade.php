@@ -30,7 +30,16 @@
 				<label style="padding-left:10px;">Prénom </label>
 				<input type="text" class="form-control" name="prenom" value="{{$patient->prenom}}" placeholder="Prénom du patient" required><br>
 				<label style="padding-left:10px;">Genre  </label>
-				<input type="select" class="form-control" name="genre" value="{{$patient->genre}}" placeholder="Genre du patient" required><br>
+				<select name="genre" id="genre" class="form-control" required>
+						@foreach(['Masculin','Feminin'] as $genre){
+							@if($genre === $patient->genre)
+							<option value="{{$patient->genre}}" selected>{{$patient->genre}}</option>
+							@else
+							<option value="{{$genre}}">{{$genre}}</option>
+							@endif
+						}
+						@endforeach
+				</select><br>
 				<label style="padding-left:10px;">Année de naissance </label>
 				<input type="date" class="form-control" name="ans_naiss" value="{{$patient->ans_naiss}}" placeholder="Année de naissance du patient" required><br>
 				<label style="padding-left:10px;">Profession </label>

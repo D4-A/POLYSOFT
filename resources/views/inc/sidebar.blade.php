@@ -15,7 +15,7 @@
 		<span class="fa fa-arrow-right">&nbsp;</span> Fonctions
 	    </a></li>
 	    <li><a class="" href="{{url('/typePayements')}}">
-		<span class="fa fa-arrow-right">&nbsp;</span> Type de Paiement
+		<span class="fa fa-arrow-right">&nbsp;</span> Type de Payement
 	    </a></li>
 	    <li><a class="" href="{{url('/creneaux')}}">
 		<span class="fa fa-arrow-right">&nbsp;</span> Creneaux
