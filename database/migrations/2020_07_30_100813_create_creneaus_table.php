@@ -14,7 +14,7 @@ class CreateCreneausTable extends Migration
     public function up()
     {
         Schema::create('creneaus', function (Blueprint $table) {
-                $table->string('id',32)->index();
+                $table->string('id',32)->unique()->index();
                 $table->string('user_id');
                 $table->string('name')->default('rendez-vous');
                 $table->dateTime('start_time',0);

@@ -14,7 +14,7 @@ class CreateExamensTable extends Migration
     public function up()
     {
         Schema::create('examens', function (Blueprint $table) {
-                $table->string('id',32)->index();
+                $table->string('id',32)->unique()->index();
                 $table->string('user_id');
                 $table->string('consultation_id');
                 $table->string('payment_id')->unique();

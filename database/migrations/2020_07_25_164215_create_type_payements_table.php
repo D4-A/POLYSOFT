@@ -14,7 +14,7 @@ class CreateTypePayementsTable extends Migration
     public function up()
     {
         Schema::create('type_payements', function (Blueprint $table) {
-                $table->string('id',32)->index();
+                $table->string('id',32)->unique()->index();
                 $table->string('name');
                 $table->double('montant');
                 $table->timestamps();

@@ -14,7 +14,7 @@ class CreateRendezVousesTable extends Migration
     public function up()
     {
         Schema::create('rendez_vouses', function (Blueprint $table) {
-                $table->string('id',32)->index();
+                $table->string('id',32)->unique()->index();
                 $table->string('patient_id');
                 $table->string('payement_id')->unique();
                 $table->string('creneau_id')->unique();

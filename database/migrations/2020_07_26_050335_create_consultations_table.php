@@ -14,7 +14,7 @@ class CreateConsultationsTable extends Migration
     public function up()
     {
         Schema::create('consultations', function (Blueprint $table) {
-                $table->string('id',32)->index(); 
+                $table->string('id',32)->unique()->index(); 
                 $table->string('user_id'); 
                 $table->string('patient_id');
                 $table->string('payement_id')->unique();

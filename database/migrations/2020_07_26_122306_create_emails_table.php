@@ -14,7 +14,7 @@ class CreateEmailsTable extends Migration
     public function up()
     {
         Schema::create('emails', function (Blueprint $table) {
-                $table->string('id',32)->index();
+                $table->string('id',32)->unique()->index();
                 $table->string('user_id');
                 $table->string('consultation_id')->nullable();
                 $table->string('subject');
