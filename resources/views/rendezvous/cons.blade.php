@@ -29,23 +29,20 @@
 		<input class="form-control" name="patient_id" value="{{$patient_id}}" placeholder="Patient Id" readonly>
 		<label> Payement</label>
 		<input class="form-control" name="payement_id" value="{{$payement_id}}" placeholder="Payement" readonly>
-		<label> Motif</label>
-		<input class="form-control" name="motif" placeholder="Motif">
-		<label>Antecedent</label>
-		<input class="form-control" name="antecedent" placeholder="Maladie deja infecte">
-		<label>Motif de consulation </label>
-		<input class="form-control" name="motif" placeholder="Motif de consultation">
-		<label>Historique de la maladie</label>
-		<input class="form-control" name="historique" placeholder="Historique de la maladie">
-		<label>Examen Physique</label>
-		<input class="form-control" name="examen_physique" placeholder="Examen Physique">
-		<label>Hypothese diagnostic </label>
-		<input class="form-control" name="hypothese_dia" placeholder="Hypothese dignostic">
-		<label>Examen complentaire</label>
-		<input class="form-control" name="examen_compl" placeholder="Examen complentaire">
-		<label>Taitement </label>
-		<input class="form-control" name="traitement" placeholder="Traitement">
-		<input type="hidden" name="rendezvous_id" value="{{$rendezvous_id}}">
+		<label style="padding-left:10px;">Motif de consulation </label>
+					<textarea class="form-control" name="motif" cols="20" rows="5" placeholder="Motif de consultation" required></textarea><br>
+					<label style="padding-left:10px;">Historique de la maladie</label>
+					<textarea class="form-control" name="historique" cols="20" rows="5" placeholder="Historique de la maladie" required></textarea><br>
+					<label style="padding-left:10px;">Antécedent</label>
+					<input class="form-control" name="antecedent" placeholder="Autres maladies connues" required><br>
+					<label style="padding-left:10px;">Examens Physiques</label>
+					<textarea class="form-control" name="examen_physique" cols="20" rows="5" placeholder="Examens Physiques" required></textarea><br>
+					<label style="padding-left:10px;">Hypothèse diagnostic </label>
+					<input class="form-control" name="hypothese_dia" placeholder="Hypothèse dignostic" required><br>
+					<label style="padding-left:10px;">Examens complémentaires</label>
+					<textarea class="form-control" name="examen_compl" cols="20" rows="5" placeholder="Examens complémentaires" required></textarea><br>
+					<label style="padding-left:10px;">Taitement</label>
+					<textarea class="form-control" name="traitement" cols="20" rows="5" placeholder="Traitement" required></textarea><br>
 	    </div>
 
 	    <button type="submit" class="btn btn-primary">

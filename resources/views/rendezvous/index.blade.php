@@ -72,15 +72,29 @@
 						<td> <?= $rendezvous->pat_name; ?></td>
 						<td> <?= $rendezvous->user_name; ?></td>
 						<td> <?= $rendezvous->creneau_id; ?></td>
-						<td> <?= $rendezvous->description; ?></td>
+						<td>
+						  @if($rendezvous->description == null)
+						  {{'none'}}
+						  @else
+						 <?= $rendezvous->description; ?>
+						  @endif
+						  </td>
 						<td> <?= $rendezvous->etat; ?></td>
 						<td style="display:flex;">
 						    @canany(['isAdmin','isDoctor','isInfir'])
+							@if($rendezvous->etat == 'closed')
+							<a href="rendezVous/cons/{{$rendezvous->id}}" style="padding-right:10px;">
+								<button type="submit" class="btn btn-sm btn-primary" disabled>
+									<span class="glyphicon glyphicon-eye-open" style="padding-right:8px;"> </span>Consulter
+								</button>
+							</a>
+							@else
 							<a href="rendezVous/cons/{{$rendezvous->id}}" style="padding-right:10px;">
 								<button type="submit" class="btn btn-sm btn-primary">
 									<span class="glyphicon glyphicon-eye-open" style="padding-right:8px;"> </span>Consulter
 								</button>
 							</a>
+							@endif
 							@endcan	
 							@canany(['isAdmin','isRecept'])
 							<a href="rendezVous/edit/{{$rendezvous->id}}" style="padding-right:10px;">
