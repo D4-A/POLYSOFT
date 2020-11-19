@@ -48,7 +48,7 @@
 	    <!-- search feature end here -->
 	</div><!--/.row-->
 	
-	<table class="table table-condensed table-striped table-bordered" id="table">
+	<table class="table table-condensed table-striped " id="table">
 	    
 	    <thead style="background-color:#ccc;">
 		<tr>

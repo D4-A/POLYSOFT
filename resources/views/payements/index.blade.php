@@ -9,13 +9,13 @@
 						<em class="fa fa-money"></em>
 					</a>
 				</li>
-				<li class="active">Paiements</li>
+				<li class="active">Payements</li>
 		    </ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 		    <div class="col-lg-12">
-			<h1 class="page-header">Liste des paiements</h1>
+			<h1 class="page-header">Liste des payements</h1>
 		    </div>
 		</div><!--/.row--><br>
 

@@ -2,7 +2,7 @@
     <ul class="nav menu">
 	<li class="active"><a href="{{url('/home')}}"><em class="fa fa-home">&nbsp;</em> Home</a></li>
 	<li><a href="{{url('/patients')}}"><em class="fa fa-users">&nbsp;</em> Patients</a></li>
-	<li><a href="{{url('/payements')}}"><em class="fa fa-money">&nbsp;</em> Paiements</a></li>
+	<li><a href="{{url('/payements')}}"><em class="fa fa-money">&nbsp;</em> Payements</a></li>
 	<li><a href="{{url('/consultations')}}"><em class="fa fa-hospital-o">&nbsp;</em> Consultations</a></li>
 	<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 	    <em class="fa fa-plus">&nbsp;</em> Autres Options <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"></span>

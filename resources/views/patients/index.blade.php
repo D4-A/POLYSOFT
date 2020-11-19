@@ -51,7 +51,7 @@
 			<!-- search feature end here -->
 		</div><!--/.row-->
 		
-		<table class="table table-condensed table-striped table-bordered" style="width:700px;" id="table">
+		<table class="table table-condensed table-striped" style="width:700px;" id="table">
 
 			<thead style="background-color:#ccc;">
 				<tr>
