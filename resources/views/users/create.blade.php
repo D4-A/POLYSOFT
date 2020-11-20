@@ -60,7 +60,7 @@
 					<label style="padding-left:10px;">E-mail</label>
 					<input type="email" class="form-control" name="email" placeholder="Email de l'utilisateur" required><br>
 					<label style="padding-left:10px;">Carte d'Identité</label>
-					<input class="form-control" name="cni" placeholder="Carte_ID de l'utilisateur" required><br>
+					<input class="form-control" name="cni" maxlength="14" placeholder="Carte_ID de l'utilisateur" required><br>
 				</div>
 
 				<button type="submit" class="btn btn-primary">
