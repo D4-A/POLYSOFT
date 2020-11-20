@@ -59,6 +59,10 @@ class PayementsController extends Controller
             'patient_id' => 'required',
             'type_payement_id' => 'required'
          ]);
+        $patient_exist = Patient::find($request->patient_id);
+        if($patient_exist == null){
+           return back()->with('error', 'Le Patient n\'existe pas');
+        }
         $payement= new Payement();
         $payement->user_id = Auth::id();
         $payement->patient_id = $request->patient_id;

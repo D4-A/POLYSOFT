@@ -19,12 +19,16 @@
 				<h1 class="page-header">Payement des frais</h1>
 			</div>
 		</div><!--/.row-->
+		@if ($message = Session::get('error'))
+			        <div class="alert alert-danger">
+			            <p>{{ $message }}</p>
+			        </div>
+		@endif
 		<form role="form" action="{{url('payements')}}" method="post">
 			@csrf
 			<div class="form-group">
 				<label style="padding-left:10px;">PatientID </label>
 				<input class="form-control" name="patient_id" placeholder="PATIENT_ID" required><br>
-				
 				<label style="padding-left:10px;">Type de paiement </label>
 				<select name="type_payement_id" id="type_payement_id" class="form-control" required><br>
 					<option placeholder="" value="">Choisissez un Type de Paiement</option>
