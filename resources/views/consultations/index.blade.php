@@ -52,15 +52,15 @@
 	    
 	    <thead style="background-color:#ccc;">
 		<tr>
-		    <th scope="col" style="text-align:center;">NUM </th>
-		    <th scope="col" style="text-align:center;">CONSID</th>
-		    <th scope="col" style="text-align:center;">Nom Médecin</th>
-		    <th scope="col" style="text-align:center;">Nom Patient</th>
+		    <th scope="col">NUM </th>
+		    <th scope="col">CONSID</th>
+		    <th scope="col">Nom Médecin</th>
+		    <th scope="col">Nom Patient</th>
 		    <!--<th scope="col">ID_Paiement</th>-->
-		    <th scope="col" style="text-align:center;">Motif</th>
-		    <th scope="col" style="text-align:center;">Date</th>
+		    <th scope="col">Motif</th>
+		    <th scope="col">Date</th>
 		    @canany(['isAdmin','isDoctor','isInf','isLaborant'])
-		    <th scope="col" style="text-align:center;">Actions</th>
+		    <th scope="col">Actions</th>
 		    @endcan
 		</tr>
 		
@@ -71,7 +71,7 @@
 		    <td scope="row" style="text-align:center;"> <?= $key; ?></td>
 		    <td> <?= $consultation->id; ?></td>
 		    <td>Dr <?= $consultation->user_name; ?></td>
-		    <td> <?= $consultation->patient_name; ?> </td>
+		    <td> <?= $consultation->patient_name; ?>  <?= $consultation->patient_prenom; ?></td>
 		    <td> <?= $consultation->motif; ?></td>
 		    <td> <?= $consultation->created_at; ?></td>
 		    @canany(['isAdmin','isDoctor','isInf'])

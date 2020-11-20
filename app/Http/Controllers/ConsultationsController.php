@@ -29,7 +29,8 @@ class ConsultationsController extends Controller
                    ->join('users', 'users.id','consultations.user_id')
                    ->join('patients', 'patients.id', 'consultations.patient_id')
                    ->join('payements', 'payements.id', 'consultations.payement_id')
-                   ->select('users.name as user_name','patients.nom as patient_name' ,'payements.id as pay_id','consultations.*')
+                   ->select('users.name as user_name','patients.nom as patient_name' ,
+                   'patients.prenom as patient_prenom','payements.id as pay_id','consultations.*')
                    ->get();
         return view('consultations/index', [
             'consultations' => $consultations
