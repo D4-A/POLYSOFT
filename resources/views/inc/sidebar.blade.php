@@ -15,14 +15,16 @@
 		<span class="fa fa-arrow-right">&nbsp;</span> Fonctions
 	    </a></li>
 	    <li><a class="" href="{{url('/typePaiements')}}">
-		<span class="fa fa-arrow-right">&nbsp;</span> Type de Paiement
+		<span class="fa fa-arrow-right">&nbsp;</span> Type de Paiements
 	    </a></li>
 	    <li><a class="" href="{{url('/creneaux')}}">
 		<span class="fa fa-arrow-right">&nbsp;</span> Creneaux
 	    </a></li>
+	    @can('isAdmin')
 	    <li><a class="" href="{{url('/rapport/create')}}">
-		<span class="fa fa-arrow-right">&nbsp;</span> Rapport
+		<span class="fa fa-arrow-right">&nbsp;</span> Rapports
 	    </a></li>
+	    @endcan
 	</ul>
 	</li>
 	<li><a href="{{url('/examens')}}"><em class="fa fa-upload">&nbsp;</em> Examens</a></li>
