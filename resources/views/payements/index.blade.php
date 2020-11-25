@@ -24,7 +24,7 @@
 				@canany(['isAdmin','isCaissier'])
 				<a href="{{url('/payements/create')}}">
 					<button type="submit"  class="btn btn-success">
-						<span class="glyphicon glyphicon-plus" style="padding-right:8px;"></span> Nouveau Paiement
+						<span class="glyphicon glyphicon-plus" style="padding-right:8px;"></span> Nouveau Payement
 					</button>
 				</a>
 				@endcan
@@ -32,7 +32,7 @@
 			<!-- search feature begin here -->
 			<div class="col-lg-6 text-right" style="padding:0;">
 				<div class="col-lg-4" style="padding-right:10px;">
-					<h5 class="text-right"><strong>RECH_PAIEMENT</strong></h5>
+					<h5 class="text-right"><strong>RECH_PAYEMENT</strong></h5>
 				</div>
 				<div class="col-lg-3" style="padding:0;">
 					<select class="form-control" id="search">

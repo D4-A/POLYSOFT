@@ -29,9 +29,9 @@
 			<div class="form-group">
 				<label style="padding-left:10px;">PatientID </label>
 				<input class="form-control" name="patient_id" placeholder="PATIENT_ID" required><br>
-				<label style="padding-left:10px;">Type de paiement </label>
+				<label style="padding-left:10px;">Type de payement </label>
 				<select name="type_payement_id" id="type_payement_id" class="form-control" required><br>
-					<option placeholder="" value="">Choisissez un Type de Paiement</option>
+					<option placeholder="" value="">Choisissez un Type de Payement</option>
 					
 					@foreach($type_payements as $type_payement){
 						<option value="{{$type_payement->id}}">{{$type_payement->name}}</option>
