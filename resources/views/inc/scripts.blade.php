@@ -7,5 +7,6 @@
 	<script src="{{asset('js/bootstrap-datepicker.js')}}"></script>
 	<script src="{{asset('js/custom.js')}}"></script>
 	<script src="{{asset('js/search.js')}}"></script>
+	<script src="{{asset('js/select.js')}}"></script>
 	<script src="{{asset('js/fillfiles.js')}}"></script>
 	
