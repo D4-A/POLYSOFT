@@ -43,12 +43,12 @@ Route::put('users/{user}','UsersController@update');
 Route::post('users/destroy/{user}','UsersController@destroy');
 
 
-Route::get('typePayements','TypePayementsController@index');
-Route::get('typePayements/create','TypePayementsController@create');
-Route::post('typePayements','TypePayementsController@store');
-Route::get('typePayements/edit/{typePayement}','TypePayementsController@edit');
-Route::put('typePayements/{typePayement}','TypePayementsController@update');
-Route::post('typePayements/destroy/{typePayement}','TypePayementsController@destroy');
+Route::get('typePaiements','TypePaiementsController@index');
+Route::get('typePaiements/create','TypePaiementsController@create');
+Route::post('typePaiements','TypePaiementsController@store');
+Route::get('typePaiements/edit/{typePaiement}','TypePaiementsController@edit');
+Route::put('typePaiements/{typePaiement}','TypePaiementsController@update');
+Route::post('typePaiements/destroy/{typePaiement}','TypePaiementsController@destroy');
 
 Route::get('patients','PatientsController@index');
 Route::get('patients/create','PatientsController@create');
@@ -57,12 +57,12 @@ Route::get('patients/edit/{patient}','PatientsController@edit');
 Route::put('patients/{patient}','PatientsController@update');
 Route::post('patients/destroy/{patient}','PatientsController@destroy');
 
-Route::get('payements','PayementsController@index');
-Route::get('payements/create','PayementsController@create');
-Route::post('payements','PayementsController@store');
-Route::get('payements/edit/{payement}','PayementsController@edit');
-Route::put('payements/{payement}','PayementsController@update');
-Route::post('payements/destroy/{payement}','PayementsController@destroy');
+Route::get('paiements','PaiementsController@index');
+Route::get('paiements/create','PaiementsController@create');
+Route::post('paiements','PaiementsController@store');
+Route::get('paiements/edit/{paiement}','PaiementsController@edit');
+Route::put('paiements/{paiement}','PaiementsController@update');
+Route::post('paiements/destroy/{paiement}','PaiementsController@destroy');
 
 Route::get('consultations','ConsultationsController@index');
 Route::get('consultations/create','ConsultationsController@create');

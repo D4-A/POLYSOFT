@@ -6,7 +6,7 @@ use App\Consultation;
 use App\User;
 use App\Patient;
 use App\Examen;
-use App\Payement;
+use App\Paiement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -28,9 +28,9 @@ class ConsultationsController extends Controller
         $consultations = DB::table('consultations')
                    ->join('users', 'users.id','consultations.user_id')
                    ->join('patients', 'patients.id', 'consultations.patient_id')
-                   ->join('payements', 'payements.id', 'consultations.payement_id')
+                   ->join('paiements', 'paiements.id', 'consultations.paiement_id')
                    ->select('users.name as user_name','patients.nom as patient_name' ,
-                   'patients.prenom as patient_prenom','payements.id as pay_id','consultations.*')
+                   'patients.prenom as patient_prenom','paiements.id as pay_id','consultations.*')
                    ->get();
         return view('consultations/index', [
             'consultations' => $consultations
@@ -58,7 +58,7 @@ class ConsultationsController extends Controller
     {
         $request->validate([
             'patient_id' => 'required',
-            'payement_id' => 'required',
+            'paiement_id' => 'required',
             'historique' => 'required',
             'examen_physique' => 'required',
             'hypothese_dia' => 'required',
@@ -74,7 +74,7 @@ class ConsultationsController extends Controller
         $consultation= new Consultation();
         $consultation->user_id = Auth::id();
         $consultation->patient_id = $request->patient_id;
-        $consultation->payement_id = $request->payement_id;
+        $consultation->paiement_id = $request->paiement_id;
         $consultation->motif = $request->motif;
         $consultation->antecedent = $request->antecedent;
         $consultation->historique = $request->historique;
@@ -154,7 +154,7 @@ class ConsultationsController extends Controller
     {
         $request->validate([
             'patient_id' => 'required',
-            'payement_id' => 'required',
+            'paiement_id' => 'required',
             'historique' => 'required',
             'examen_physique' => 'required',
             'hypothese_dia' => 'required',
@@ -164,7 +164,7 @@ class ConsultationsController extends Controller
         
         $consultation->user_id = Auth::id();
         $consultation->patient_id = $request->patient_id;
-        $consultation->payement_id = $request->payement_id;
+        $consultation->paiement_id = $request->paiement_id;
         $consultation->motif = $request->motif;
         $consultation->antecedent = $request->antecedent;
         $consultation->historique = $request->historique;

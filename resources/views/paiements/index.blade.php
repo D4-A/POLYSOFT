@@ -9,22 +9,22 @@
 						<em class="fa fa-money"></em>
 					</a>
 				</li>
-				<li class="active">Payements</li>
+				<li class="active">Paiements</li>
 		    </ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 		    <div class="col-lg-12">
-			<h1 class="page-header">Liste des payements</h1>
+			<h1 class="page-header">Liste des paiements</h1>
 		    </div>
 		</div><!--/.row--><br>
 
 		<div class="row col-lg-12" style="padding-bottom:30px;">
 			<div class="col-lg-6 text-left" style="padding:0;">
 				@canany(['isAdmin','isCaissier'])
-				<a href="{{url('/payements/create')}}">
+				<a href="{{url('/paiements/create')}}">
 					<button type="submit"  class="btn btn-success">
-						<span class="glyphicon glyphicon-plus" style="padding-right:8px;"></span> Nouveau Payement
+						<span class="glyphicon glyphicon-plus" style="padding-right:8px;"></span> Nouveau Paiement
 					</button>
 				</a>
 				@endcan
@@ -66,25 +66,25 @@
 		    </thead>
 
 		    <tbody>
-			<?php foreach($payements as $key => $payement): ?>
+			<?php foreach($paiements as $key => $paiement): ?>
 			<tr>
 			    <td scope="row" style="text-align:center;"> {{ $key }}</td>
-			    <td> {{ $payement->id }}</td>
-			    <td> {{ $payement->user_name }}</td>
-			    <td> {{ $payement->nom}} {{ $payement->prenom}}</td>
-			    <td> {{ $payement->name}}</td>
-			    <td> {{ $payement->montant}}</td>
-			    <td> {{ $payement->created_at }}</td>
+			    <td> {{ $paiement->id }}</td>
+			    <td> {{ $paiement->user_name }}</td>
+			    <td> {{ $paiement->nom}} {{ $paiement->prenom}}</td>
+			    <td> {{ $paiement->name}}</td>
+			    <td> {{ $paiement->montant}}</td>
+			    <td> {{ $paiement->created_at }}</td>
 			    
 			    @canany(['isAdmin','isCaissier'])
 			    <td style="display:flex;text-align:center;">
-				<a href="payements/edit/{{$payement->id}}" style="padding-right:10px;">
+				<a href="paiements/edit/{{$paiement->id}}" style="padding-right:10px;">
 				    <button type="submit" class="btn btn-sm btn-primary">
 					<span class="glyphicon glyphicon-edit"> Edit</span>   
 				    </button>
 				</a>
 				
-				<form action="payements/destroy/{{$payement->id}}" method="post">
+				<form action="paiements/destroy/{{$paiement->id}}" method="post">
 				    @csrf
 				    <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
 					<span class="glyphicon glyphicon-trash"> Delete</span> 

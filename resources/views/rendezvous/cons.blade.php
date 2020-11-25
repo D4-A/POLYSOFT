@@ -27,8 +27,8 @@
 	    <div class="form-group">
 		<label>Patient  </label>
 		<input class="form-control" name="patient_id" value="{{$patient_id}}" placeholder="Patient Id" readonly>
-		<label> Payement</label>
-		<input class="form-control" name="payement_id" value="{{$payement_id}}" placeholder="Payement" readonly>
+		<label> Paiement</label>
+		<input class="form-control" name="paiement_id" value="{{$paiement_id}}" placeholder="Paiement" readonly>
 		<label style="padding-left:10px;">Motif de consulation </label>
 					<textarea class="form-control" name="motif" cols="20" rows="5" placeholder="Motif de consultation" required></textarea><br>
 					<label style="padding-left:10px;">Historique de la maladie</label>

@@ -17,7 +17,7 @@ class CreateConsultationsTable extends Migration
                 $table->string('id',32)->unique()->index(); 
                 $table->string('user_id'); 
                 $table->string('patient_id');
-                $table->string('payement_id')->unique();
+                $table->string('paiement_id')->unique();
                 $table->string('motif');
                 $table->string('antecedent');
                 $table->string('historique'); 
@@ -31,8 +31,8 @@ class CreateConsultationsTable extends Migration
                       ->onDelete('cascade');
                 $table->foreign('patient_id',44)->references('id')
                       ->on('patients')->onDelete('cascade');
-                $table->foreign('payement_id',40)->references('id')
-                      ->on('payements')->onDelete('cascade');
+                $table->foreign('paiement_id',40)->references('id')
+                      ->on('paiements')->onDelete('cascade');
             });
     }
     

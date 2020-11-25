@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\TypePayement;
+use App\TypePaiement;
 use Illuminate\Http\Request;
 
-class TypePayementsController extends Controller
+class TypePaiementsController extends Controller
 {
     public function __construct()
     {
@@ -14,9 +14,9 @@ class TypePayementsController extends Controller
     
     public function index()
     {
-        $typePayements = TypePayement::all();
-        return view('typePayements/index',[            
-            'typePayements'=> $typePayements
+        $typePaiements = TypePaiement::all();
+        return view('typePaiements/index',[            
+            'typePaiements'=> $typePaiements
         ]);
     }
 
@@ -27,7 +27,7 @@ class TypePayementsController extends Controller
      */
     public function create()
     {
-        return view('typePayements/create');
+        return view('typePaiements/create');
     }
 
     /**
@@ -42,11 +42,11 @@ class TypePayementsController extends Controller
             'name' => 'required',
             'montant' => 'required'
         ]);
-        $typePayement= new TypePayement();
-        $typePayement->name = $request->name;
-        $typePayement->montant = $request->montant;
-        $typePayement->save();
-        return redirect('typePayements');
+        $typePaiement= new TypePaiement();
+        $typePaiement->name = $request->name;
+        $typePaiement->montant = $request->montant;
+        $typePaiement->save();
+        return redirect('typePaiements');
 
     }
 
@@ -69,9 +69,9 @@ class TypePayementsController extends Controller
      */
     public function edit($id)
     {
-        $typePayement= TypePayement::find($id);
-        return view('typePayements/edit', [
-            'typePayement' => $typePayement
+        $typePaiement= TypePaiement::find($id);
+        return view('typePaiements/edit', [
+            'typePaiement' => $typePaiement
         ]);
     }
 
@@ -82,16 +82,16 @@ class TypePayementsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TypePayement $typePayement)
+    public function update(Request $request, TypePaiement $typePaiement)
     {
         $request->validate([
             'name' => 'required',
             'montant' => 'required'
         ]);
-        $typePayement->name = $request->name;
-        $typePayement->montant = $request->montant;
-        $typePayement->save();
-        return redirect('typePayements');
+        $typePaiement->name = $request->name;
+        $typePaiement->montant = $request->montant;
+        $typePaiement->save();
+        return redirect('typePaiements');
     }
 
     /**
@@ -100,9 +100,9 @@ class TypePayementsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TypePayement $typePayement)
+    public function destroy(TypePaiement $typePaiement)
     {
-        $typePayement->delete();
-        return redirect('typePayements');
+        $typePaiement->delete();
+        return redirect('typePaiements');
     }
 }

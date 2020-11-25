@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 
-class TypePayementSeeder extends Seeder
+class TypePaiementSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,23 +12,23 @@ class TypePayementSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('type_payements')->insert([
+        DB::table('type_paiements')->insert([
             'id' => IdGenerator::generate
-                             (['table' => 'type_payements',
+                             (['table' => 'type_paiements',
                                'length' => 4, 'prefix' => 'T']),
             'name' => 'Cons infirmier',
             'montant' => '1500'
         ]);
-        DB::table('type_payements')->insert([
+        DB::table('type_paiements')->insert([
             'id' => IdGenerator::generate
-                             (['table' => 'type_payements',
+                             (['table' => 'type_paiements',
                                'length' => 4, 'prefix' => 'T']),
             'name' => 'Cons Dr généraliste',
             'montant' => '10000'
         ]);
-        DB::table('type_payements')->insert([
+        DB::table('type_paiements')->insert([
             'id' => IdGenerator::generate
-                             (['table' => 'type_payements',
+                             (['table' => 'type_paiements',
                                'length' => 4, 'prefix' => 'T']),
             'name' => 'Cons Dr spécialiste',
             'montant' => '10000'

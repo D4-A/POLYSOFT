@@ -27,7 +27,7 @@ class CreateExamensTable extends Migration
                 $table->foreign('consultation_id',46)->references('id')
                       ->on('consultations')->onDelete('cascade');
                 $table->foreign('payment_id',41)->references('id')
-                      ->on('payements')->onDelete('cascade');
+                      ->on('paiements')->onDelete('cascade');
         });
     }
 

@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
         $this->call(FonctionSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(PatientSeeder::class);
-        $this->call(TypePayementSeeder::class);
-        $this->call(PayementSeeder::class);
+        $this->call(TypePaiementSeeder::class);
+        $this->call(PaiementSeeder::class);
         $this->call(ConsultationsSeeder::class);
     }
 }
