@@ -20,6 +20,9 @@
 	    <li><a class="" href="{{url('/creneaux')}}">
 		<span class="fa fa-arrow-right">&nbsp;</span> Creneaux
 	    </a></li>
+	    <li><a class="" href="{{url('/rapport/create')}}">
+		<span class="fa fa-arrow-right">&nbsp;</span> Rapport
+	    </a></li>
 	</ul>
 	</li>
 	<li><a href="{{url('/examens')}}"><em class="fa fa-upload">&nbsp;</em> Examens</a></li>

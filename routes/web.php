@@ -109,3 +109,8 @@ Route::get('rendezVous/edit/{rendezvous}','RendezVousController@edit');
 Route::put('rendezVous/{rendezvous}','RendezVousController@update');
 Route::post('rendezVous/destroy/{rendezvous}','RendezVousController@destroy');
 Route::get('rendezVous/cons/{rendezvous}','RendezVousController@cons');
+
+Route::get('rapport','RapportsControllers@index');
+Route::get('rapport/create','RapportsControllers@create');
+Route::post('rapport','RapportsControllers@store');
+
