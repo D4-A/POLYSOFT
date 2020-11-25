@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Patient;
 use App\Consultation;
 use Illuminate\Support\Facades\DB;
-use App\Payement;
+use App\Paiement;
 
 class RapportsControllers extends Controller
 {
@@ -88,9 +88,9 @@ class RapportsControllers extends Controller
                     $consultations = DB::table('consultations')
                    ->join('users', 'users.id','consultations.user_id')
                    ->join('patients', 'patients.id', 'consultations.patient_id')
-                   ->join('payements', 'payements.id', 'consultations.payement_id')
+                   ->join('paiements', 'paiements.id', 'consultations.paiement_id')
                    ->select('users.name as user_name','patients.nom as patient_name' ,
-                   'patients.prenom as patient_prenom','payements.id as pay_id','consultations.*')
+                   'patients.prenom as patient_prenom','paiements.id as pay_id','consultations.*')
                    ->get();
                     return view('consultations/index',[            
                         'consultations'=> $consultations
@@ -99,9 +99,9 @@ class RapportsControllers extends Controller
                     $consultations = DB::table('consultations')
                    ->join('users', 'users.id','consultations.user_id')
                    ->join('patients', 'patients.id', 'consultations.patient_id')
-                   ->join('payements', 'payements.id', 'consultations.payement_id')
+                   ->join('paiements', 'paiements.id', 'consultations.paiement_id')
                    ->select('users.name as user_name','patients.nom as patient_name' ,
-                   'patients.prenom as patient_prenom','payements.id as pay_id','consultations.*')
+                   'patients.prenom as patient_prenom','paiements.id as pay_id','consultations.*')
                    
                    ->whereDate('created_at','<=',$end)->get();
                     return view('consultations/index',[            
@@ -111,9 +111,9 @@ class RapportsControllers extends Controller
                     $consultations = DB::table('consultations')
                    ->join('users', 'users.id','consultations.user_id')
                    ->join('patients', 'patients.id', 'consultations.patient_id')
-                   ->join('payements', 'payements.id', 'consultations.payement_id')
+                   ->join('paiements', 'paiements.id', 'consultations.paiement_id')
                    ->select('users.name as user_name','patients.nom as patient_name' ,
-                   'patients.prenom as patient_prenom','payements.id as pay_id','consultations.*')
+                   'patients.prenom as patient_prenom','paiements.id as pay_id','consultations.*')
                    
                    ->whereDate('created_at','>=',$start)->get();
                     return view('consultations/index',[            
@@ -123,9 +123,9 @@ class RapportsControllers extends Controller
 $consultations = DB::table('consultations')
                    ->join('users', 'users.id','consultations.user_id')
                    ->join('patients', 'patients.id', 'consultations.patient_id')
-                   ->join('payements', 'payements.id', 'consultations.payement_id')
+                   ->join('paiements', 'paiements.id', 'consultations.paiement_id')
                    ->select('users.name as user_name','patients.nom as patient_name' ,
-                   'patients.prenom as patient_prenom','payements.id as pay_id','consultations.*')
+                   'patients.prenom as patient_prenom','paiements.id as pay_id','consultations.*')
                    ->whereBetween('created_at',[$start,$end])->get();
                     return view('consultations/index',[            
                         'consultations'=> $consultations
@@ -136,9 +136,9 @@ $consultations = DB::table('consultations')
                     $consultations = DB::table('consultations')
                    ->join('users', 'users.id','consultations.user_id')
                    ->join('patients', 'patients.id', 'consultations.patient_id')
-                   ->join('payements', 'payements.id', 'consultations.payement_id')
+                   ->join('paiements', 'paiements.id', 'consultations.paiement_id')
                    ->select('users.name as user_name','patients.nom as patient_name' ,
-                   'patients.prenom as patient_prenom','payements.id as pay_id','consultations.*')
+                   'patients.prenom as patient_prenom','paiements.id as pay_id','consultations.*')
                    
                    ->where('consultations.user_id',$grp)->get();
                     return view('consultations/index',[            
@@ -149,9 +149,9 @@ $consultations = DB::table('consultations')
                     $consultations = DB::table('consultations')
                    ->join('users', 'users.id','consultations.user_id')
                    ->join('patients', 'patients.id', 'consultations.patient_id')
-                   ->join('payements', 'payements.id', 'consultations.payement_id')
+                   ->join('paiements', 'paiements.id', 'consultations.paiement_id')
                    ->select('users.name as user_name','patients.nom as patient_name' ,
-                   'patients.prenom as patient_prenom','payements.id as pay_id','consultations.*')
+                   'patients.prenom as patient_prenom','paiements.id as pay_id','consultations.*')
                    ->where('consultations.user_id',$grp)
                    ->whereDate('created_at','<=',$end)->get();
                     return view('consultations/index',[            
@@ -161,9 +161,9 @@ $consultations = DB::table('consultations')
                     $consultations = DB::table('consultations')
                    ->join('users', 'users.id','consultations.user_id')
                    ->join('patients', 'patients.id', 'consultations.patient_id')
-                   ->join('payements', 'payements.id', 'consultations.payement_id')
+                   ->join('paiements', 'paiements.id', 'consultations.paiement_id')
                    ->select('users.name as user_name','patients.nom as patient_name' ,
-                   'patients.prenom as patient_prenom','payements.id as pay_id','consultations.*')
+                   'patients.prenom as patient_prenom','paiements.id as pay_id','consultations.*')
                    ->where('consultations.user_id',$grp)
                    ->whereDate('created_at','>=',$start)->get();
                     return view('consultations/index',[            
@@ -174,80 +174,80 @@ $consultations = DB::table('consultations')
         case 'caissier':
             if($grp == null){
                     if ($start == null && $end == null){
-                        $payements = DB::table('payements')
-                                   ->join('users','users.id','payements.user_id')
-                                   ->join('patients','patients.id','payements.patient_id')
-                                   ->join('type_payements','type_payements.id','payements.type_payement_id')
-                                   ->select('type_payements.*','users.name as user_name','patients.*','payements.*')
+                        $paiements = DB::table('paiements')
+                                   ->join('users','users.id','paiements.user_id')
+                                   ->join('patients','patients.id','paiements.patient_id')
+                                   ->join('type_paiements','type_paiements.id','paiements.type_paiement_id')
+                                   ->select('type_paiements.*','users.name as user_name','patients.*','paiements.*')
                                    ->get();
-                        return view('payements/index',[            
-                            'payements'=> $payements
+                        return view('paiements/index',[            
+                            'paiements'=> $paiements
                         ]);
                     }else if($start == null && $end != null){
-                        $payements = DB::table('payements')
-                                   ->join('users','users.id','payements.user_id')
-                                   ->join('patients','patients.id','payements.patient_id')
-                                   ->join('type_payements','type_payements.id','payements.type_payement_id')
-                                   ->select('type_payements.*','users.name as user_name','patients.*','payements.*')
+                        $paiements = DB::table('paiements')
+                                   ->join('users','users.id','paiements.user_id')
+                                   ->join('patients','patients.id','paiements.patient_id')
+                                   ->join('type_paiements','type_paiements.id','paiements.type_paiement_id')
+                                   ->select('type_paiements.*','users.name as user_name','patients.*','paiements.*')
                                    
                                    ->whereDate('created_at','<=',$end)->get();
-                        return view('payements/index',[            
-                            'payements'=> $payements
+                        return view('paiements/index',[            
+                            'paiements'=> $paiements
                         ]);
                     }else if($start != null && $end == null){
-                        $payements = DB::table('payements')
-                                   ->join('users','users.id','payements.user_id')
-                                   ->join('patients','patients.id','payements.patient_id')
-                                   ->join('type_payements','type_payements.id','payements.type_payement_id')
-                                   ->select('type_payements.*','users.name as user_name','patients.*','payements.*')
+                        $paiements = DB::table('paiements')
+                                   ->join('users','users.id','paiements.user_id')
+                                   ->join('patients','patients.id','paiements.patient_id')
+                                   ->join('type_paiements','type_paiements.id','paiements.type_paiement_id')
+                                   ->select('type_paiements.*','users.name as user_name','patients.*','paiements.*')
                                    ->whereDate('created_at','>=',$start)->get();
-                        return view('payements/index',[            
-                            'payements'=> $payements
+                        return view('paiements/index',[            
+                            'paiements'=> $paiements
                         ]);
                     }else if($start != null && $end != null){
-                        $payements = DB::table('payements')
-                                   ->join('users','users.id','payements.user_id')
-                                   ->join('patients','patients.id','payements.patient_id')
-                                   ->join('type_payements','type_payements.id','payements.type_payement_id')
-                                   ->select('type_payements.*','users.name as user_name','patients.*','payements.*')
+                        $paiements = DB::table('paiements')
+                                   ->join('users','users.id','paiements.user_id')
+                                   ->join('patients','patients.id','paiements.patient_id')
+                                   ->join('type_paiements','type_paiements.id','paiements.type_paiement_id')
+                                   ->select('type_paiements.*','users.name as user_name','patients.*','paiements.*')
                                    ->whereBetween('created_at',[$start,$end])->get();
-                        return view('payements/index',[            
-                            'payements'=> $payements
+                        return view('paiements/index',[            
+                            'paiements'=> $paiements
                         ]);
                     }
                 }else{
                     if ($start == null && $end == null){
-                        $payements = DB::table('payements')
-                   ->join('users','users.id','payements.user_id')
-                   ->join('patients','patients.id','payements.patient_id')
-                   ->join('type_payements','type_payements.id','payements.type_payement_id')
-                   ->select('type_payements.*','users.name as user_name','patients.*','payements.*')
+                        $paiements = DB::table('paiements')
+                   ->join('users','users.id','paiements.user_id')
+                   ->join('patients','patients.id','paiements.patient_id')
+                   ->join('type_paiements','type_paiements.id','paiements.type_paiement_id')
+                   ->select('type_paiements.*','users.name as user_name','patients.*','paiements.*')
                    ->where('user_id',$grp)->get();
-                        return view('payements/index',[            
-                            'payements'=> $payements
+                        return view('paiements/index',[            
+                            'paiements'=> $paiements
                         ]);
         
                     }else if($start == null && $end != null){
-                        $payements = DB::table('payements')
-                   ->join('users','users.id','payements.user_id')
-                   ->join('patients','patients.id','payements.patient_id')
-                   ->join('type_payements','type_payements.id','payements.type_payement_id')
-                   ->select('type_payements.*','users.name as user_name','patients.*','payements.*')
+                        $paiements = DB::table('paiements')
+                   ->join('users','users.id','paiements.user_id')
+                   ->join('patients','patients.id','paiements.patient_id')
+                   ->join('type_paiements','type_paiements.id','paiements.type_paiement_id')
+                   ->select('type_paiements.*','users.name as user_name','patients.*','paiements.*')
                    ->where('user_id',$grp)
                    ->whereDate('created_at','<=',$end)->get();
-                        return view('payements/index',[            
-                            'payements'=> $payements
+                        return view('paiements/index',[            
+                            'paiements'=> $paiements
                         ]);
                     }else if($start != null && $end == null){
-                        $payements = DB::table('payements')
-                   ->join('users','users.id','payements.user_id')
-                   ->join('patients','patients.id','payements.patient_id')
-                   ->join('type_payements','type_payements.id','payements.type_payement_id')
-                   ->select('type_payements.*','users.name as user_name','patients.*','payements.*')
+                        $paiements = DB::table('paiements')
+                   ->join('users','users.id','paiements.user_id')
+                   ->join('patients','patients.id','paiements.patient_id')
+                   ->join('type_paiements','type_paiements.id','paiements.type_paiement_id')
+                   ->select('type_paiements.*','users.name as user_name','patients.*','paiements.*')
                    ->where('user_id',$grp)
                    ->whereDate('created_at','>=',$start)->get();
-                        return view('payements/index',[            
-                            'payements'=> $payements
+                        return view('paiements/index',[            
+                            'paiements'=> $paiements
                         ]);
                     }
                 }

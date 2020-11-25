@@ -32,7 +32,7 @@
 				<label style="padding-left:10px;">Patient ID</label>
 				<input class="form-control" name="patient_id" value="{{$rendezvous->patient_id}}" placeholder="Patient_ID" required><br>
 				<label style="padding-left:10px;">Paiement ID</label>
-				<input class="form-control" name="payement_id" value="{{$rendezvous->payement_id}}" placeholder="Paiement_ID" required><br>
+				<input class="form-control" name="paiement_id" value="{{$rendezvous->paiement_id}}" placeholder="Paiement_ID" required><br>
 
 				<label style="padding-left:10px;">Créneau ID</label>
 				<input class="form-control" name="creneau_id" value="{{$rendezvous->creneau_id}}" placeholder="Créneau_ID" required><br>

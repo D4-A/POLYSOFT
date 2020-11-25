@@ -10,13 +10,13 @@
 						<em class="fa fa-money"></em>
 					</a>
 				</li>
-				<li class="active">Payements</li>
+				<li class="active">Paiements</li>
 			</ol>
 		</div><!--/.row--><br>
 	
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Payement des frais</h1>
+				<h1 class="page-header">Paiement des frais</h1>
 			</div>
 		</div><!--/.row-->
 		@if ($message = Session::get('error'))
@@ -24,17 +24,17 @@
 			            <p>{{ $message }}</p>
 			        </div>
 		@endif
-		<form role="form" action="{{url('payements')}}" method="post">
+		<form role="form" action="{{url('paiements')}}" method="post">
 			@csrf
 			<div class="form-group">
 				<label style="padding-left:10px;">PatientID </label>
 				<input class="form-control" name="patient_id" placeholder="PATIENT_ID" required><br>
-				<label style="padding-left:10px;">Type de payement </label>
-				<select name="type_payement_id" id="type_payement_id" class="form-control" required><br>
-					<option placeholder="" value="">Choisissez un Type de Payement</option>
+				<label style="padding-left:10px;">Type de paiement </label>
+				<select name="type_paiement_id" id="type_paiement_id" class="form-control" required><br>
+					<option placeholder="" value="">Choisissez un Type de Paiement</option>
 					
-					@foreach($type_payements as $type_payement){
-						<option value="{{$type_payement->id}}">{{$type_payement->name}}</option>
+					@foreach($type_paiements as $type_paiement){
+						<option value="{{$type_paiement->id}}">{{$type_paiement->name}}</option>
 					}
 					@endforeach
 				</select><br>

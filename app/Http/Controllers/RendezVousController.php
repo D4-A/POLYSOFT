@@ -103,12 +103,12 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
     {
         $request->validate([
             'patient_id' => 'required',
-            'payement_id' => 'required',
+            'paiement_id' => 'required',
             'creneau_id' => 'required',
          ]);
-        $ispayementInConsultation = Consultation::where('payement_id',$request->payement_id)
+        $ispaiementInConsultation = Consultation::where('paiement_id',$request->paiement_id)
                                   ->first();
-        if($ispayementInConsultation !== null){
+        if($ispaiementInConsultation !== null){
             return back()->with('error','La facture a ete utilise');
         }
         $creneau = \App\Creneau::find($request->creneau_id)->first();
@@ -118,7 +118,7 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
         $rendezvous = new RendezVous();
 
         $rendezvous->patient_id = $request->patient_id;
-        $rendezvous->payement_id = $request->payement_id;
+        $rendezvous->paiement_id = $request->paiement_id;
         $rendezvous->creneau_id = $request->creneau_id;
         $rendezvous->description = $request->description;
         $rendezvous->etat = 'pending';
@@ -133,7 +133,7 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
                     $message = 'Le patient n\'existe pas';
                 $found_pay = preg_match('/pay/',$e->errorInfo[2]);
                 if($found_pay === 1)
-                    $message = 'Le payement n\'existe pas';
+                    $message = 'Le paiement n\'existe pas';
                 $found_cren = preg_match('/cren/',$e->errorInfo[2]);
                 if($found_cren === 1)
                     $message = 'Le creneau n\'existe pas';
@@ -177,11 +177,11 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
         $rendezvous = RendezVous::find($id);
         $rendezvous_id = $rendezvous->id;
         $patient_id = $rendezvous->patient_id;
-        $payement_id = $rendezvous->payement_id;
+        $paiement_id = $rendezvous->paiement_id;
 
         return view('rendezvous/cons', [
             'patient_id' => $patient_id,
-            'payement_id' => $payement_id,
+            'paiement_id' => $paiement_id,
             'rendezvous_id' => $rendezvous_id
         ]);
     }
@@ -190,21 +190,21 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\rendezVoudd($payement_id);s  $rendezVous
+     * @param  \App\rendezVoudd($paiement_id);s  $rendezVous
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, rendezVous $rendezvous)
     {
         $request->validate([
             'patient_id' => 'required',
-            'payement_id' => 'required',
+            'paiement_id' => 'required',
             'creneau_id' => 'required',
             'description' => 'required',
             'etat' => 'required'
          ]);
         
         $rendezvous->patient_id = $request->patient_id;
-        $rendezvous->payement_id = $request->payement_id;
+        $rendezvous->paiement_id = $request->paiement_id;
         $rendezvous->creneau_id = $request->creneau_id;
         $rendezvous->description = $request->description;
         $rendezvous->etat = $request->etat;
@@ -218,7 +218,7 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
                    $message = 'Le patient n\'existe pas';
                $found_pay = preg_match('/pay/',$e->errorInfo[2]);
                if($found_pay === 1)
-                   $message = 'Le payement n\'existe pas';
+                   $message = 'Le paiement n\'existe pas';
                $found_cren = preg_match('/cren/',$e->errorInfo[2]);
                if($found_cren === 1)
                    $message = 'Le creneau n\'existe pas';
@@ -226,7 +226,7 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
            case 1062:
                $found_pay = preg_match('/pay/',$e->errorInfo[2]);
                if($found_pay === 1)
-                   $message = 'Le payement deja utilise';
+                   $message = 'Le paiement deja utilise';
                $found_cren = preg_match('/cren/',$e->errorInfo[2]);
                if($found_cren === 1)
                    $message = 'Le creneau deja pris';

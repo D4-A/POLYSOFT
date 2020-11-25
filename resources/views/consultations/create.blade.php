@@ -32,7 +32,7 @@
 					<label style="padding-left:10px;">PatientID</label>
 					<input class="form-control" name="patient_id" placeholder="PATIENT_ID" required><br>
 					<label style="padding-left:10px;"> PaiementID</label>
-					<input class="form-control" name="payement_id" placeholder="PAIEMENT_ID" required><br>
+					<input class="form-control" name="paiement_id" placeholder="PAIEMENT_ID" required><br>
 					<label style="padding-left:10px;">Motif de consulation </label>
 					<textarea class="form-control" name="motif" cols="20" rows="5" placeholder="Motif de consultation" required></textarea><br>
 					<label style="padding-left:10px;">Historique de la maladie</label>

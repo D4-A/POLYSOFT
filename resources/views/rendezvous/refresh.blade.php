@@ -52,7 +52,7 @@
 						<input class="form-control" type="text" name="patient_id" placeholder="Patient_ID" style="height:40px;" required>
 					</div>
 					<div class="col-lg-3">
-						<input class="form-control" type="text" name="payement_id" placeholder="Paiement_ID" style="height:40px;" required>
+						<input class="form-control" type="text" name="paiement_id" placeholder="Paiement_ID" style="height:40px;" required>
 					</div>
 					<div class="col-lg-3">
 						<input class="form-control" type="text" name="description" placeholder="Description_Rendez-vous" style="height:40px;">

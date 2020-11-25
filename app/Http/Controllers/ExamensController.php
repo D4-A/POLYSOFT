@@ -27,8 +27,8 @@ class ExamensController extends Controller
     {
         $examens = DB::table('examens')
                  ->join('users','users.id','examens.user_id')
-		 ->join('payements', 'payements.id','examens.payment_id')
-                 ->select('payements.id as payment_id','users.name as user_name','examens.*')
+		 ->join('paiements', 'paiements.id','examens.payment_id')
+                 ->select('paiements.id as payment_id','users.name as user_name','examens.*')
                  ->get();
         return view('examens/index', [
             'examens' => $examens
@@ -56,9 +56,9 @@ class ExamensController extends Controller
         $files = $request->file('files');
         $cons_id = $request->get('consultation_id');
 	$payment_id = $request->get('payment_id');
-	$chech_if_pay_used_in_cons = Consultation::where('payement_id',$request->payment_id)
+	$chech_if_pay_used_in_cons = Consultation::where('paiement_id',$request->payment_id)
                                   ->first();
-	$chech_if_pay_used_in_rendzvous = rendezVous::where('payement_id',$request->payment_id)
+	$chech_if_pay_used_in_rendzvous = rendezVous::where('paiement_id',$request->payment_id)
                                   ->first();
 	
 	if(($chech_if_pay_used_in_cons !== null) ||

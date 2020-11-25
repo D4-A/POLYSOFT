@@ -10,30 +10,30 @@
 					<em class="fa fa-money"></em>
 				</a>
 				</li>
-				<li class="active">Payements</li>
+				<li class="active">Paiements</li>
 			</ol>
 		</div><!--/.row-->
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Modifier un payement</h1>
+				<h1 class="page-header">Modifier un paiement</h1>
 			</div>
 		</div><!--/.row--><br>
 		
-		<form role="form" action="/payements/{{$payement->id}}" method="post">
+		<form role="form" action="/paiements/{{$paiement->id}}" method="post">
 			@csrf
 			@method('PUT')
 			<div class="form-group">
 				<label style="padding-left:10px;">PatientID</label>
-				<input class="form-control" name="patient_id" value="{{$payement->patient_id}}" placeholder="PATIENT_ID" required><br>
+				<input class="form-control" name="patient_id" value="{{$paiement->patient_id}}" placeholder="PATIENT_ID" required><br>
 
 				<label style="padding-left:10px;">Type de paiement</label>
-				<select name="type_payement_id" id="type_payement_id" class="form-control" required><br>
-				    @foreach($type_payements as $type_payement){
-					@if($type_payement->id === $payement->type_payement_id)
-					    <option value="{{$type_payement->id}}" selected>{{$type_payement->name}}</option>
+				<select name="type_paiement_id" id="type_paiement_id" class="form-control" required><br>
+				    @foreach($type_paiements as $type_paiement){
+					@if($type_paiement->id === $paiement->type_paiement_id)
+					    <option value="{{$type_paiement->id}}" selected>{{$type_paiement->name}}</option>
 					@else
-					    <option value="{{$type_payement->id}}">{{$type_payement->name}}</option>
+					    <option value="{{$type_paiement->id}}">{{$type_paiement->name}}</option>
 					@endif
 					}
 				    @endforeach

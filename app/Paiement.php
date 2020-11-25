@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 
-class Payement extends Model
+class Paiement extends Model
 {
     protected $keyType = 'string';
     public $incrementing = false;
@@ -14,7 +14,7 @@ class Payement extends Model
         parent::boot();
         self::creating(function ($model) {
                 $model->id = IdGenerator::generate
-                           (['table' => 'payements',
+                           (['table' => 'paiements',
                              'length' => 6, 'prefix' => 'PAY']);
             });
     }
