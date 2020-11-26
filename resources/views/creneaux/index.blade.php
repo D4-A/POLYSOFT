@@ -38,8 +38,7 @@
 		<div class="col-lg-3" style="padding:0;">
 		    <select class="form-control" id="search">
 			<option value="1"> ID</option>
-			<option value="2"> Docteur</option>
-			<option value="6"> status</option>	    
+			<option value="5"> status</option>	    
 		    </select>
 		</div>
 		<div class="col-lg-5" style="padding-left:5px;">
@@ -55,7 +54,6 @@
 		<tr>
 		    <th scope="col" style="text-align:center;">NUM</th>
 		    <th scope="col">ID CRENEAU</th>
-		    <th scope="col">ID DOCTEUR</th>
 		    <th scope="col">NOM</th>
 		    <th scope="col">DEBUT</th>
 		    <th scope="col">FIN</th>
@@ -68,7 +66,6 @@
 		<tr>
 		    <td scope="row" style="text-align:center;"> <?= $key; ?></td>
 		    <td> <?= $creneau->id; ?></td>
-		    <td> <?= $creneau->user_name; ?></td>
 		    <td> <?= $creneau->name; ?></td>
 		    <td> <?= $creneau->start_time; ?></td>
 		    <td> <?= $creneau->end_time; ?></td>
