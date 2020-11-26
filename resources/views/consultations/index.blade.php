@@ -21,7 +21,7 @@
 	
 	<div class="row col-lg-12" style="padding-bottom:30px;">
 	    <div class="col-lg-6 text-left" style="padding:0;">
-		@canany(['isAdmin','isDoctor','isInf'])
+		@canany(['isDoctor','isInf'])
 		<a href="{{url('/consultations/create')}}">
 		    <button type="submit"  class="btn btn-success">
 			<span class="glyphicon glyphicon-plus" style="padding-right:8px;"></span>Nouveau Consultation
@@ -74,7 +74,7 @@
 		    <td> <?= $consultation->patient_name; ?>  <?= $consultation->patient_prenom; ?></td>
 		    <td> <?= $consultation->motif; ?></td>
 		    <td> <?= $consultation->created_at; ?></td>
-		    @canany(['isAdmin','isDoctor','isInf'])
+		    @canany(['isDoctor','isInf'])
 		    <td style="display:flex;">
 			@endcan
 			@canany(['isAdmin','isDoctor','isInf','isLaborant'])
@@ -91,7 +91,7 @@
 			@endcan
 			@endcan
 			
-			@canany(['isAdmin','isDoctor','isInf'])
+			@canany(['isDoctor','isInf'])
 			<a href="consultations/edit/{{$consultation->id}}" style="padding-right:10px;">
 			    <button type="submit" class="btn btn-sm btn-primary">
 				<span class="glyphicon glyphicon-edit"> </span> Edit
@@ -107,7 +107,7 @@
 			    </button>
 			</form>
 			@endcan
-			@canany(['isAdmin','isDoctor','isInf'])
+			@canany(['isDoctor','isInf'])
 		    </td>
 		    @endcan
 		</tr>
