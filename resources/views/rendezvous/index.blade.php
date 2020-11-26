@@ -22,7 +22,7 @@
 
 		<div class="row col-lg-12" style="padding-bottom:30px;">
 			<div class="col-lg-4 text-left" style="padding:0;">
-				@canany(['isAdmin','isRecept'])
+				@canany(['isAdmin','isRecept','isDoctor'])
 				<a href="{{url('/rendezVous/create')}}">
 					<button type="submit"  class="btn btn-success">
 						<span class="glyphicon glyphicon-plus" style="padding-right:8px;"></span>Nouveau Rendez-Vous
