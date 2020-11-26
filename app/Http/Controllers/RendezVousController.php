@@ -181,11 +181,12 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
         $rendezvous_id = $rendezvous->id;
         $patient_id = $rendezvous->patient_id;
         $paiement_id = $rendezvous->paiement_id;
-
+        $creneau_id = RendezVous::find($id)->value('creneau_id');
         return view('rendezvous/cons', [
             'patient_id' => $patient_id,
             'paiement_id' => $paiement_id,
-            'rendezvous_id' => $rendezvous_id
+            'rendezvous_id' => $rendezvous_id,
+            'creneau_id' => $creneau_id
         ]);
     }
 

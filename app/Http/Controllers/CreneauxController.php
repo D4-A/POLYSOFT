@@ -98,7 +98,7 @@ class CreneauxController extends Controller
         
         $start_i = date('i',strtotime($request->start_time));
         $start_ie = date('i',strtotime($request->end_time));
-
+        
         if($start_e > $start_h){
             $i = (($start_e - $start_h) * 2);
             

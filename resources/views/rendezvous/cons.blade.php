@@ -42,6 +42,7 @@
 					<label style="padding-left:10px;">Taitement</label>
 					<textarea class="form-control" name="traitement" cols="20" rows="5" placeholder="Traitement" required></textarea><br>
 					<input type="hidden" class="form-control" name="rendezvous_id" value="{{$rendezvous_id}}">
+					<input type="hidden" class="form-control" name="creneau_id" value="{{$creneau_id}}">
 
 	    </div>
 

@@ -65,10 +65,14 @@ class ConsultationsController extends Controller
             'examen_compl' => 'required',
             'traitement' => 'required'
          ]);
-        if($request->rendezvous_id){
+        if($request->rendezvous_id && $request->creneau_id){
             $rendezvous = \App\rendezVous::find($request->rendezvous_id);
             $rendezvous->etat = 'closed';
             $rendezvous->save();
+
+            $Creneau = \App\Creneau::find($request->creneau_id);
+            $Creneau->ouvert = 0;
+            $Creneau->save();
         }
         $consultation= new Consultation();
         $consultation->user_id = Auth::id();
