@@ -1,4 +1,4 @@
-<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar" style="background-color:#ccc;padding-top:75px;">
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar" style="background-color:#ccc;">
     <ul class="nav menu">
 	<li class="active"><a href="{{url('/home')}}"><em class="fa fa-home">&nbsp;</em> Home</a></li>
 	<li><a href="{{url('/patients')}}"><em class="fa fa-users">&nbsp;</em> Patients</a></li>

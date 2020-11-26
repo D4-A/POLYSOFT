@@ -6,9 +6,6 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#" style="padding:0px;">
-					<span><img src="{{asset('plogin/images/log2.png')}}" style="width:225px;height:155px;"/><span>
-				</a>
 				<ul class="nav navbar-top-links navbar-right">
 				    <li class="dropdown"><a href="{{url('/rendezVous')}}">
 					<em class="fa fa-calendar"></em>Agenda
