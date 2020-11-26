@@ -15,7 +15,7 @@ class PaiementSeeder extends Seeder
          DB::table('paiements')->insert([
              'id' => IdGenerator::generate
                              (['table' => 'paiements',
-                               'length' => 6, 'prefix' => 'PAY']),
+                               'length' => 5, 'prefix' => 'FA']),
             'user_id' => 'US001',
             'patient_id' => 'PN001',
              'type_paiement_id' => 'T001',
@@ -24,7 +24,7 @@ class PaiementSeeder extends Seeder
          DB::table('paiements')->insert([
              'id' => IdGenerator::generate
                              (['table' => 'paiements',
-                               'length' => 6, 'prefix' => 'PAY']),
+                               'length' => 5, 'prefix' => 'FA']),
              'user_id' => 'US002',
              'patient_id' => 'PN001',
              'type_paiement_id' => 'T002',
@@ -33,7 +33,7 @@ class PaiementSeeder extends Seeder
            DB::table('paiements')->insert([
             'id' => IdGenerator::generate
                              (['table' => 'paiements',
-                               'length' => 6, 'prefix' => 'PAY']),
+                               'length' => 5, 'prefix' => 'FA']),
             'user_id' => 'US002',
             'patient_id' => 'PN001',
             'type_paiement_id' => 'T003',
