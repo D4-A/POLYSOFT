@@ -98,8 +98,11 @@ class CreneauxController extends Controller
         
         $start_i = date('i',strtotime($request->start_time));
         $start_ie = date('i',strtotime($request->end_time));
+
+        $start_y = date('y',strtotime($request->start_time));
+        $start_ye = date('y',strtotime($request->end_time));
         
-        if($start_e > $start_h){
+        if($start_e > $start_h && $start_ye >= $start_y){
             $i = (($start_e - $start_h) * 2);
             
             if(($start_i == 30 && $start_e != 30)
@@ -131,7 +134,7 @@ class CreneauxController extends Controller
                 $first_pass = false;
             }while($i > 1);
             
-        }else if($start_e == $start_h)
+        }else if($start_e == $start_h && $start_ie > $start_i && $start_ye >= $start_y)
         {
             $creneau= new Creneau();
             $creneau->name = $request->name;
@@ -140,6 +143,8 @@ class CreneauxController extends Controller
             $creneau->end_time = $request->end_time;
             $creneau->ouvert = $request->ouvert == 'true' ? 1 : 0;
             $creneau->save();
+        }else{
+            return back()->with("error","L'interval du temps n'est pas valide");
         }
             return redirect('creneaux');
     }

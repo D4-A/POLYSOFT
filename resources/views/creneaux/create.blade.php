@@ -13,13 +13,16 @@
 				<li class="active">Créneaux</li>
 			</ol>
 		</div><!--/.row-->
-
+		@if ($message = Session::get('error'))
+		    <div class="alert alert-danger">
+			<p>{{ $message }}</p>
+		    </div>
+		@endif
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">Réservez un Créneau</h1>
 			</div>
 		</div><!--/.row--><br>
-
 		<form role="form" action="{{url('creneaux')}}" method="post">
 			@csrf
 			<div class="form-group">
