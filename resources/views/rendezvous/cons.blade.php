@@ -25,10 +25,8 @@
 	<form role="form" action="{{url('consultations')}}" method="post">
 	    @csrf
 	    <div class="form-group">
-		<label>Patient  </label>
-		<input class="form-control" name="patient_id" value="{{$patient_id}}" placeholder="Patient Id" readonly>
-		<label> Paiement</label>
-		<input class="form-control" name="paiement_id" value="{{$paiement_id}}" placeholder="Paiement" readonly>
+		<input type="hidden" class="form-control" name="patient_id" value="{{$patient_id}}" placeholder="Patient Id" readonly>
+		<input type="hidden" class="form-control" name="paiement_id" value="{{$paiement_id}}" placeholder="Paiement" readonly>
 		<label style="padding-left:10px;">Motif de consulation </label>
 					<textarea class="form-control" name="motif" cols="20" rows="5" placeholder="Motif de consultation" required></textarea><br>
 					<label style="padding-left:10px;">Historique de la maladie</label>
@@ -43,6 +41,8 @@
 					<textarea class="form-control" name="examen_compl" cols="20" rows="5" placeholder="Examens complémentaires" required></textarea><br>
 					<label style="padding-left:10px;">Taitement</label>
 					<textarea class="form-control" name="traitement" cols="20" rows="5" placeholder="Traitement" required></textarea><br>
+					<input type="hidden" class="form-control" name="rendezvous_id" value="{{$rendezvous_id}}">
+
 	    </div>
 
 	    <button type="submit" class="btn btn-primary">

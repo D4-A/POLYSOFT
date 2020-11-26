@@ -70,7 +70,6 @@ class ConsultationsController extends Controller
             $rendezvous->etat = 'closed';
             $rendezvous->save();
         }
-        
         $consultation= new Consultation();
         $consultation->user_id = Auth::id();
         $consultation->patient_id = $request->patient_id;
