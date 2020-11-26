@@ -59,7 +59,7 @@
 		    <!--<th scope="col">ID_Paiement</th>-->
 		    <th scope="col">Motif</th>
 		    <th scope="col">Date</th>
-		    @canany(['isAdmin','isDoctor','isInf','isLaborant'])
+		    @canany(['isDoctor','isInf','isLaborant'])
 		    <th scope="col">Actions</th>
 		    @endcan
 		</tr>
@@ -77,8 +77,8 @@
 		    @canany(['isDoctor','isInf'])
 		    <td style="display:flex;">
 			@endcan
-			@canany(['isAdmin','isDoctor','isInf','isLaborant'])
-			@can('isLaborant')
+			@canany(['isDoctor','isInf','isLaborant'])
+			@canany(['isLaborant'])
 			
 			@endcan
 			<a href="consultations/show/{{$consultation->id}}" style="padding-right:10px;">
@@ -99,7 +99,7 @@
 			</a>
 			@endcan
 			
-			@canany(['isAdmin','isDoctor','isInf'])
+			@canany(['isDoctor','isInf'])
 			<form action="consultations/destroy/{{$consultation->id}}" method="post">
 			    @csrf
 			    <button type="submit" onclick="return confirm('voulez-vous vraiment supprimer?')" class="btn btn-sm btn-danger">
