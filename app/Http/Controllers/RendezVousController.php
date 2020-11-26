@@ -7,6 +7,8 @@ use App\Consultation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Creneau;
+use App\Paiement;
 
 class RendezVousController extends Controller
 {
@@ -104,7 +106,6 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
     public function store(Request $request)
     {
         $request->validate([
-            'patient_id' => 'required',
             'paiement_id' => 'required',
             'creneau_id' => 'required',
          ]);
@@ -113,13 +114,13 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
         if($ispaiementInConsultation !== null){
             return back()->with('error','La facture a ete utilise');
         }
-        $creneau = \App\Creneau::find($request->creneau_id)->first();
+        $creneau = Creneau::find($request->creneau_id)->first();
         $creneau->ouvert = 0;
         $creneau->save();
 
         $rendezvous = new RendezVous();
 
-        $rendezvous->patient_id = $request->patient_id;
+        $rendezvous->patient_id = Paiement::where('id',$request->paiement_id)->value('patient_id');
         $rendezvous->paiement_id = $request->paiement_id;
         $rendezvous->creneau_id = $request->creneau_id;
         $rendezvous->description = $request->description;
