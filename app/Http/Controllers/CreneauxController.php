@@ -20,9 +20,11 @@ class CreneauxController extends Controller
      */
     public function index()
     {
+        $user_id = Auth::id();
         $creneaux = DB::table('creneaus')
                   ->join('users','users.id','creneaus.user_id')
                   ->select('users.name as user_name','creneaus.*')
+                  ->where('users.id',$user_id)
                   ->get();
         return view('creneaux/index',[
             'creneaux' => $creneaux
