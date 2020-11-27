@@ -52,7 +52,7 @@
 						<option value="Feminin">Féminin</option>
 					</select><br>
 					<label style="padding-left:10px;">Date de Naissance</label>
-					<input class="form-control" name="ans_naiss" placeholder="Date_Naiss de l'utilisateur" required><br>
+					<input type="date" class="form-control" name="ans_naiss" placeholder="Date_Naiss de l'utilisateur" required><br>
 					<label style="padding-left:10px;">Adresse</label>
 					<input class="form-control" name="adresse" placeholder="Adresse de l'utilisateur" required><br>
 					<label style="padding-left:10px;">Téléphone</label>

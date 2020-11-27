@@ -80,7 +80,7 @@
                     <label for="tel" class="col-md-3 col-form-label" style="padding-top:15px;padding-left:40px;">{{ __('Telephone') }}</label>
 
                     <div class="col-md-9">
-                        <input id="tel" type="text" class="form-control @error('tel') is-invalid @enderror" name="tel" value="{{ old('tel') ?? $user->tel }}" required autocomplete="off" autofocus>
+                        <input id="tel" type="text" class="form-control @error('tel') is-invalid @enderror" maxlength="8" name="tel" value="{{ old('tel') ?? $user->tel }}" required autocomplete="off" autofocus>
 
                         @error('tel')
                         <span class="invalid-feedback" role="alert">
@@ -106,7 +106,7 @@
                     <label for="cni" class="col-md-3 col-form-label" style="padding-top:15px;padding-left:40px;">{{ __('Carte d\' Identité') }}</label>
 
                     <div class="col-md-9">
-                        <input id="cni" type="text" class="form-control @error('cni') is-invalid @enderror" name="cni" value="{{ old('cni') ?? $user->cni }}" required autocomplete="off" autofocus>
+                        <input id="cni" type="text" class="form-control @error('cni') is-invalid @enderror" maxlength="14" name="cni" value="{{ old('cni') ?? $user->cni }}" required autocomplete="off" autofocus>
 
                         @error('cni')
                         <span class="invalid-feedback" role="alert">
