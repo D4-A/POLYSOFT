@@ -44,22 +44,13 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
                ->select('fonctions.name as fonct_name','users.*')
                ->where('fonctions.name','LIKE','%oct%')
                ->get();
-        $days = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi',
-                 'Dimanche'];
-        $heures = ['08:00-08:30','08:30-09:00','09:00-09:30','09:30-10:00',
-                   '10:00-10:30','10:30-11:00','11:00-11:30','11:30-12:00',
-                   '12:00-12:30','12:30-13:00','13:00-13:30','13:30-14:00',
-                   '14:00-14:30','14:30-15:00','15:00-15:30','15:30-16:00',
-                   '16:00-16:30','16:30-17:00'];
         return view('rendezvous/create',[
             'users' => $users,
-            'days' => $days,
-            'heures' => $heures
         ]);
     }
-    public function refresh($id)
+    public function actualiser($id)
     {
-        if($id === 'U0001')
+        if($id === 'US001')
             return back();
         $medecin = DB::table('users')->where('id',$id)->first();
         $users = DB::table('users')
@@ -96,7 +87,46 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
             'medecin' => $medecin
         ]);
     }
+    public function refresh(Request $request)
+    {
+        if(Auth::id() === 'US001')
+            return back();
+        $medecin = DB::table('users')->where('id',$request->medecin)->first();
+        $users = DB::table('users')
+               ->join('fonctions','fonctions.id','users.fonction_id')
+               ->select('fonctions.name as fonct_name','users.*')
+               ->where('fonctions.name','LIKE','%oct%')
+               ->get();
+        $days = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi',
+                 'Dimanche'];
+        $heures = ['08:00-08:30','08:30-09:00','09:00-09:30','09:30-10:00',
+                   '10:00-10:30','10:30-11:00','11:00-11:30','11:30-12:00',
+                   '12:00-12:30','12:30-13:00','13:00-13:30','13:30-14:00',
+                   '14:00-14:30','14:30-15:00','15:00-15:30','15:30-16:00',
+                   '16:00-16:30','16:30-17:00'];
+        $creneaux = DB::table('creneaus')->where('user_id',$request->medecin)
+                                         ->where('ouvert',1)
+                                         ->get();
 
+        $interval = [];
+        if($creneaux !== null){
+            foreach($creneaux as $creneau){
+                $debut = $creneau->start_time;
+                $day = date('D', strtotime(explode(' ',$debut)[0]));
+                $fin = $creneau->end_time;
+                $debut_fin = substr(explode(' ',$debut)[1],0,5) .'-'. substr(explode(' ',$fin)[1],0,5);
+                $interval += [($debut_fin . '-' . $day) => $creneau->id];
+            }
+        }
+        return view('rendezvous/refresh',[
+            'days' => $days,
+            'heures' => $heures,
+            'interval' => $interval,
+            'users' => $users,
+            'medecin' => $medecin
+        ]);
+    }
+   
     /**
      * Store a newly created resource in storage.
      *
@@ -114,9 +144,9 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
         if($ispaiementInConsultation !== null){
             return back()->with('error','La facture a ete utilise');
         }
-        $creneau = Creneau::find($request->creneau_id)->first();
-        $creneau->ouvert = 0;
-        $creneau->save();
+        $Creneau = \App\Creneau::find($request->creneau_id);
+        $Creneau->ouvert = 0;
+        $Creneau->save();
 
         $rendezvous = new RendezVous();
 

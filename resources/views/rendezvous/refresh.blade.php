@@ -42,7 +42,7 @@
 		    <div class="col-lg-3">
 			<a href="#" id="linkre">
 			    <button type="button"  onclick="getComboA()" class="btn btn-info">
-				<span class="glyphicon glyphicon-search" style="padding-right:8px;"></span>Rechercher
+				<span class="glyphicon glyphicon-refresh" style="padding-right:8px;"></span>Actualiser
 			    </button>
 			</a>
 		    </div>

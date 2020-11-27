@@ -69,10 +69,6 @@ class ConsultationsController extends Controller
             $rendezvous = \App\rendezVous::find($request->rendezvous_id);
             $rendezvous->etat = 'closed';
             $rendezvous->save();
-
-            $Creneau = \App\Creneau::find($request->creneau_id);
-            $Creneau->ouvert = 0;
-            $Creneau->save();
         }
         $consultation= new Consultation();
         $consultation->user_id = Auth::id();
