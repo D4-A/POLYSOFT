@@ -160,7 +160,7 @@ class ConsultationsController extends Controller
             'examen_compl' => 'required',
             'traitement' => 'required'
          ]);
-        
+
         $consultation->user_id = Auth::id();
         $consultation->patient_id = $request->patient_id;
         $consultation->paiement_id = $request->paiement_id;
