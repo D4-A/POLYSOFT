@@ -101,7 +101,7 @@ class ProfilesController extends Controller
         $user->cni = $request->cni;
         $user->password = Hash::make($request->password);
         $user->save();
-        return redirect('profile')->with('success', 'Infos modifier avec succes');
+        return redirect('profile')->with('success', 'Infos modifiées avec succes');
     }
 
     /**
