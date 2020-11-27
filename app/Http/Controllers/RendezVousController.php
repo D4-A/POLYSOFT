@@ -147,8 +147,9 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
                    '16:00-16:30','16:30-17:00'];
         $creneaux = DB::table('creneaus')->where('user_id',$request->medecin)
                                          ->where('ouvert',1)
+                                         ->whereDate('start_time','>=',$end_week)
                                          ->get();
-
+        dd($creneaux);
         $interval = [];
         if($creneaux !== null){
             foreach($creneaux as $creneau){
