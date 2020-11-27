@@ -53,6 +53,7 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
         $temp = $id;
         $id = substr($id,0,5);
         $week = substr($temp,-16,16);
+        $end_week = self::advance(strtotime($week),$week);
         $medecin = DB::table('users')->where('id',$id)->first();
         $users = DB::table('users')
                ->join('fonctions','fonctions.id','users.fonction_id')
@@ -66,10 +67,10 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
                    '12:00-12:30','12:30-13:00','13:00-13:30','13:30-14:00',
                    '14:00-14:30','14:30-15:00','15:00-15:30','15:30-16:00',
                    '16:00-16:30','16:30-17:00'];
-        $creneaux = DB::table('creneaus')->where('user_id',$id)
-                                         ->where('ouvert',1)
-                                         ->get();
-
+        $creneaux = \App\Creneau::where('user_id',$id)
+                  ->where('ouvert',1)
+                  ->whereBetween('end_time',
+                                 [$week,$end_week])->get();
         $interval = [];
         if($creneaux !== null){
             foreach($creneaux as $creneau){
@@ -123,8 +124,19 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
                 continue;
             }
         }
-        $full_time = substr_replace($date_in_string,(string)$mois,-11,2);
-        $full_time = substr_replace($date_in_string,(string)$num_day,-8,2);
+        if($mois < 10){
+            $mois = '0' . $mois;
+            $full_time = substr_replace($date_in_string,$mois,-11,2);
+        }else{
+            $full_time = substr_replace($date_in_string,$mois,-11,2);
+        }
+        
+        if($num_day < 10){
+            $num_day = '0' . $num_day;
+            $full_time = substr_replace($full_time,$num_day,-8,2);
+        }else{
+            $full_time = substr_replace($full_time,$num_day,-8,2);
+        }
         return $full_time;
     }
     public function refresh(Request $request)
@@ -145,11 +157,10 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
                    '12:00-12:30','12:30-13:00','13:00-13:30','13:30-14:00',
                    '14:00-14:30','14:30-15:00','15:00-15:30','15:30-16:00',
                    '16:00-16:30','16:30-17:00'];
-        $creneaux = DB::table('creneaus')->where('user_id',$request->medecin)
-                                         ->where('ouvert',1)
-                                         ->whereDate('start_time','>=',$end_week)
-                                         ->get();
-        dd($creneaux);
+        $creneaux = \App\Creneau::where('user_id',$request->medecin)
+                  ->where('ouvert',1)
+                  ->whereBetween('end_time',
+                                 [$week,$end_week])->get();
         $interval = [];
         if($creneaux !== null){
             foreach($creneaux as $creneau){
