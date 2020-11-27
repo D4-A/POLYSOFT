@@ -16,32 +16,25 @@
 	<form action="{{url('/rendezVous')}}" method="post">
 	    @csrf
 	    <div class="col-md-12" style="padding-bottom:30px;">
-		<div class="col-md-12">
-		    <script>
-		     function getComboA() {
-			 let link;
-			 let med = document.getElementById('medecin');
-			 if(med.value === ""){
-			     link = '/rendezVous/refresh/' + 0;
-			 }
-			 else{
-			     link = '/rendezVous/refresh/' + med.value;
-			 }
-			 document.getElementById("linkre").setAttribute("href", link);
-		     }
-		    </script>
-
+		<div class="col-md-6">
 		    <div class="col-lg-3">
-			<select class="form-control" name="medecin" id="medecin">
-			    <option value="">Choisir le Docteur</option>
+			<select class="form-control" name="medecin" id="medecind">
+			    <option value="">Choisir Un docteur</option>
 			    @foreach($users as $user)
-				<option value="{{$user->id}}"> {{$user->name}} {{$user->prenom}}</option>
+				@if($user->id == $medecin->id)
+				    <option value="{{$medecin->id}}" selected> {{$medecin->name}} {{$medecin->prenom}}</option>
+				@else
+				    <option value="{{$user->id}}"> {{$user->name}} {{$user->prenom}}</option>
+				@endif
 			    @endforeach
 			</select>
 		    </div>
 		    <div class="col-lg-3">
+			<input type="datetime-local" class="form-control" name="week" id="weekd" value="{{old('week')??$week}}" placeholder="Semaine" required><br>    
+		    </div>
+		    <div class="col-lg-3">
 			<a href="#" id="linkre">
-			    <button type="button"  onclick="getComboA()" class="btn btn-info">
+			    <button type="button" onclick="getComboA()" class="btn btn-info">
 				<span class="glyphicon glyphicon-refresh" style="padding-right:8px;"></span>Actualiser
 			    </button>
 			</a>

@@ -31,3 +31,17 @@ function reffresh(){
 	document.getElementById('grp').disabled = false;
     }
 }
+function getComboA() {
+    let link;
+    let med = document.getElementById('medecind');
+    let weekd = document.getElementById('weekd');
+    
+    if(med.value === ""){
+	return;
+    }
+    else{
+	link = '/rendezVous/refresh/' + med.value + '-' + weekd.value;
+    }
+    document.getElementById("linkre").setAttribute("href", link);
+}
+		    

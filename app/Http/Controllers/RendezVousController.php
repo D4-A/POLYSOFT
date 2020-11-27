@@ -50,8 +50,9 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
     }
     public function actualiser($id)
     {
-        if($id === 'US001')
-            return back();
+        $temp = $id;
+        $id = substr($id,0,5);
+        $week = substr($temp,-16,16);
         $medecin = DB::table('users')->where('id',$id)->first();
         $users = DB::table('users')
                ->join('fonctions','fonctions.id','users.fonction_id')
@@ -84,14 +85,14 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
             'heures' => $heures,
             'interval' => $interval,
             'users' => $users,
-            'medecin' => $medecin
+            'medecin' => $medecin,
+            'week' => $week
         ]);
     }
     public function refresh(Request $request)
     {
-        if(Auth::id() === 'US001')
-            return back();
         $medecin = DB::table('users')->where('id',$request->medecin)->first();
+        $week = $request->week;
         $users = DB::table('users')
                ->join('fonctions','fonctions.id','users.fonction_id')
                ->select('fonctions.name as fonct_name','users.*')
@@ -123,7 +124,8 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
             'heures' => $heures,
             'interval' => $interval,
             'users' => $users,
-            'medecin' => $medecin
+            'medecin' => $medecin,
+            'week' => $week
         ]);
     }
    
