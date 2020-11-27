@@ -89,10 +89,50 @@ user_name','creneaus.id as creneau_id','rendez_vouses.*')
             'week' => $week
         ]);
     }
+    public function advance($full_time,$date_in_string)
+    {
+        $mois = date('m',$full_time);
+        $num_day = date('d',$full_time);
+        for($i = 0;$i<7;$i++){
+            $num_day += 1;
+            if($mois == 11 || $mois == 9 || $mois == 6 || $mois == 4
+            )
+            {
+                if($num_day > 30){
+                    $mois += 1;
+                    $num_day = 1;
+                }
+                continue;
+            }
+            if($mois == 12 || $mois == 10 || $mois == 8 || $mois == 12
+               || $mois == 5 || $mois == 3 || $mois == 1)
+            {
+                if($num_day > 31){
+                    $mois += 1;
+                    $num_day = 1;
+                }
+                continue;
+            }
+            if($mois == 2)
+            {
+                if($num_day > 29)
+                {
+                    $mois += 1;
+                    $num_day = 1;
+                }
+                continue;
+            }
+        }
+        $full_time = substr_replace($date_in_string,(string)$mois,-11,2);
+        $full_time = substr_replace($date_in_string,(string)$num_day,-8,2);
+        return $full_time;
+    }
     public function refresh(Request $request)
     {
         $medecin = DB::table('users')->where('id',$request->medecin)->first();
         $week = $request->week;
+        $end_week = self::advance(strtotime($week),$week);
+        
         $users = DB::table('users')
                ->join('fonctions','fonctions.id','users.fonction_id')
                ->select('fonctions.name as fonct_name','users.*')
