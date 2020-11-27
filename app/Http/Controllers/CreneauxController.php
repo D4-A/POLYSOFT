@@ -67,7 +67,12 @@ class CreneauxController extends Controller
                 $full_time = substr_replace($full_time,'30',-2,2);
             } else if($start_i == 30){
                 $full_time = substr_replace($full_time,'00',-2,2);
-                $full_time = substr_replace($full_time,(string)$start_h + 1,-5,2);
+                if($start_h < 9){
+                    $start_h = '0' . ($start_h + 1);
+                    $full_time = substr_replace($full_time,$start_h,-5,2);
+                }else{
+                    $full_time = substr_replace($full_time,$start_h + 1,-5,2);
+                }
             }else{
                 dd('lolo');
             }
@@ -77,10 +82,12 @@ class CreneauxController extends Controller
     {
         $i = 0;
         $tmp = $start_time;
+        
         while($tmp != $end_time)
         {
             $i += 1;
             $tmp = self::transform_end_time($tmp);
+           
         }
         return $i;
     }
@@ -113,12 +120,11 @@ class CreneauxController extends Controller
         $start_y = date('y',strtotime($request->start_time));
         $start_ye = date('y',strtotime($request->end_time));
 
+        
         $count = self::get_inc($request->start_time,$request->end_time);
         //dd($count);
-        if($count > 1 && $start_ye >= $start_y){
-            
+        if($count > 1 && $start_ye >= $start_y){ 
             $i = $count;
-            
             $temp = null;
             $creneau= new Creneau();
             $creneau->name = $request->name;
