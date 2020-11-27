@@ -73,6 +73,17 @@ class CreneauxController extends Controller
             }
         return $full_time;
     }
+    public function get_inc($start_time,$end_time)
+    {
+        $i = 0;
+        $tmp = $start_time;
+        while($tmp != $end_time)
+        {
+            $i += 1;
+            $tmp = self::transform_end_time($tmp);
+        }
+        return $i;
+    }
     public function store(Request $request)
     {
         $request->validate([
@@ -101,15 +112,13 @@ class CreneauxController extends Controller
 
         $start_y = date('y',strtotime($request->start_time));
         $start_ye = date('y',strtotime($request->end_time));
-        
-        if($start_e > $start_h && $start_ye >= $start_y){
-            $i = (($start_e - $start_h) * 2);
+
+        $count = self::get_inc($request->start_time,$request->end_time);
+        //dd($count);
+        if($count > 1 && $start_ye >= $start_y){
             
-            if(($start_i == 30 && $start_e != 30)
-               || ($start_i != 30 && $start_e == 30))
-            {
-                $i += 1;
-            }
+            $i = $count;
+            
             $temp = null;
             $creneau= new Creneau();
             $creneau->name = $request->name;
@@ -134,7 +143,7 @@ class CreneauxController extends Controller
                 $first_pass = false;
             }while($i > 1);
             
-        }else if($start_e == $start_h && $start_ie > $start_i && $start_ye >= $start_y)
+        }else if($count == 1 && $start_ie != $start_i && $start_ye >= $start_y)
         {
             $creneau= new Creneau();
             $creneau->name = $request->name;
