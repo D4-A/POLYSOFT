@@ -16,7 +16,7 @@
 	<form action="{{url('/rendezVous')}}" method="post">
 	    @csrf
 	    <div class="col-md-12" style="padding-bottom:30px;">
-		<div class="col-md-6">
+		<div class="col-md-12">
 		    <div class="col-lg-3">
 			<select class="form-control" name="medecin" id="medecind">
 			    <option value="">Choisir Un docteur</option>
