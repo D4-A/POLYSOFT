@@ -26,5 +26,33 @@ class FonctionSeeder extends Seeder
             'name' => 'Docteur',
             'diplome' => 'Doctorat'
         ]);
+        DB::table('fonctions')->insert([
+            'id' => IdGenerator::generate
+                             (['table' => 'fonctions',
+                               'length' => 4, 'prefix' => 'F']),
+            'name' => 'Infirmier ',
+            'diplome' => 'A2'
+        ]);
+        DB::table('fonctions')->insert([
+            'id' => IdGenerator::generate
+                             (['table' => 'fonctions',
+                               'length' => 4, 'prefix' => 'F']),
+            'name' => 'Laborantin',
+            'diplome' => 'A2'
+        ]);
+        DB::table('fonctions')->insert([
+            'id' => IdGenerator::generate
+                             (['table' => 'fonctions',
+                               'length' => 4, 'prefix' => 'F']),
+            'name' => 'Receptionniste',
+            'diplome' => 'Humanite'
+        ]);
+        DB::table('fonctions')->insert([
+            'id' => IdGenerator::generate
+                             (['table' => 'fonctions',
+                               'length' => 4, 'prefix' => 'F']),
+            'name' => 'Caissier',
+            'diplome' => 'Humanite'
+        ]);
     }
 }
