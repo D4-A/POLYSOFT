@@ -31,9 +31,9 @@
 				@method('PUT')
 				<div class="form-group">
 				<label style="padding-left:10px;">PatientID</label>
-				<input class="form-control" name="patient_id" value="{{$consultation->patient_id}}" placeholder="PATIENT_ID" required><br>
+				<input class="form-control" name="patient_id" value="{{$consultation->patient_id}}" placeholder="PATIENT_ID" readonly required><br>
 				<label style="padding-left:10px;"> PaiementID</label>
-				<input class="form-control" name="paiement_id" value="{{$consultation->paiement_id}}" placeholder="PAIEMENT_ID" required><br>
+				<input class="form-control" name="paiement_id" value="{{$consultation->paiement_id}}" placeholder="PAIEMENT_ID" readonly required><br>
 				<label style="padding-left:10px;"> Motif de consultation</label>
 				<input class="form-control" name="motif" value="{{$consultation->motif}}" placeholder="Motif de consultation" required><br>
 				<label style="padding-left:10px;">Historique de la maladie</label>
